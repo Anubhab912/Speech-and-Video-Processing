@@ -77,16 +77,13 @@ flowchart LR
 
 ## 📂 Interactive Repository Directory & Direct Links
 
-Click any file or directory link below to navigate directly to its content:
+Click any file link below to navigate directly to its content:
 
 ```gfm
 SVP/
 ├── 📄 README.md                                               # Master landing page
 ├── 📁 Course_Handout/
 │   └── 📄 SVP_Lesson_Plan_Autumn2026.md                       # [Course Syllabus & Activity Calendar](Course_Handout/SVP_Lesson_Plan_Autumn2026.md)
-├── 📁 assets/                                                 # Presentation Diagram Assets
-│   ├── 📁 ch01/                                               # [Chapter 1 Diagrams & Figures](assets/ch01/)
-│   └── 📁 ch02/                                               # [Chapter 2 Diagrams & Figures](assets/ch02/)
 ├── 📁 Module_1_Speech_Processing_Concepts/
 │   ├── 📁 Chapter_1_Introduction_to_Speech_Processing/
 │   │   ├── 📄 README.md                                       # [Chapter 1 Lecture Notes](Module_1_Speech_Processing_Concepts/Chapter_1_Introduction_to_Speech_Processing/README.md)
@@ -171,7 +168,6 @@ Click on any course topic or resource button to jump straight to the exact study
 
 1. **Studying Concepts**: Click on any **[Read Notes]** button in the module matrix to open the detailed lecture notes complete with Mermaid flowcharts and presentation figures.
 2. **Practicing for Exams**: Click on any **[5-Mark Exam Q&A]** or **[Solved Numericals]** link to view step-by-step model solutions.
-3. **Exploring Diagrams**: Access raw extracted figure assets directly from the [`assets/ch01/`](assets/ch01/) and [`assets/ch02/`](assets/ch02/) image directories.
 
 ---
 

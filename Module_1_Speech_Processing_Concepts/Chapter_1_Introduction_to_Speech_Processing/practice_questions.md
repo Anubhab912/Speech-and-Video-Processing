@@ -35,7 +35,7 @@ flowchart LR
     E --> F[Interpretation of Information]
 ```
 
-![Elements of Speech Communication](../../../assets/ch01/elements_of_speech_comm.png)
+![Elements of Speech Communication](../../assets/ch01/elements_of_speech_comm.png)
 *Figure 2.1: Elements of Speech Communication System (Source: Slide 11)*
 
 - **Information Source**: Source that produces speech using a linguistic medium (brain and vocal tract).
@@ -59,10 +59,10 @@ flowchart LR
 
 **1. Speech Production System (3 Marks)**
 
-![Speech Production System](../../../assets/ch01/speech_production_system.jpg)
+![Speech Production System](../../assets/ch01/speech_production_system.jpg)
 *Figure 3.1: Speech Production System Anatomy (Source: Slide 13)*
 
-![Schematic Speech Production Process](../../../assets/ch01/speech_production_schematic.png)
+![Schematic Speech Production Process](../../assets/ch01/speech_production_schematic.png)
 *Figure 3.2: Schematic Representation of Speech Production Process (Source: Slide 14)*
 
 - **Lungs (Air Source)**: Muscle force from the diaphragm pushes air upward through the trachea to provide necessary airflow pressure.
@@ -73,7 +73,7 @@ flowchart LR
 
 **2. Speech Perception System (2 Marks)**
 
-![Speech Perception System](../../../assets/ch01/speech_perception_system.jpg)
+![Speech Perception System](../../assets/ch01/speech_perception_system.jpg)
 *Figure 3.3: Speech Perception System (Source: Slide 19)*
 
 - **Outer Ear**: Collects sound waves from the environment and channels them down the ear canal toward the middle ear.
@@ -96,7 +96,7 @@ flowchart LR
 
 **2. Standard Phonetic Representation Systems (2.5 Marks)**
 
-![Phonetic List American English](../../../assets/ch01/phonetic_list_american_english.png)
+![Phonetic List American English](../../assets/ch01/phonetic_list_american_english.png)
 *Figure 4.1: Phonetic Representation List (Source: Slide 24)*
 
 - **IPA (International Phonetic Alphabet)**:
@@ -112,10 +112,10 @@ flowchart LR
 
 #### Answer:
 
-![Tongue Hump Vowels](../../../assets/ch01/tongue_hump_vowels.jpg)
+![Tongue Hump Vowels](../../assets/ch01/tongue_hump_vowels.jpg)
 *Figure 5A.1: Tongue Hump Positions and Waveform Plots for Vowels (Source: Slide 29)*
 
-![Formant Frequencies Table](../../../assets/ch01/formant_frequencies_table.jpg)
+![Formant Frequencies Table](../../assets/ch01/formant_frequencies_table.jpg)
 *Figure 5A.2: Formant Frequencies for Typical Vowels (Source: Slide 33)*
 
 **1. Production Mechanism of Vowels (2 Marks)**
@@ -162,7 +162,7 @@ flowchart LR
 
 **1. Production Mechanism of Semi-Vowels (3 Marks)**
 - Semi-vowels (also referred to as glides) are speech sounds that behave like vowels acoustically but function like consonants in syllable structures.
-- Produced with an open vocal tract similar to vowels, but with rapid articulator motion transitioning into or out of a adjacent vowel.
+- Produced with an open vocal tract similar to vowels, but with rapid articulator motion transitioning into or out of an adjacent vowel.
 - They cannot serve as the vocalic nucleus of a syllable, functioning instead at syllable boundaries.
 
 **2. Examples in English (2 Marks)**
@@ -175,10 +175,10 @@ flowchart LR
 
 #### Answer:
 
-![Classification of Phonemes](../../../assets/ch01/classification_of_phonemes_tree.png)
+![Classification of Phonemes](../../assets/ch01/classification_of_phonemes_tree.png)
 *Figure 5D.1: Classification Tree of Phonemes (Source: Slide 25)*
 
-![Speech Sound Production Table](../../../assets/ch01/speech_sound_production_table.png)
+![Speech Sound Production Table](../../assets/ch01/speech_sound_production_table.png)
 *Figure 5D.2: Production Conditions for Consonants (Source: Slide 18)*
 
 **1. Production Mechanisms of Consonant Classes (3 Marks)**
@@ -209,7 +209,7 @@ flowchart LR
 
 #### Answer:
 
-![F1 F2 Cluster and Centroid](../../../assets/ch01/f1_f2_vowel_cluster.jpg)
+![F1 F2 Cluster and Centroid](../../assets/ch01/f1_f2_vowel_cluster.jpg)
 *Figure 6.1: F1-F2 Cluster and Centroid for Vowels (Source: Slide 31)*
 
 **1. Formant Frequencies $F_1$ and $F_2$ (1.5 Marks)**
