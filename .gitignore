@@ -1,0 +1,35 @@
+# Gitignore for Speech and Video Processing (SVP) Course Repository
+
+# Ignore raw presentation and document source files
+*.pptx
+*.ppt
+*.docx
+*.doc
+*.pdf
+*.zip
+
+# Ignore raw source directories (if re-added for editing)
+Module 1/
+Module 3/
+Module 4/
+Module 5/
+Module 2/
+Course Handout/
+
+# System & OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*$*.docx
+~$*.pptx
+
+# IDE and Editor configurations
+.vscode/
+.idea/
+*.swp
+*.tmp
+
+# Python cache & temporary build artifacts
+__pycache__/
+*.pyc
+scratch/
