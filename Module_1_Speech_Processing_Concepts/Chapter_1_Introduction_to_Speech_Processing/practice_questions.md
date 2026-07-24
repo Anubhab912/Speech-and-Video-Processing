@@ -205,22 +205,27 @@ flowchart LR
 
 ---
 
-### Question 6: Explain the significance of F1, F2 cluster and F1, F2 centroid of Speech Processing? (5 Marks)
+### Question 6: Explain the significance of F1, F2 cluster and F1, F2 centroid in Speech Processing? (5 Marks)
 
 #### Answer:
 
-![F1 F2 Cluster and Centroid](../../assets/ch01/f1_f2_vowel_cluster.jpg)
-*Figure 6.1: F1-F2 Cluster and Centroid for Vowels*
+![F1-F2 Vowel Cluster and Centroid](../../assets/ch01/f1_f2_vowel_cluster.jpg)
+*Figure 6.1: F1-F2 Formant Frequency Distribution Cluster and Centroid for Vowels*
 
-**1. Formant Frequencies $F_1$ and $F_2$ (1.5 Marks)**
-- Formants are resonant frequency peaks of the vocal tract filter that shape vowel quality.
-- **$F_1$**: Inversely proportional to tongue height (High tongue $\rightarrow$ Low $F_1$; Low tongue $\rightarrow$ High $F_1$).
-- **$F_2$**: Directly reflects tongue frontness/backness (Front vowels $\rightarrow$ High $F_2$; Back vowels $\rightarrow$ Low $F_2$).
+**1. Fundamentals of Formants $F_1$ and $F_2$ (1 Mark)**
+- **Formants** are the resonant frequencies of the human vocal tract filter that shape vowel quality and distinguish speech sounds.
+- **$F_1$ (First Formant)**: Inversely related to tongue height. A high tongue position (e.g., close vowels `/i/`, `/u/`) produces a **low $F_1$**, whereas a low tongue position (e.g., open vowels `/a/`, `/æ/`) produces a **high $F_1$**.
+- **$F_2$ (Second Formant)**: Directly reflects tongue frontness/backness. Front vowels (e.g., `/i/`, `/e/`, `/æ/`) yield a **high $F_2$**, while back vowels (e.g., `/u/`, `/o/`, `/ɔ/`) yield a **low $F_2$**.
 
-**2. Significance of $F_1$-$F_2$ Cluster (1.75 Marks)**
-- **Definition**: The scatter distribution of measured $F_1$ and $F_2$ formant frequency values for a vowel sampled across multiple speakers.
-- **Significance**: Shows natural acoustic variation in pronunciation among different speakers for the same vowel, illustrating speaker variability in vowel space.
+**2. Significance of $F_1$-$F_2$ Cluster in Speech Processing (2 Marks)**
+- **Definition**: An $F_1$-$F_2$ cluster is the two-dimensional scatter plot distribution of measured first ($F_1$) and second ($F_2$) formant frequency pairs for a given vowel sampled across multiple speakers.
+- **Significance & Applications**:
+  - **Speaker Variability Modeling**: Captures natural acoustic variations in vowel pronunciation caused by differences in age, gender, accent, and vocal tract dimensions.
+  - **Acoustic Decision Boundaries**: Demonstrates how pronunciations of the same vowel cluster into bounded regions in the 2D formant space ($F_1$ vs. $F_2$), helping speech recognizers establish decision boundaries for classification.
 
-**3. Significance of $F_1$-$F_2$ Centroid (1.75 Marks)**
-- **Definition**: The average (central) $F_1$ and $F_2$ position of a vowel, representing its reference location in vowel space.
-- **Significance**: Provides a single canonical reference point for vowel identification, acoustic space comparison, and pattern recognition algorithms in speech processing.
+**3. Significance of $F_1$-$F_2$ Centroid in Speech Processing (2 Marks)**
+- **Definition**: The $F_1$-$F_2$ centroid is the mathematical mean position (average coordinate pair) of an $F_1$-$F_2$ cluster, representing the canonical location of a vowel in the formant space.
+- **Significance & Applications**:
+  - **Canonical Reference Benchmark**: Serves as a standard reference point for acoustic modeling and vowel space comparison.
+  - **Speaker Normalization**: Used to normalize acoustic feature vectors across different speakers to reduce inter-speaker variability.
+  - **Speech Recognition & Synthesis**: Simplifies pattern matching in Automatic Speech Recognition (ASR) by evaluating distance metrics to centroid targets, and serves as the baseline target in Text-to-Speech (TTS) synthesis.
