@@ -1,11 +1,11 @@
 # Module V: Object Tracking and Segmentation
 
 > [!NOTE]  
-> **Status**: `[Needs clarification]` — PowerPoint slides for Module V are pending delivery from the course instructor. Content below reflects the official syllabus outline from the Course Handout.
+> **Status**: `[Needs clarification]` — Content outline below reflects the official syllabus topics for Module V.
 
 ---
 
-## Module Overview & Syllabus Breakdown (7 Lectures | Serials 34–40)
+## Module Overview & Syllabus Breakdown (7 Lectures)
 
 ### Topic 1: 2D/3D Video Tracking & Contour Tracking
 - Bounding box and blob tracking methods

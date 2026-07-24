@@ -1,11 +1,11 @@
 # Module III: Basics of Video Processing
 
 > [!NOTE]  
-> **Status**: `[Needs clarification]` — PowerPoint slides for Module III are pending delivery from the course instructor. Content below reflects the official syllabus outline from the Course Handout.
+> **Status**: `[Needs clarification]` — Content outline below reflects the official syllabus topics for Module III.
 
 ---
 
-## Module Overview & Syllabus Breakdown (8 Lectures | Serials 18–25)
+## Module Overview & Syllabus Breakdown (8 Lectures)
 
 ### Topic 1: Video Formation, Perception, and Representation
 - Video capture principles, frame rates, and temporal perception

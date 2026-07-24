@@ -1,11 +1,11 @@
-# Chapter 2: PPT Slide Exercises & Solved Numerical Problems
+# Chapter 2: Practice Questions & Solved Numerical Problems
 
 > [!NOTE]  
-> **Status**: `[Needs clarification]` — Pending user-supplied 5-mark question list (to be updated next week). The problems below are solved directly from the official PowerPoint presentation slides (Slide 28 Class Exercise, Slide 30 Exercise, and Slide 31 Practice Problems).
+> **Status**: `[Needs clarification]` — Content below covers fundamental digital speech representation concepts and solved numerical practice problems.
 
 ---
 
-## Conceptual Questions (Derived from PPT Outcomes)
+## Conceptual Questions
 
 ### Question 1
 **Explain the complete process of converting an analog speech signal into a digital signal using ADC.**
@@ -44,9 +44,9 @@ Analog-to-Digital Conversion (ADC) transforms a continuous-time, continuous-ampl
 
 ---
 
-## Solved PowerPoint Slide Numerical Exercises
+## Solved Numerical Exercises
 
-### Problem 1 (Slide 28 Exercise)
+### Problem 1: Uniform Quantization Step Size & File Size Calculation
 **A speech signal is uniformly quantized using 16 bits per sample over a range of $\pm 5\text{ V}$. Find the quantization step size ($\Delta$). If the sampling frequency is $12\text{ Hz}$, what will be the size of the file for a $10\text{ sec}$ recording?**
 
 #### Step-by-Step Solution:
@@ -69,7 +69,7 @@ $$\text{File Size (bytes)} = \frac{1,920}{8} = \mathbf{240\text{ bytes}}$$
 
 ---
 
-### Problem 2 (Slide 30 Exercise)
+### Problem 2: 8-Bit ADC Quantization Error Parameters
 **Suppose there is an 8-bit ADC with input range $-1\text{ V}$ to $+1\text{ V}$. Find:**
 1. Quantization Step size ($\Delta$)
 2. Maximum Quantization Error ($e_{max}$)
@@ -92,7 +92,7 @@ $$\sigma_e^2 = \frac{\Delta^2}{12} = \frac{(0.0078125)^2}{12} = \frac{6.1035 \ti
 
 ---
 
-### Problem 3 (Slide 31 Practice Problem 1 & 2)
+### Problem 3: 10-Bit vs. 12-Bit ADC Resolution Comparison
 **Part A: A 10-bit ADC converts analog signals in the range $-5\text{ V}$ to $+5\text{ V}$. Determine Quantization step size, maximum quantization error, and mean squared quantization error.**  
 **Part B: Suppose the ADC is modified to operate with 12-bit resolution instead of 10-bit resolution. Discuss how this change affects ADC operation.**
 
@@ -116,7 +116,7 @@ $$\sigma_e^2 = \frac{\Delta^2}{12} = \frac{(0.0078125)^2}{12} = \frac{6.1035 \ti
 
 ---
 
-### Problem 4 (Slide 31 Practice Problem 3)
+### Problem 4: 16 kHz Speech Acquisition System ADC Parameters
 **A speech acquisition system samples a signal at $16\text{ kHz}$ using a 10-bit ADC over the input range $-1.5\text{ V}$ to $+1.5\text{ V}$. Calculate Quantization step size, maximum quantization error, and mean squared quantization error.**
 
 #### Step-by-Step Solution:

@@ -36,7 +36,7 @@ flowchart LR
 ```
 
 ![Elements of Speech Communication](../../assets/ch01/elements_of_speech_comm.png)
-*Figure 2.1: Elements of Speech Communication System (Source: Slide 11)*
+*Figure 2.1: Elements of Speech Communication System*
 
 - **Information Source**: Source that produces speech using a linguistic medium (brain and vocal tract).
 - **Measurement**: Capturing raw audio acoustic waves using microphones to convert them into electrical signals.
@@ -60,10 +60,10 @@ flowchart LR
 **1. Speech Production System (3 Marks)**
 
 ![Speech Production System](../../assets/ch01/speech_production_system.jpg)
-*Figure 3.1: Speech Production System Anatomy (Source: Slide 13)*
+*Figure 3.1: Speech Production System Anatomy*
 
 ![Schematic Speech Production Process](../../assets/ch01/speech_production_schematic.png)
-*Figure 3.2: Schematic Representation of Speech Production Process (Source: Slide 14)*
+*Figure 3.2: Schematic Representation of Speech Production Process*
 
 - **Lungs (Air Source)**: Muscle force from the diaphragm pushes air upward through the trachea to provide necessary airflow pressure.
 - **Vocal Cords / Larynx (Sound Source)**: Air passes through vocal cords. Vibrating vocal cords produce voiced sounds; open vocal cords produce unvoiced sounds.
@@ -74,7 +74,7 @@ flowchart LR
 **2. Speech Perception System (2 Marks)**
 
 ![Speech Perception System](../../assets/ch01/speech_perception_system.jpg)
-*Figure 3.3: Speech Perception System (Source: Slide 19)*
+*Figure 3.3: Speech Perception System*
 
 - **Outer Ear**: Collects sound waves from the environment and channels them down the ear canal toward the middle ear.
 - **Middle Ear**: Eardrum and ossicles amplify and convert sound pressure variations into mechanical vibrations.
@@ -97,7 +97,7 @@ flowchart LR
 **2. Standard Phonetic Representation Systems (2.5 Marks)**
 
 ![Phonetic List American English](../../assets/ch01/phonetic_list_american_english.png)
-*Figure 4.1: Phonetic Representation List (Source: Slide 24)*
+*Figure 4.1: Phonetic Representation List*
 
 - **IPA (International Phonetic Alphabet)**:
   - Standardized system of symbols created by the International Phonetic Association.
@@ -113,10 +113,10 @@ flowchart LR
 #### Answer:
 
 ![Tongue Hump Vowels](../../assets/ch01/tongue_hump_vowels.jpg)
-*Figure 5A.1: Tongue Hump Positions and Waveform Plots for Vowels (Source: Slide 29)*
+*Figure 5A.1: Tongue Hump Positions and Waveform Plots for Vowels*
 
 ![Formant Frequencies Table](../../assets/ch01/formant_frequencies_table.jpg)
-*Figure 5A.2: Formant Frequencies for Typical Vowels (Source: Slide 33)*
+*Figure 5A.2: Formant Frequencies for Typical Vowels*
 
 **1. Production Mechanism of Vowels (2 Marks)**
 - Vowels are produced with an open vocal tract without major constrictions, allowing air to flow freely.
@@ -176,10 +176,10 @@ flowchart LR
 #### Answer:
 
 ![Classification of Phonemes](../../assets/ch01/classification_of_phonemes_tree.png)
-*Figure 5D.1: Classification Tree of Phonemes (Source: Slide 25)*
+*Figure 5D.1: Classification Tree of Phonemes*
 
 ![Speech Sound Production Table](../../assets/ch01/speech_sound_production_table.png)
-*Figure 5D.2: Production Conditions for Consonants (Source: Slide 18)*
+*Figure 5D.2: Production Conditions for Consonants*
 
 **1. Production Mechanisms of Consonant Classes (3 Marks)**
 
@@ -210,7 +210,7 @@ flowchart LR
 #### Answer:
 
 ![F1 F2 Cluster and Centroid](../../assets/ch01/f1_f2_vowel_cluster.jpg)
-*Figure 6.1: F1-F2 Cluster and Centroid for Vowels (Source: Slide 31)*
+*Figure 6.1: F1-F2 Cluster and Centroid for Vowels*
 
 **1. Formant Frequencies $F_1$ and $F_2$ (1.5 Marks)**
 - Formants are resonant frequency peaks of the vocal tract filter that shape vowel quality.

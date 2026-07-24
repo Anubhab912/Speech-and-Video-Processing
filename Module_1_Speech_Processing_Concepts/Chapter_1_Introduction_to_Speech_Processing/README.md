@@ -94,20 +94,20 @@ flowchart TD
 ```
 
 ![Elements of Speech Communication](../../assets/ch01/elements_of_speech_comm.png)
-*Figure 1.1: Elements of Speech Communication (Source: Slide 11)*
+*Figure 1.1: Elements of Speech Communication*
 
 ![Speech Chain Steps](../../assets/ch01/speech_chain_steps.png)
-*Figure 1.2: Steps in the Speech Chain (Source: Slide 12)*
+*Figure 1.2: Steps in the Speech Chain*
 
 ---
 
 ## 6. Speech Production System & Excitation Sources
 
 ![Speech Production System](../../assets/ch01/speech_production_system.jpg)
-*Figure 1.3: Anatomical Structure of Speech Production System (Source: Slide 13)*
+*Figure 1.3: Anatomical Structure of Speech Production System*
 
 ![Schematic Representation of Speech Production](../../assets/ch01/speech_production_schematic.png)
-*Figure 1.4: Schematic Representation of Speech Production Process (Source: Slide 14)*
+*Figure 1.4: Schematic Representation of Speech Production Process*
 
 ### Anatomical Components:
 - **Lungs (Air Source)**: Provide airflow pressure required for speech production. Muscle force from the diaphragm pushes air upward through the trachea.
@@ -129,7 +129,7 @@ flowchart TD
 ## 7. Speech Perception System
 
 ![Speech Perception System](../../assets/ch01/speech_perception_system.jpg)
-*Figure 1.5: Speech Perception System (Source: Slide 19)*
+*Figure 1.5: Speech Perception System*
 
 - **Outer Ear**: Collects speech sound waves and directs them toward the middle ear.
 - **Middle Ear**: Amplifies and converts sound pressure variations into mechanical vibrations.
@@ -150,10 +150,10 @@ flowchart TD
 ## 9. Classification of Phonemes
 
 ![Classification of Phonemes](../../assets/ch01/classification_of_phonemes_tree.png)
-*Figure 1.6: Classification of Phonemes Tree (Source: Slide 25)*
+*Figure 1.6: Classification of Phonemes Tree*
 
 ![Production of Speech Sounds](../../assets/ch01/speech_sound_production_table.png)
-*Figure 1.7: Production Conditions for Speech Sounds (Source: Slide 18)*
+*Figure 1.7: Production Conditions for Speech Sounds*
 
 ### 9.1 Vowels
 Speech sounds produced with an open vocal tract, allowing air to flow freely. Typically voiced, longer in duration, and carry high recognition value in speech processing.
@@ -164,7 +164,7 @@ Formants are resonant frequency peaks of the vocal tract shaping vowel quality:
 - **$F_2$**: Reflects tongue frontness/backness. Front vowels (/i/, /e/, /æ/) $\rightarrow$ High $F_2$; Back vowels (/u/, /o/, /ɔ/) $\rightarrow$ Low $F_2$.
 
 ![F1-F2 Vowel Cluster and Centroid](../../assets/ch01/f1_f2_vowel_cluster.jpg)
-*Figure 1.8: F1-F2 Cluster and Centroid Distribution for Vowels (Source: Slide 31)*
+*Figure 1.8: F1-F2 Cluster and Centroid Distribution for Vowels*
 
 - **$F_1$-$F_2$ Cluster**: Distribution (grouping) of measured $F_1$ and $F_2$ formant frequencies of a vowel across multiple speakers, showing natural variation.
 - **$F_1$-$F_2$ Centroid**: Average (central) $F_1$ and $F_2$ position of a vowel, representing its reference location in vowel space.
@@ -182,23 +182,3 @@ Formants are resonant frequency peaks of the vocal tract shaping vowel quality:
   - *Alveolar stops*: /T/, /Th/, /D/, /Dh/
   - *Dental stops*: /t/, /th/, /d/, /dh/
   - *Bilabial stops*: /p/, /ph/, /b/, /bh/
-
----
-
-## Slide Reference Mapping
-
-| Topic | Slide Numbers |
-| :--- | :---: |
-| Chapter Title & Outcomes | Slide 1 – 2 |
-| Speech & Processing Definitions | Slide 3 – 4 |
-| Speech Transmission vs Speech Processing | Slide 5 – 6 |
-| Speech Processing Model | Slide 7 – 8 |
-| Applications & Real-time Platforms | Slide 9 – 10 |
-| Elements of Speech Communication & Speech Chain | Slide 11 – 12 |
-| Speech Production System Anatomy & Schematic | Slide 13 – 16 |
-| Excitation Sources (Voiced, Unvoiced, Mixed) | Slide 17 – 18 |
-| Speech Perception System & Audible Frequency Range | Slide 19 – 21 |
-| Acoustic Phonetics, Phonemes, IPA vs ARPAbet | Slide 22 – 24 |
-| Classification of Phonemes & Vowel Overview | Slide 25 – 28 |
-| Vowel Formants ($F_1, F_2$), Clusters & Centroids | Slide 29 – 33 |
-| Diphthongs, Semivowels, Consonants (Stops, Fricatives, Nasals) | Slide 34 – 36 |

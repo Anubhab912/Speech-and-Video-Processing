@@ -90,7 +90,7 @@ SVP/
 │   │   └── 📄 practice_questions.md                           # [Chapter 1 Exam 5-Mark Q&A (Q1–Q6)](Module_1_Speech_Processing_Concepts/Chapter_1_Introduction_to_Speech_Processing/practice_questions.md)
 │   ├── 📁 Chapter_2_Digital_Representation_of_Speech_Signals/
 │   │   ├── 📄 README.md                                       # [Chapter 2 Lecture Notes](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/README.md)
-│   │   └── 📄 practice_questions.md                           # [Chapter 2 Solved PPT Numericals](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/practice_questions.md)
+│   │   └── 📄 practice_questions.md                           # [Chapter 2 Solved Practice Numericals](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/practice_questions.md)
 │   ├── 📁 Chapter_3_Convolution_and_Pole_Zero_Modeling/
 │   │   └── 📄 README.md                                       # [Chapter 3 Notes & Outline](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/README.md)
 │   ├── 📁 Chapter_4_DFT_FFT_and_Spectral_Estimation/
@@ -156,11 +156,11 @@ Click on any course topic or resource button to jump straight to the exact study
   - *Q5D: Consonant Classes (Stops, Fricatives, Nasals) & Examples (5 Marks)*
   - *Q6: Significance of $F_1, F_2$ Cluster & Centroid (5 Marks)*
 
-- 🧮 **[Chapter 2 PPT Slide Numericals & Solved ADC Exercises](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/practice_questions.md)**:
+- 🧮 **[Chapter 2 Practice Questions & Solved ADC Exercises](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/practice_questions.md)**:
   - *ADC Process & Nyquist Sampling Theorem conceptual derivations.*
-  - *Slide 28 Exercise: 16-Bit Quantization Step Size ($\Delta$) & 10s Recording File Size (240 Bytes).*
-  - *Slide 30 Exercise: 8-Bit ADC Step Size, Maximum Error ($e_{max}$), and MSE Noise Power ($\sigma_e^2$).*
-  - *Slide 31 Practice Problems: 10-Bit vs 12-Bit ADC resolution comparison & SQNR analysis.*
+  - *Problem 1: 16-Bit Quantization Step Size ($\Delta$) & 10s Recording File Size (240 Bytes).*
+  - *Problem 2: 8-Bit ADC Step Size, Maximum Error ($e_{max}$), and MSE Noise Power ($\sigma_e^2$).*
+  - *Problem 3 & 4: 10-Bit vs 12-Bit ADC resolution comparison & 16 kHz acquisition system parameters.*
 
 ---
 

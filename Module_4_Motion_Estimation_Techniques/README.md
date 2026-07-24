@@ -1,11 +1,11 @@
 # Module IV: Motion Estimation Techniques
 
 > [!NOTE]  
-> **Status**: `[Needs clarification]` — PowerPoint slides for Module IV are pending delivery from the course instructor. Content below reflects the official syllabus outline from the Course Handout.
+> **Status**: `[Needs clarification]` — Content outline below reflects the official syllabus topics for Module IV.
 
 ---
 
-## Module Overview & Syllabus Breakdown (8 Lectures | Serials 26–33)
+## Module Overview & Syllabus Breakdown (8 Lectures)
 
 ### Topic 1: Optical Flow & Motion Representation
 - Optical flow constraint equation

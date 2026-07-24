@@ -1,11 +1,11 @@
 # Module II: Feature Extraction and Speech Recognition
 
 > [!NOTE]  
-> **Status**: `[Needs clarification]` — PowerPoint slides for Module II are pending delivery from the course instructor. Content below reflects the official syllabus outline from the Course Handout.
+> **Status**: `[Needs clarification]` — Content outline below reflects the official syllabus topics for Module II.
 
 ---
 
-## Module Overview & Syllabus Breakdown (7 Lectures | Serials 11–17)
+## Module Overview & Syllabus Breakdown (7 Lectures)
 
 ### Topic 1: Feature Extraction Overview & Cepstral Analysis
 - Real Cepstrum and Complex Cepstrum definition

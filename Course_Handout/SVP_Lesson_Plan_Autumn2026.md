@@ -80,9 +80,9 @@ At the end of the course, students will be able to:
 ## Detailed Syllabus & Lecture Breakdown
 
 ### Module I: Speech Processing Concepts (10 Lectures | Serials 1–10)
-1. Introduction, applications of speech and video processing *(Slide Deck: Ch-01)*
-2. Speech production mechanism, Speech perception and characteristics of speech signals *(Slide Deck: Ch-01)*
-3. Sampling, quantization, and digital representation of speech, Spectrogram and time-frequency representation *(Slide Deck: Ch-02)*
+1. Introduction, applications of speech and video processing
+2. Speech production mechanism, Speech perception and characteristics of speech signals
+3. Sampling, quantization, and digital representation of speech, Spectrogram and time-frequency representation
 4. Convolution and Speech Systems, Pole-zero Modeling
 5. DFT and FFT Representation for Speech Processing, FFT Properties, Spectral Estimation using DFT
 6. Linear Filter Banks

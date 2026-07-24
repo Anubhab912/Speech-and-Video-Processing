@@ -34,7 +34,7 @@ After completing this chapter, students will be able to:
 | **Examples** | Human speech before recording, voltage across an electrical circuit | Recorded speech sampled at $16\text{ kHz}$ |
 
 ![Continuous vs Discrete Signal Graph](../../assets/ch02/continuous_vs_discrete_signal_graph.png)
-*Figure 2.1: Continuous-Time vs Discrete-Time Signals (Source: Slide 5, 9)*
+*Figure 2.1: Continuous-Time vs Discrete-Time Signals*
 
 ### 2.2 Continuous-Valued vs. Discrete-Valued Signals
 - **Continuous-Valued Signal**: Takes on all possible values on a finite or infinite range.
@@ -42,7 +42,7 @@ After completing this chapter, students will be able to:
 - **Digital Signal**: A discrete-time signal having a discrete set of values.
 
 ![Continuous vs Discrete Valued Graph](../../assets/ch02/continuous_vs_discrete_valued_graph.png)
-*Figure 2.2: Continuous-Valued vs Discrete-Valued Signals (Source: Slide 10)*
+*Figure 2.2: Continuous-Valued vs Discrete-Valued Signals*
 
 ---
 
@@ -69,13 +69,13 @@ A continuous acoustic waveform carrying linguistic information:
 ## 4. Analog-to-Digital Conversion (ADC) Process
 
 ![Digitization Overview](../../assets/ch02/speech_digitization_overview.png)
-*Figure 4.1: Speech Waveform Transduction (Source: Slide 14)*
+*Figure 4.1: Speech Waveform Transduction*
 
 ![Microphone Speaker Transduction](../../assets/ch02/mic_speaker_transduction.png)
-*Figure 4.2: Transduction between Acoustic and Electrical Signals (Source: Slide 15)*
+*Figure 4.2: Transduction between Acoustic and Electrical Signals*
 
 ![ADC Block Process](../../assets/ch02/adc_sampling_quantization_coding.png)
-*Figure 4.3: Sampling, Quantization, and Coding Operations (Source: Slide 17)*
+*Figure 4.3: Sampling, Quantization, and Coding Operations*
 
 1. **Sampling**: Takes "samples" of continuous-time signal $x_a(t)$ at discrete time instants $t = nT_s$, producing discrete-time sequence $x[n] = x_a(n T_s)$.
 2. **Quantization**: Converts continuous-valued samples into discrete-valued (digital) levels $x_q[n]$.
@@ -88,10 +88,10 @@ A continuous acoustic waveform carrying linguistic information:
 ### 5.1 Sampling Terminologies
 
 ![Sampling Interval Ts](../../assets/ch02/sampling_interval_ts.png)
-*Figure 5.1: Sampling Frequency and Interval (Source: Slide 19)*
+*Figure 5.1: Sampling Frequency and Interval*
 
 ![Speech Bandwidth](../../assets/ch02/speech_bandwidth_telephony.png)
-*Figure 5.2: Speech Bandwidths (Source: Slide 20)*
+*Figure 5.2: Speech Bandwidths*
 
 - **Sampling Frequency ($F_s$)**: Number of samples taken every second (Hertz, Hz). Examples: $8000\text{ Hz}$, $16000\text{ Hz}$, $44100\text{ Hz}$.
 - **Sampling Interval ($T_s$)**: Time between two consecutive samples ($T_s = 1 / F_s$).
@@ -150,24 +150,3 @@ $$e[n] = x[n] - x_q[n]$$
 - **Mean Squared Quantization Error ($\sigma_e^2$)**: For uniformly distributed error, noise power is:
 
 $$\sigma_e^2 = \frac{\Delta^2}{12}$$
-
----
-
-## Slide Reference Mapping
-
-| Topic | Slide Numbers |
-| :--- | :---: |
-| Title & Outcomes | Slide 1 – 2 |
-| Signal Definition & Continuous vs Discrete Time | Slide 3 – 9 |
-| Continuous-Valued vs Discrete-Valued Signals | Slide 10 |
-| Speech Digitization & Acoustic Wave Characteristics | Slide 11 |
-| Speech Signal Units (Phonemes, Syllables, Words) & Variability | Slide 12 – 13 |
-| Transduction & ADC Operations (Sampling, Quantization, Coding) | Slide 14 – 17 |
-| Sampling Terminologies ($F_s$, $T_s$, Bandwidth) | Slide 18 – 20 |
-| Nyquist-Shannon Sampling Theorem & Aliasing Prevention | Slide 21 – 23 |
-| Quantization Definition & Step Size Formula ($\Delta$) | Slide 24 – 25 |
-| Bit Rate & File Size Calculations | Slide 26 – 27 |
-| Class Exercise (16-bit Quantization File Size) | Slide 28 |
-| Quantization Error & Noise Power ($\sigma_e^2 = \Delta^2 / 12$) | Slide 29 |
-| 8-Bit ADC Solved Exercise | Slide 30 |
-| Practice Problems (10-bit / 12-bit ADC Numericals) | Slide 31 |
