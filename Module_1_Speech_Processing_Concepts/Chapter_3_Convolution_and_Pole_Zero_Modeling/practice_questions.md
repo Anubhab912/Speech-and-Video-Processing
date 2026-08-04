@@ -2,90 +2,232 @@
 
 ---
 
-### Question 1: Differentiate between Time-Domain, Frequency-Domain, and Spectrogram representations of Speech Signals? Discuss the need for Spectrograms in Speech Processing. (5 Marks)
+### Question 1: Define Time-Domain representation of a speech signal. Explain the significance of X-axis and Y-axis with an example waveform. (5 Marks)
 
 #### Answer:
 
-**1. Comparison of Speech Signal Representations (3 Marks)**
+**1. Definition of Time-Domain Representation (1 Mark)**
+A time-domain representation of a speech signal is the simplest and most direct plot showing how instantaneous speech amplitude (air pressure variation or voltage) changes continuously or discretely over time.
 
-| Parameter | Time-Domain Representation | Frequency-Domain Representation | Spectrogram (Time-Frequency) |
-| :--- | :--- | :--- | :--- |
-| **Axes** | X: Time ($\text{s}$), Y: Amplitude | X: Frequency ($\text{Hz}$), Y: Magnitude ($\text{dB}$) | X: Time ($\text{s}$), Y: Frequency ($\text{Hz}$) |
-| **3rd Dimension** | None | None | Color / Dark Intensity (Magnitude in $\text{dB}$) |
-| **Information** | Signal duration, onset, pauses, pitch periods | Pitch ($F_0$), harmonics, formant energy distribution | Formant trajectories over time, phoneme transitions |
-| **Transformation** | Direct acoustic wave sampling | Discrete Fourier Transform (DFT / FFT) | Short-Time Fourier Transform (STFT) |
+**2. Detailed Axes Significance (2 Marks)**
+- **X-axis (Time)**: Measured in seconds ($\text{s}$) or milliseconds ($\text{ms}$). Indicates total duration of observation, exact timing of speech events (word onset, vowel duration, pauses, silence intervals, and speech offset).
+- **Y-axis (Amplitude)**: Measures instantaneous signal strength. Represented as sound pressure in Pascals ($\text{Pa}$), electrical voltage ($\text{V}$) in analog circuits, or normalized range ($[-1, +1]$) in digital audio systems.
+  - *Positive amplitude*: Represents positive air pressure compression.
+  - *Negative amplitude*: Represents negative air pressure rarefaction.
+  - *Larger peak-to-peak amplitude*: Corresponds to louder speech; smaller amplitude corresponds to softer speech or silence.
 
-**2. Need for Spectrograms in Speech Processing (2 Marks)**
-- **Combines Time and Frequency Details**: Overcomes time-only or frequency-only limitations by showing *which* frequencies occur at *what* specific time instant.
-- **Formant Trajectory Tracking**: Displays dark horizontal bands ($F_1, F_2, F_3$) reflecting vocal tract dynamic resonance changes.
-- **Voiced vs. Unvoiced Classification**: Distinguishes glottal periodic striations (voiced speech) from broad-spectrum high-frequency noise (unvoiced fricatives).
-- **Core Applications**: Essential for automatic speech recognition (ASR), speaker identification, phonetic segmentation, and noise reduction.
+**3. Example Waveform Interpretation (2 Marks)**
+
+![Time-Domain Speech Waveform](../../assets/ch03/slide_06_img_02.png)
+*Figure 1.1: Time-Domain Waveform of Spoken Utterance "Sunday"*
+
+In a typical $3.5\text{ s}$ speech recording (e.g., the word *"Sunday"*):
+- **$0 - 1.1\text{ s}$**: Initial silence / flat baseline showing near-zero ambient noise.
+- **$1.1 - 1.7\text{ s}$**: High-amplitude periodic oscillations representing voiced speech sound.
+- **$1.7 - 2.6\text{ s}$**: Pause where amplitude returns near zero.
+- **$2.6 - 2.9\text{ s}$**: Low-amplitude secondary speech segment.
+- **$2.9 - 3.5\text{ s}$**: Ending silence region.
 
 ---
 
-### Question 2: Define Linear Time-Invariant (LTI) Systems. Explain the properties of Linearity (Superposition Principle) and Time-Invariance with mathematical definitions. (5 Marks)
+### Question 2: Explain Frequency-Domain representation of a speech signal. Describe how energy is distributed across different frequency bands. (5 Marks)
+
+#### Answer:
+
+**1. Definition of Frequency-Domain Representation (1.5 Marks)**
+The frequency-domain representation describes how speech signal energy is distributed across constituent frequencies. By applying the Fourier Transform (FT) or Fast Fourier Transform (FFT), complex time-domain waveforms are decomposed into pure sinusoidal frequency components.
+
+![Frequency Spectrum](../../assets/ch03/slide_10_img_05.png)
+*Figure 2.1: Frequency-Domain Magnitude Spectrum (0 to 8000 Hz)*
+
+**2. Graph Axes (1 Mark)**
+- **X-axis (Frequency in Hz)**: Ranges from $0\text{ Hz}$ up to the Nyquist frequency ($F_s/2$). For $16\text{ kHz}$ sampling, $F_{Nyq} = 8000\text{ Hz}$.
+- **Y-axis (Magnitude in dB)**: Represents energy strength of each frequency component (typically $40\text{ dB}$ to $140\text{ dB}$).
+
+**3. Energy Distribution across Frequency Bands (2.5 Marks)**
+- **$0 - 1000\text{ Hz}$ (Low Frequency Region)**: Energy concentration is highest here. Contains the fundamental frequency ($F_0$ / pitch) and primary glottal harmonics.
+- **$1000 - 4000\text{ Hz}$ (Mid Frequency Region)**: Contains major vocal tract formants ($F_1, F_2, F_3$), essential for identifying vowels and spoken message content.
+- **$4000 - 8000\text{ Hz}$ (High Frequency Region)**: Energy gradually decays, carrying unvoiced consonant and fricative noise information (/s/, /z/, /f/) to enhance speech clarity.
+
+---
+
+### Question 3: Differentiate between Time-Domain and Frequency-Domain representations of Speech Signals across key parameters. (5 Marks)
+
+#### Answer:
+
+| Comparison Parameter | Time-Domain Representation | Frequency-Domain Representation |
+| :--- | :--- | :--- |
+| **Primary Definition** | Shows how signal amplitude varies continuously over time | Shows how speech energy is distributed across different frequencies |
+| **Plot Axes** | **X-axis**: Time ($\text{s}$ or $\text{ms}$)<br>**Y-axis**: Amplitude ($\text{V}$, $\text{Pa}$, or $[-1, +1]$) | **X-axis**: Frequency ($\text{Hz}$)<br>**Y-axis**: Magnitude / Power ($\text{dB}$) |
+| **Information Conveyed** | Signal onset, word duration, pauses, loudness, silence intervals | Pitch ($F_0$), glottal harmonics, vocal tract formants ($F_1, F_2$), spectral tilt |
+| **Generation Method** | Captured directly via microphone sensor & ADC sampling | Computed by applying Fourier Transform (FT/FFT) on time-domain signal |
+| **Primary Applications** | Speech endpoint detection, silence removal, time-frame framing | Speech recognition, speaker identification, pitch extraction, noise filtering |
+
+---
+
+### Question 4: What is a Spectrogram? Explain how it is generated using STFT and discuss its importance in speech processing. (5 Marks)
+
+#### Answer:
+
+![Speech Spectrogram](../../assets/ch03/slide_16_img_06.png)
+*Figure 4.1: Time-Frequency Spectrogram of Spoken Utterance "Sunday"*
+
+**1. Definition of Spectrogram (1 Mark)**
+A **spectrogram** is a time-frequency representation of a speech signal that displays how frequency content and spectral energy evolve over time, combining time-domain and frequency-domain information into a single plot.
+
+**2. Generation via Short-Time Fourier Transform (STFT) (1.5 Marks)**
+1. The continuous speech signal $x[n]$ is divided into short, overlapping frames (typically $20 - 30\text{ ms}$) using a window function $w[n]$.
+2. The Discrete Fourier Transform (DFT/FFT) is computed for each windowed frame:
+   $$\text{STFT}\{x[n]\}(m, \omega) = \sum_{n=-\infty}^{\infty} x[n] w[n-m] e^{-j\omega n}$$
+3. The squared magnitude spectra $|\text{STFT}|^2$ are plotted side-by-side over time.
+
+**3. Spectrogram Axes & Interpretation (1.5 Marks)**
+- **X-axis**: Duration in seconds ($\text{s}$).
+- **Y-axis**: Frequency range in Hertz ($0 - 8000\text{ Hz}$).
+- **Color / Dark Intensity**: Logarithmic energy magnitude ($\text{dB}$). Darker/warmer regions represent high energy; lighter regions indicate low energy/silence.
+- **Formant Bands**: Horizontal dark bands represent resonant vocal tract formants ($F_1, F_2, F_3$).
+
+**4. Applications in Speech Processing (1 Mark)**
+Used in Automatic Speech Recognition (ASR), speaker identification, text-to-speech synthesis, phoneme segmentation, formant tracking, emotion recognition, and noise suppression.
+
+---
+
+### Question 5: Define Linear Time-Invariant (LTI) Systems. Explain the properties of Linearity (Superposition Principle) and Time-Invariance with mathematical conditions. (5 Marks)
 
 #### Answer:
 
 **1. Definition of LTI System (1 Mark)**
-A Discrete-Time Linear Time-Invariant (LTI) System is a mathematical transformation $y[n] = T\{x[n]\}$ that converts an input sequence $x[n]$ into an output sequence $y[n]$ while simultaneously satisfying **Linearity** and **Time-Invariance**.
+A Discrete-Time Linear Time-Invariant (LTI) System is a system operator $T\{\cdot\}$ that transforms an input sequence $x[n]$ into an output sequence $y[n] = T\{x[n]\}$ while satisfying both **Linearity** and **Time-Invariance**. In speech processing, LTI systems model vocal tract filtering and transmission channels.
 
 **2. Linearity / Superposition Principle (2 Marks)**
-A system is linear if it satisfies both **Scalability (Homogeneity)** and **Additivity**:
-- **Scalability**: $T\{a \cdot x[n]\} = a \cdot T\{x[n]\}$
-- **Additivity**: $T\{x_1[n] + x_2[n]\} = T\{x_1[n]\} + T\{x_2[n]\}$
-- **Superposition Equation**: For arbitrary constants $a$ and $b$:
+A system is linear if it satisfies **Scalability (Homogeneity)** and **Additivity**:
+- **Scalability**: $T\{a \cdot x[n]\} = a \cdot T\{x[n]\} = a \cdot y[n]$
+- **Additivity**: $T\{x_1[n] + x_2[n]\} = T\{x_1[n]\} + T\{x_2[n]\} = y_1[n] + y_2[n]$
+- **Superposition Equation**: For constants $a$ and $b$:
   $$T\{a \cdot x_1[n] + b \cdot x_2[n]\} = a \cdot y_1[n] + b \cdot y_2[n]$$
   *(The response to a linear combination of inputs equals the linear combination of individual responses).*
 
 **3. Time-Invariance Property (2 Marks)**
-- **Definition**: A system is time-invariant if delaying the input sequence by $k$ samples results in an identical time delay of $k$ samples in the output sequence.
+- **Definition**: A system is time-invariant if delaying the input sequence by $k$ samples produces an identical delay of $k$ samples in the output sequence.
 - **Mathematical Condition**: If $x[n] \xrightarrow{T} y[n]$, then:
   $$x[n - k] \xrightarrow{T} y[n - k]$$
-- **Significance**: System characteristics and parameters remain constant over time (system behavior does not depend on when the input is applied).
+- **Significance**: System characteristics do not change over time; input signal shape remains identical, shifting only in time location.
 
 ---
 
-### Question 3: State the Impulse Decomposition Property and derive the Time-Domain Convolution Sum formula. List four essential properties of Convolution. (5 Marks)
+### Question 6: State the Impulse Decomposition property. Explain mathematically how any discrete-time speech signal is built from unit impulses. (5 Marks)
 
 #### Answer:
 
-**1. Impulse Decomposition Property (1.5 Marks)**
-Any arbitrary discrete-time signal $x[n]$ can be uniquely decomposed into a weighted sum of time-shifted unit impulse functions $\delta[n-k]$:
+**1. Impulse Decomposition Property (2 Marks)**
+The **Impulse Decomposition Property** states that any discrete-time signal $x[n]$ can be uniquely represented as a linear combination of weighted, time-shifted unit impulse functions (delta functions) $\delta[n-k]$:
 
 $$x[n] = \sum_{k=-\infty}^{\infty} x[k] \, \delta[n - k]$$
 
-where the unit impulse function is $\delta[n] = 1$ for $n=0$, and $0$ elsewhere.
+**2. Unit Impulse Function Definition (1.5 Marks)**
+The unit impulse function $\delta[n]$ is defined as:
 
-**2. Derivation of Convolution Sum (1.5 Marks)**
-Applying an LTI system transformation $T\{\cdot\}$ to the decomposed input sequence:
+$$\delta[n] = \begin{cases} 1, & n = 0 \\ 0, & n \neq 0 \end{cases}$$
 
-$$y[n] = T\{x[n]\} = T\left\{ \sum_{k=-\infty}^{\infty} x[k] \, \delta[n - k] \right\}$$
+A delayed unit impulse $\delta[n - k]$ occurs exclusively at index $n = k$:
 
-By **Linearity**, the operator $T$ commutes with the summation and scaling factor $x[k]$:
+$$\delta[n - k] = \begin{cases} 1, & n = k \\ 0, & n \neq k \end{cases}$$
 
-$$y[n] = \sum_{k=-\infty}^{\infty} x[k] \, T\{\delta[n - k]\}$$
-
-By **Time-Invariance**, if $T\{\delta[n]\} = h[n]$ (the system impulse response), then $T\{\delta[n-k]\} = h[n-k]$. Substituting yields the **Convolution Sum**:
-
-$$y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k] \, h[n - k]$$
-
-**3. Key Properties of Convolution (2 Marks)**
-1. **Commutative**: $x[n] * h[n] = h[n] * x[n]$
-2. **Associative**: $(x[n] * h_1[n]) * h_2[n] = x[n] * (h_1[n] * h_2[n])$
-3. **Distributive**: $x[n] * (h_1[n] + h_2[n]) = (x[n] * h_1[n]) + (x[n] * h_2[n])$
-4. **Finite Output Length**: For input length $L_x$ and impulse response length $L_h$, output length is $L_y = L_x + L_h - 1$.
+**3. Signal Reconstruction Example (1.5 Marks)**
+Consider discrete sequence $x[n] = \{3, 2, 1\}$ for $n = 0, 1, 2$. Applying impulse decomposition:
+$$x[n] = x[0]\delta[n] + x[1]\delta[n-1] + x[2]\delta[n-2] = 3\delta[n] + 2\delta[n-1] + 1\delta[n-2]$$
+- At $n = 0$: $x[0] = 3(1) + 2(0) + 1(0) = 3$
+- At $n = 1$: $x[1] = 3(0) + 2(1) + 1(0) = 2$
+- At $n = 2$: $x[2] = 3(0) + 2(0) + 1(1) = 1$  
+The signal $x[n]$ is perfectly reconstructed.
 
 ---
 
-### Question 4: A discrete-time LTI system has input signal $x[n] = \{2, 1, 2, 4, 3\}$ for $n = 0, 1, 2, 3, 4$ and impulse response $h[n] = \{1, -1, 2\}$ for $n = 0, 1, 2$. Calculate the complete output sequence $y[n]$ using convolution. (5 Marks)
+### Question 7: Derive the Time-Domain Convolution Sum formula from LTI system properties. List six essential properties of Convolution. (5 Marks)
+
+#### Answer:
+
+**1. Mathematical Derivation of Convolution Sum (2 Marks)**
+1. Represent input signal $x[n]$ using impulse decomposition:
+   $$x[n] = \sum_{k=-\infty}^{\infty} x[k] \, \delta[n - k]$$
+2. Pass $x[n]$ through an LTI system $T\{\cdot\}$ to obtain output $y[n]$:
+   $$y[n] = T\{x[n]\} = T\left\{ \sum_{k=-\infty}^{\infty} x[k] \, \delta[n - k] \right\}$$
+3. By **Linearity**, swap the operator $T$ with the summation and scaling factor $x[k]$:
+   $$y[n] = \sum_{k=-\infty}^{\infty} x[k] \, T\{\delta[n - k]\}$$
+4. By **Time-Invariance**, if $T\{\delta[n]\} = h[n]$ (the system impulse response), then $T\{\delta[n-k]\} = h[n-k]$. Substituting yields the **Convolution Sum**:
+   $$y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k] \, h[n - k]$$
+
+**2. Six Essential Properties of Convolution (3 Marks)**
+1. **Commutative Property**: $x[n] * h[n] = h[n] * x[n]$
+2. **Associative Property**: $(x[n] * h_1[n]) * h_2[n] = x[n] * (h_1[n] * h_2[n])$
+3. **Distributive Property**: $x[n] * (h_1[n] + h_2[n]) = (x[n] * h_1[n]) + (x[n] * h_2[n])$
+4. **Impulse Property**: $x[n] * \delta[n] = x[n]$
+5. **Shift Property**: $x[n - k_1] * h[n - k_2] = y[n - k_1 - k_2]$
+6. **Finite Duration Output Length Property**: If $x[n]$ has length $L_x$ and $h[n]$ has length $L_h$, output $y[n]$ has length:
+   $$L_y = L_x + L_h - 1$$
+
+---
+
+### Question 8: Demonstrate the step-by-step graphical/tabular convolution method to compute $y[n] = x[n] * h[n]$ for input $x[n] = \{1, 2, 1\}$ ($n=0,1,2$) and impulse response $h[n] = \{1, -1\}$ ($n=0,1$). (5 Marks)
+
+#### Solution:
+
+**Step 1: Signal Identification & Length Calculation (1 Mark)**
+- Input $x[k] = \{1, 2, 1\}$ at $k = 0, 1, 2$ ($L_x = 3$).
+- Impulse response $h[k] = \{1, -1\}$ at $k = 0, 1$ ($L_h = 2$).
+- Output length $L_y = L_x + L_h - 1 = 3 + 2 - 1 = 4$ samples (indices $n = 0, 1, 2, 3$).
+
+**Step 2: Time Reversal (Flip Impulse Response $h[-k]$) (1 Mark)**
+- Original $h[k]$ at $k = 0, 1 \implies h[0]=1, h[1]=-1$.
+- Flipped $h[-k]$ at $k = -1, 0 \implies h[-(-1)]=h[1]=-1$ at $k=-1$, and $h[0]=1$ at $k=0$.
+
+**Step 3: Sliding and Sum of Products Computations (3 Marks)**
+
+- **For $n = 0$**: Shift $h[-k]$ by 0 steps $\rightarrow h[0-k]$.
+  $$\begin{array}{rccc}
+  k: & 0 & 1 & 2 \\
+  x[k]: & 1 & 2 & 1 \\
+  h[0-k]: & 1 & -1 & \\
+  \end{array}$$
+  $$y[0] = x[0]h[0] = 1 \times 1 = \mathbf{1}$$
+
+- **For $n = 1$**: Shift $h[-k]$ by 1 step right $\rightarrow h[1-k]$.
+  $$\begin{array}{rccc}
+  k: & 0 & 1 & 2 \\
+  x[k]: & 1 & 2 & 1 \\
+  h[1-k]: & -1 & 1 & \\
+  \end{array}$$
+  $$y[1] = (x[0]h[1]) + (x[1]h[0]) = (1 \times -1) + (2 \times 1) = -1 + 2 = \mathbf{1}$$
+
+- **For $n = 2$**: Shift $h[-k]$ by 1 step right $\rightarrow h[2-k]$.
+  $$\begin{array}{rccc}
+  k: & 0 & 1 & 2 \\
+  x[k]: & 1 & 2 & 1 \\
+  h[2-k]: & & -1 & 1 \\
+  \end{array}$$
+  $$y[2] = (x[1]h[1]) + (x[2]h[0]) = (2 \times -1) + (1 \times 1) = -2 + 1 = \mathbf{-1}$$
+
+- **For $n = 3$**: Shift $h[-k]$ by 1 step right $\rightarrow h[3-k]$.
+  $$\begin{array}{rccc}
+  k: & 0 & 1 & 2 \\
+  x[k]: & 1 & 2 & 1 \\
+  h[3-k]: & & & -1 \quad 1 \\
+  \end{array}$$
+  $$y[3] = x[2]h[1] = 1 \times -1 = \mathbf{-1}$$
+
+**Final Output Sequence**:
+$$\mathbf{y[n] = \{1, 1, -1, -1\} \quad \text{for } n = 0, 1, 2, 3}$$
+
+---
+
+### Question 9: A discrete-time LTI system has input signal $x[n] = \{2, 1, 2, 4, 3\}$ for $n = 0, 1, 2, 3, 4$ and impulse response $h[n] = \{1, -1, 2\}$ for $n = 0, 1, 2$. Calculate the complete output sequence $y[n]$ using convolution. (5 Marks)
 
 #### Solution:
 
 **1. Input Parameters & Output Length (1 Mark)**
 - Input $x[n] = \{2, 1, 2, 4, 3\}$, starting at $n = 0$, length $L_x = 5$.
 - Impulse response $h[n] = \{1, -1, 2\}$, starting at $n = 0$, length $L_h = 3$.
-- Output sequence length $L_y = L_x + L_h - 1 = 5 + 3 - 1 = 7$ (for indices $n = 0, 1, 2, 3, 4, 5, 6$).
+- Output sequence length $L_y = L_x + L_h - 1 = 5 + 3 - 1 = 7$ (indices $n = 0, 1, 2, 3, 4, 5, 6$).
 
 **2. Convolution Sum Computations (3 Marks)**
 Formula: $y[n] = \sum_{k} x[k] \, h[n - k]$
@@ -112,11 +254,11 @@ Formula: $y[n] = \sum_{k} x[k] \, h[n - k]$
   $$y[6] = x[4]h[2] = 3 \times 2 = \mathbf{6}$$
 
 **3. Final Result Summary (1 Mark)**
-$$y[n] = \{2, -1, 5, 4, 3, 5, 6\} \quad \text{for } n = 0, 1, 2, 3, 4, 5, 6$$
+$$\mathbf{y[n] = \{2, -1, 5, 4, 3, 5, 6\} \quad \text{for } n = 0, 1, 2, 3, 4, 5, 6}$$
 
 ---
 
-### Question 5: A discrete-time LTI system has input signal $x[n] = \{1, 3, 2, 1\}$ for $n = 0, 1, 2, 3$ and impulse response $h[n] = \{2, -1\}$ for $n = 0, 1$. Compute output $y[n]$ and verify the output sequence length property. (5 Marks)
+### Question 10: A discrete-time LTI system has input signal $x[n] = \{1, 3, 2, 1\}$ for $n = 0, 1, 2, 3$ and impulse response $h[n] = \{2, -1\}$ for $n = 0, 1$. Compute output $y[n]$ and verify the output sequence length property. (5 Marks)
 
 #### Solution:
 
@@ -127,40 +269,94 @@ $$y[n] = \{2, -1, 5, 4, 3, 5, 6\} \quad \text{for } n = 0, 1, 2, 3, 4, 5, 6$$
 
 **2. Convolution Computations (2.5 Marks)**
 
-- **$y[0]$**:
-  $$y[0] = x[0]h[0] = 1 \times 2 = \mathbf{2}$$
-
-- **$y[1]$**:
-  $$y[1] = x[0]h[1] + x[1]h[0] = (1 \times -1) + (3 \times 2) = -1 + 6 = \mathbf{5}$$
-
-- **$y[2]$**:
-  $$y[2] = x[1]h[1] + x[2]h[0] = (3 \times -1) + (2 \times 2) = -3 + 4 = \mathbf{1}$$
-
-- **$y[3]$**:
-  $$y[3] = x[2]h[1] + x[3]h[0] = (2 \times -1) + (1 \times 2) = -2 + 2 = \mathbf{0}$$
-
-- **$y[4]$**:
-  $$y[4] = x[3]h[1] = 1 \times -1 = \mathbf{-1}$$
+- **$y[0]$**: $y[0] = x[0]h[0] = 1 \times 2 = \mathbf{2}$
+- **$y[1]$**: $y[1] = x[0]h[1] + x[1]h[0] = (1 \times -1) + (3 \times 2) = -1 + 6 = \mathbf{5}$
+- **$y[2]$**: $y[2] = x[1]h[1] + x[2]h[0] = (3 \times -1) + (2 \times 2) = -3 + 4 = \mathbf{1}$
+- **$y[3]$**: $y[3] = x[2]h[1] + x[3]h[0] = (2 \times -1) + (1 \times 2) = -2 + 2 = \mathbf{0}$
+- **$y[4]$**: $y[4] = x[3]h[1] = 1 \times -1 = \mathbf{-1}$
 
 **3. Output Sequence & Verification Statement (1 Mark)**
 $$\mathbf{y[n] = \{2, 5, 1, 0, -1\} \quad \text{for } n = 0, 1, 2, 3, 4}$$
-*Verification*: Computed output sequence contains exactly 5 non-zero terms, verifying $L_y = L_x + L_h - 1 = 5$.
+*Verification*: Output sequence contains exactly 5 non-zero terms, verifying $L_y = L_x + L_h - 1 = 5$.
 
 ---
 
-### Question 6: Discuss the limitations of time-domain convolution for speech processing. Explain why Pole-Zero Modeling is required to represent the human vocal tract system. (5 Marks)
+### Question 11: For input sequence $x[n] = \{1, 3, 2, 1\}$ and impulse response $h[n] = \{2, -1\}$, verify the Commutative Property of Convolution by computing $y_2[n] = h[n] * x[n]$. (5 Marks)
+
+#### Solution:
+
+**1. Commutative Property Statement (1 Mark)**
+The commutative property states that $x[n] * h[n] = h[n] * x[n]$. Reversing the roles of input and impulse response yields an identical output sequence.
+
+**2. Computing $y_2[n] = h[n] * x[n]$ (3 Marks)**
+Here $h[n] = \{2, -1\}$ ($L_h = 2$, indices $k=0,1$) and $x[n] = \{1, 3, 2, 1\}$ ($L_x = 4$, indices $k=0,1,2,3$).
+Formula: $y_2[n] = \sum_{k} h[k] \, x[n - k]$
+
+- **$y_2[0]$**: $h[0]x[0] = 2 \times 1 = \mathbf{2}$
+- **$y_2[1]$**: $h[0]x[1] + h[1]x[0] = (2 \times 3) + (-1 \times 1) = 6 - 1 = \mathbf{5}$
+- **$y_2[2]$**: $h[0]x[2] + h[1]x[1] = (2 \times 2) + (-1 \times 3) = 4 - 3 = \mathbf{1}$
+- **$y_2[3]$**: $h[0]x[3] + h[1]x[2] = (2 \times 1) + (-1 \times 2) = 2 - 2 = \mathbf{0}$
+- **$y_2[4]$**: $h[1]x[3] = -1 \times 1 = \mathbf{-1}$
+
+**3. Comparison & Verification (1 Mark)**
+- From Question 10: $y_1[n] = x[n] * h[n] = \{2, 5, 1, 0, -1\}$.
+- Computed $y_2[n] = h[n] * x[n] = \{2, 5, 1, 0, -1\}$.  
+Since $y_1[n] = y_2[n]$ for all $n$, the **Commutative Property** is verified.
+
+---
+
+### Question 12: Express $x[n] = \{1, 3, 2, 1\}$ as a sum of impulses and evaluate convolution using Linearity and the Shift Property. Prove that $x[n] * \delta[n-k] = x[n-k]$. (5 Marks)
+
+#### Solution:
+
+**1. Proof of Shift Property $x[n] * \delta[n-k] = x[n-k]$ (2 Marks)**
+By definition of convolution:
+$$x[n] * \delta[n-k] = \sum_{m=-\infty}^{\infty} x[m] \, \delta[n - k - m]$$
+The delta function $\delta[n - k - m]$ is non-zero only when $n - k - m = 0 \implies m = n - k$.  
+Substituting $m = n - k$ into the summation yields:
+$$x[n] * \delta[n-k] = x[n - k]$$ *(Shift Property Proved)*.
+
+**2. Impulse Decomposition of $x[n]$ (1 Mark)**
+For $x[n] = \{1, 3, 2, 1\}$ ($n = 0, 1, 2, 3$):
+$$x[n] = 1\delta[n] + 3\delta[n-1] + 2\delta[n-2] + 1\delta[n-3]$$
+
+**3. Convolution via Linearity & Impulse Response $h[n] = \{2, -1\}$ (2 Marks)**
+Convolving $x[n]$ with $h[n]$:
+$$y[n] = x[n] * h[n] = [1\delta[n] + 3\delta[n-1] + 2\delta[n-2] + 1\delta[n-3]] * h[n]$$
+Applying Distributive and Shift Properties:
+$$y[n] = 1h[n] + 3h[n-1] + 2h[n-2] + 1h[n-3]$$
+
+Evaluating sample values:
+- $h[n] = \{\mathbf{2}, -1\}$ at $n=0, 1$
+- $3h[n-1] = \{0, \mathbf{6}, -3\}$ at $n=1, 2$
+- $2h[n-2] = \{0, 0, \mathbf{4}, -2\}$ at $n=2, 3$
+- $1h[n-3] = \{0, 0, 0, \mathbf{2}, -1\}$ at $n=3, 4$
+
+Summing all shifted sequences sample-by-sample:
+- $n = 0$: $2 + 0 + 0 + 0 = \mathbf{2}$
+- $n = 1$: $-1 + 6 + 0 + 0 = \mathbf{5}$
+- $n = 2$: $0 - 3 + 4 + 0 = \mathbf{1}$
+- $n = 3$: $0 + 0 - 2 + 2 = \mathbf{0}$
+- $n = 4$: $0 + 0 + 0 - 1 = \mathbf{-1}$
+
+$$\mathbf{y[n] = \{2, 5, 1, 0, -1\}}$$
+
+---
+
+### Question 13: Discuss the limitations of time-domain convolution for speech processing. Explain why Pole-Zero Modeling is required to represent the human vocal tract system. (5 Marks)
 
 #### Answer:
 
 **1. Limitations of Time-Domain Convolution (2.5 Marks)**
-- **High Computational Complexity**: Direct convolution of long speech signals requires $O(N \cdot M)$ multiplications and additions per frame, making real-time processing inefficient.
-- **Lack of Direct Frequency Insight**: Time-domain convolution samples $x[n] * h[n]$ do not explicitly reveal system frequency response, bandwidths, or spectral tilt.
-- **Obscured Formants & Resonances**: Important speech characteristics (vocal tract formants and nasal antiresonances) cannot be directly estimated or isolated from raw time-domain convolution output.
+- **High Computational Complexity**: Direct convolution of long speech sequences requires $O(N \cdot M)$ multiplications and additions per frame, creating heavy computational overhead for real-time applications.
+- **Hidden Filter / Frequency Behavior**: Looking only at time-domain convolution samples $y[n] = x[n] * h[n]$ makes it difficult to see how a filter shapes specific frequency bands.
+- **Absence of Direct Spectral Information**: Time-domain samples do not directly indicate fundamental pitch ($F_0$), resonant bandwidths, or spectral energy distribution.
+- **Obscured Vocal Tract Resonances**: Internal system characteristics like vocal tract poles (resonances) and zeros (anti-resonances) cannot be directly isolated or observed from time-domain sample sequences alone.
 
 **2. Need for Pole-Zero System Modeling (2.5 Marks)**
-- **Mathematical System Representation**: Models the vocal tract as a rational transfer function in the $Z$-domain:
+- **Mathematical System Transfer Function**: Describes the vocal tract using a rational system transfer function $H(z)$ in the $Z$-domain:
   $$H(z) = \frac{B(z)}{A(z)} = G \frac{1 + \sum_{k=1}^{M} b_k z^{-k}}{1 - \sum_{k=1}^{N} a_k z^{-k}}$$
-- **Physical Vocal Tract Mapping**:
-  - **Poles ($A(z) = 0$)**: Correspond to vocal tract resonant frequencies (**formants** $F_1, F_2, F_3$), forming peaks in the spectral envelope.
-  - **Zeros ($B(z) = 0$)**: Correspond to acoustic anti-resonances (dips), modeling nasal tract coupling (nasal consonants /m/, /n/).
-- **Efficient Speech Analysis & Coding**: Enables compact parametrization of speech (LPC coefficients), drastically reducing bitrates for speech transmission and recognition systems.
+- **Physical Vocal Tract Representation**:
+  - **Poles ($A(z) = 0$)**: Represent vocal tract resonant frequencies (**formants** $F_1, F_2, F_3$), producing magnitude spectrum peaks for vowels.
+  - **Zeros ($B(z) = 0$)**: Represent acoustic anti-resonances (spectral dips), modeling nasal cavity coupling in nasal sounds (/m/, /n/, /ŋ/).
+- **Efficient Speech Coding & Synthesis**: Compactly parametrizes speech using Linear Predictive Coding (LPC) coefficients, enabling massive data compression for speech transmission, recognition, and synthesis.
