@@ -92,7 +92,8 @@ SVP/
 │   │   ├── 📄 README.md                                       # [Chapter 2 Lecture Notes](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/README.md)
 │   │   └── 📄 practice_questions.md                           # [Chapter 2 Solved Practice Numericals](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/practice_questions.md)
 │   ├── 📁 Chapter_3_Convolution_and_Pole_Zero_Modeling/
-│   │   └── 📄 README.md                                       # [Chapter 3 Notes & Outline](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/README.md)
+│   │   ├── 📄 README.md                                       # [Chapter 3 Lecture Notes](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/README.md)
+│   │   └── 📄 practice_questions.md                           # [Chapter 3 Exam 5-Mark Q&A & Convolution](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/practice_questions.md)
 │   ├── 📁 Chapter_4_DFT_FFT_and_Spectral_Estimation/
 │   │   └── 📄 README.md                                       # [Chapter 4 Notes & Outline](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/README.md)
 │   ├── 📁 Chapter_5_Linear_Filter_Banks/
@@ -124,7 +125,7 @@ Click on any course topic or resource button to jump straight to the exact study
 | **Course Handout** | Course Outcomes, Grading Scheme & 40-Lecture Plan | 📜 [Open Syllabus](Course_Handout/SVP_Lesson_Plan_Autumn2026.md) | ✅ Complete |
 | **Chapter 1** | Speech Models, Vocal Anatomy, Acoustic Phonetics, Formants | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_1_Introduction_to_Speech_Processing/README.md)<br>📝 [5-Mark Exam Q&A](Module_1_Speech_Processing_Concepts/Chapter_1_Introduction_to_Speech_Processing/practice_questions.md) | ✅ Complete |
 | **Chapter 2** | Signals, ADC Process, Sampling Theorem, Aliasing, Quantization | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/README.md)<br>🧮 [Solved Numericals](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/practice_questions.md) | ✅ Complete |
-| **Chapter 3** | Linear Systems, Time/Frequency Convolution, Pole-Zero Models | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/README.md) | ⏳ Outline Ready |
+| **Chapter 3** | Time-Frequency Analysis, Spectrograms, LTI Systems, Convolution, Pole-Zero | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/README.md)<br>📝 [5-Mark Exam Q&A](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/practice_questions.md) | ✅ Complete |
 | **Chapter 4** | Discrete Fourier Transform (DFT), FFT, Spectrograms | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/README.md) | ⏳ Outline Ready |
 | **Chapter 5** | Linear Filter Banks, Mel-Scale Filtering, Sub-Band Analysis | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_5_Linear_Filter_Banks/README.md) | ⏳ Outline Ready |
 | **Chapter 6** | Linear Predictive Coding (LPC), Levinson-Durbin Recursion | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_6_Linear_Prediction_and_LPC/README.md) | ⏳ Outline Ready |
@@ -161,6 +162,13 @@ Click on any course topic or resource button to jump straight to the exact study
   - *Problem 1: 16-Bit Quantization Step Size ($\Delta$) & 10s Recording File Size (240 Bytes).*
   - *Problem 2: 8-Bit ADC Step Size, Maximum Error ($e_{max}$), and MSE Noise Power ($\sigma_e^2$).*
   - *Problem 3 & 4: 10-Bit vs 12-Bit ADC resolution comparison & 16 kHz acquisition system parameters.*
+
+- 📊 **[Chapter 3 5-Mark Exam Questions & Solved Convolution Numericals](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/practice_questions.md)**:
+  - *Q1: Time-Domain vs Frequency-Domain vs Spectrogram Comparison (5 Marks).*
+  - *Q2: LTI Systems, Linearity (Superposition) & Time-Invariance (5 Marks).*
+  - *Q3: Impulse Decomposition & Convolution Sum Derivation (5 Marks).*
+  - *Q4 & Q5: Step-by-Step Solved Convolution Numericals ($y[n] = x[n] * h[n]$) (5 Marks).*
+  - *Q6: Limitations of Time-Domain Convolution & Pole-Zero Modeling Need (5 Marks).*
 
 ---
 
