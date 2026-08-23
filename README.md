@@ -95,7 +95,8 @@ SVP/
 │   │   ├── 📄 README.md                                       # [Chapter 3 Lecture Notes](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/README.md)
 │   │   └── 📄 practice_questions.md                           # [Chapter 3 Exam 5-Mark Q&A & Convolution](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/practice_questions.md)
 │   ├── 📁 Chapter_4_DFT_FFT_and_Spectral_Estimation/
-│   │   └── 📄 README.md                                       # [Chapter 4 Notes & Outline](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/README.md)
+│   │   ├── 📄 README.md                                       # [Chapter 4 Lecture Notes](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/README.md)
+│   │   └── 📄 practice_questions.md                           # [Chapter 4 Exam 5-Mark Q&A & LPC/FFT](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/practice_questions.md)
 │   ├── 📁 Chapter_5_Linear_Filter_Banks/
 │   │   └── 📄 README.md                                       # [Chapter 5 Notes & Outline](Module_1_Speech_Processing_Concepts/Chapter_5_Linear_Filter_Banks/README.md)
 │   ├── 📁 Chapter_6_Linear_Prediction_and_LPC/
@@ -126,7 +127,7 @@ Click on any course topic or resource button to jump straight to the exact study
 | **Chapter 1** | Speech Models, Vocal Anatomy, Acoustic Phonetics, Formants | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_1_Introduction_to_Speech_Processing/README.md)<br>📝 [5-Mark Exam Q&A](Module_1_Speech_Processing_Concepts/Chapter_1_Introduction_to_Speech_Processing/practice_questions.md) | ✅ Complete |
 | **Chapter 2** | Signals, ADC Process, Sampling Theorem, Aliasing, Quantization | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/README.md)<br>🧮 [Solved Numericals](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/practice_questions.md) | ✅ Complete |
 | **Chapter 3** | Time-Frequency Analysis, Spectrograms, LTI Systems, Convolution, Pole-Zero | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/README.md)<br>📝 [5-Mark Exam Q&A](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/practice_questions.md) | ✅ Complete |
-| **Chapter 4** | Discrete Fourier Transform (DFT), FFT, Spectrograms | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/README.md) | ⏳ Outline Ready |
+| **Chapter 4** | Discrete Fourier Transform (DFT), FFT Cooley-Tukey, Filter Banks, Mel Scale, LPC | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/README.md)<br>📝 [5-Mark Exam Q&A](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/practice_questions.md) | ✅ Complete |
 | **Chapter 5** | Linear Filter Banks, Mel-Scale Filtering, Sub-Band Analysis | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_5_Linear_Filter_Banks/README.md) | ⏳ Outline Ready |
 | **Chapter 6** | Linear Predictive Coding (LPC), Levinson-Durbin Recursion | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_6_Linear_Prediction_and_LPC/README.md) | ⏳ Outline Ready |
 | **Chapter 7** | Python Audio Processing (SciPy, Librosa) Lab Guide | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_7_Python_Implementation/README.md) | ⏳ Outline Ready |
@@ -169,6 +170,13 @@ Click on any course topic or resource button to jump straight to the exact study
   - *Q3: Impulse Decomposition & Convolution Sum Derivation (5 Marks).*
   - *Q4 & Q5: Step-by-Step Solved Convolution Numericals ($y[n] = x[n] * h[n]$) (5 Marks).*
   - *Q6: Limitations of Time-Domain Convolution & Pole-Zero Modeling Need (5 Marks).*
+
+- 🎛️ **[Chapter 4 5-Mark Exam Questions & Solved DFT/FFT/LPC Numericals](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/practice_questions.md)**:
+  - *Q1–Q3: Fourier Transform, Euler's formula & Dirac delta impulse spectra derivations.*
+  - *Q4–Q7: DFT definition, Orthogonality proof, 8-Point DFT calculations & Spectral Leakage.*
+  - *Q8–Q9: Cooley-Tukey FFT, Even-Odd Decomposition, Twiddle Factor & Butterfly Unit.*
+  - *Q10–Q12: Bank-of-Filters (BOF) pipeline, decimation & filter bank compression ratio numericals.*
+  - *Q13–Q15: Mel Scale conversion, LPC all-pole model & Yule-Walker equation derivation.*
 
 ---
 

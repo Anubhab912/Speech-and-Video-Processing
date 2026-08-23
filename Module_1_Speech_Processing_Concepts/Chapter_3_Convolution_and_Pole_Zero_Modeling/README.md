@@ -186,8 +186,77 @@ While time-domain convolution fully describes LTI system outputs, it presents si
 2. **Hidden Spectral Structure**: Time-domain coefficients do not explicitly disclose resonant frequencies (formants), bandwidths, or attenuation.
 3. **Obscured System Stability & Resonances**: System poles (vocal tract resonances) and zeros (nasal tract antiresonances) cannot be directly identified from time-domain sample sequences.
 
-To overcome these limitations, speech systems transition from time-domain convolution to **Pole-Zero System Modeling ($Z$-Transform domain)**, representing the vocal tract transfer function as:
+---
 
-$$H(z) = \frac{B(z)}{A(z)} = G \frac{\prod_{k=1}^{M} (1 - z_k z^{-1})}{\prod_{k=1}^{N} (1 - p_k z^{-1})}$$
+## 9. Pole-Zero System Modeling of Speech Systems
 
-where $p_k$ represent system **poles** (vocal tract formants) and $z_k$ represent system **zeros** (anti-resonances).
+### 9.1 Physical Speech Production & Vocal Tract System Representation
+In digital speech processing, the human speech production mechanism is modeled as an acoustic source exciting a linear system (vocal tract filter):
+
+```mermaid
+flowchart LR
+    A["🫁 Lungs & Vocal Cords (Excitation Source X(z))"] --> B["🗣️ Vocal Tract Filter H(z)"] --> C["🔊 Output Speech Signal Y(z)"]
+```
+
+$$Y(z) = X(z) \cdot H(z) \implies H(z) = \frac{Y(z)}{X(z)}$$
+
+Rather than modeling every physical articulator movement (tongue, lips, jaw, velum), Digital Signal Processing (DSP) parametrizes the vocal tract as a rational transfer function $H(z)$ composed of **poles** and **zeros**.
+
+### 9.2 Mathematical Transfer Function, Poles, and Zeros
+The general discrete-time rational system transfer function is expressed as:
+
+$$H(z) = \frac{B(z)}{A(z)} = G \frac{\sum_{k=0}^{M} b_k z^{-k}}{1 - \sum_{k=1}^{N} a_k z^{-k}} = G \frac{z^{N-M} \prod_{k=1}^{M} (z - z_k)}{\prod_{k=1}^{N} (z - p_k)}$$
+
+- **Poles ($A(z) = 0$)**: The complex values of $z$ for which denominator $A(z) = 0$, causing transfer function magnitude $|H(z)| \to \infty$.
+  - *Acoustic Role*: Poles amplify specific frequencies, forming resonant peaks in the speech spectrum known as **vocal tract formants** ($F_1, F_2, F_3$).
+  - *Vowel Example*: Spoken vowel `/a/` has prominent formants around $700\text{ Hz}$, $1200\text{ Hz}$, and $2500\text{ Hz}$, modeled by complex-conjugate pole pairs near the unit circle in the $z$-plane.
+- **Zeros ($B(z) = 0$)**: The complex values of $z$ for which numerator $B(z) = 0$, causing transfer function magnitude $|H(z)| = 0$.
+  - *Acoustic Role*: Zeros attenuate or completely suppress specific frequency components, creating spectral dips or anti-resonances.
+  - *Nasal Example*: Nasal consonants (/m/, /n/, /ŋ/) introduce zeros into the vocal tract transfer function due to acoustic coupling with the nasal cavity.
+
+### 9.3 Pole-Zero Plot & Stability Analysis ($s$-Plane vs. $z$-Plane)
+A pole-zero plot displays the spatial locations of system poles (marked with an **X**) and zeros (marked with an **O**) in the complex frequency plane.
+
+![Pole-Zero Diagrams](../../assets/ch03/slide_48_img_12.png)
+*Figure 9.1: Pole-Zero Plots in $s$-plane (Continuous-Time Laplace Transform) and $z$-plane (Discrete-Time Z-Transform)*
+
+- **Continuous-Time Systems ($s$-plane)**: Evaluated using the Laplace transform. System stability requires all poles to lie in the **Left Half-Plane** ($\text{Re}(s) < 0$).
+- **Discrete-Time Systems ($z$-plane)**: Evaluated using the Z-transform. An LTI discrete-time system is **BIBO Stable** if and only if **all poles lie strictly inside the unit circle**:
+  $$|p_k| < 1 \quad \forall k = 1, 2, \dots, N$$
+
+### 9.4 Solved Examples from Lecture Slides
+
+#### Example 1: Second-Order System Analysis
+Find the poles and zeros of the discrete-time transfer function:
+$$H(z) = \frac{z - 0.5}{z^2 - 0.8z + 0.25}$$
+
+- **Zeros Calculation**: Set numerator to zero:
+  $$z - 0.5 = 0 \implies \mathbf{z = 0.5}$$
+  *(One real zero at $z = 0.5$, completely suppressing response at this point).*
+- **Poles Calculation**: Set denominator to zero ($z^2 - 0.8z + 0.25 = 0$):
+  $$z = \frac{0.8 \pm \sqrt{(-0.8)^2 - 4(1)(0.25)}}{2} = \frac{0.8 \pm \sqrt{0.64 - 1.0}}{2} = \frac{0.8 \pm j0.6}{2} = \mathbf{0.4 \pm j0.3}$$
+- **Stability Verification**:
+  $$|p| = \sqrt{0.4^2 + 0.3^2} = \sqrt{0.16 + 0.09} = \sqrt{0.25} = 0.5 < 1$$
+  Since $|p| = 0.5 < 1$, both poles lie inside the unit circle; the system is **BIBO Stable**.
+
+#### Example 2: Higher-Order System Analysis
+Determine the poles and zeros of:
+$$H(z) = \frac{z^2(z - 0.9)}{(z - (0.5 - j0.7))(z - (0.5 + j0.7))(z - 0.8)}$$
+
+- **Zeros Calculation**:
+  - $z^2 = 0 \implies \mathbf{z = 0, 0}$ *(Double/repeated zeros at the origin)*.
+  - $z - 0.9 = 0 \implies \mathbf{z = 0.9}$ *(Real zero at $z = 0.9$)*.
+- **Poles Calculation**:
+  - $z - (0.5 - j0.7) = 0 \implies \mathbf{p_1 = 0.5 - j0.7}$
+  - $z - (0.5 + j0.7) = 0 \implies \mathbf{p_2 = 0.5 + j0.7}$
+  - $z - 0.8 = 0 \implies \mathbf{p_3 = 0.8}$
+- **Stability Verification**:
+  - $|p_{1,2}| = \sqrt{0.5^2 + 0.7^2} = \sqrt{0.25 + 0.49} = \sqrt{0.74} \approx 0.8602 < 1$.
+  - $|p_3| = 0.8 < 1$.  
+  All poles lie inside the unit circle; the system is **BIBO Stable**.
+
+### 9.5 Significance of Pole-Zero Placement in Digital Filter Design
+1. **Resonance Peak Shaping**: The closer a pole $p_k$ is to the unit circle ($|p_k| \to 1$), the sharper and narrower the corresponding spectral formant resonance peak.
+2. **Frequency Notch Filtering**: Placing a zero directly on the unit circle ($|z_k| = 1$) creates an exact notch filter that completely eliminates an unwanted frequency.
+3. **Filter Design Backbone**: Pole-zero placement forms the foundation for designing Infinite Impulse Response (IIR) digital filters, Linear Predictive Coding (LPC) speech synthesizers, and acoustic noise cancellers.
+

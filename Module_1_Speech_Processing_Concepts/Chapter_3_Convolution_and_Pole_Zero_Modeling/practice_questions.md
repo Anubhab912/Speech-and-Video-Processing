@@ -360,3 +360,110 @@ $$\mathbf{y[n] = \{2, 5, 1, 0, -1\}}$$
   - **Poles ($A(z) = 0$)**: Represent vocal tract resonant frequencies (**formants** $F_1, F_2, F_3$), producing magnitude spectrum peaks for vowels.
   - **Zeros ($B(z) = 0$)**: Represent acoustic anti-resonances (spectral dips), modeling nasal cavity coupling in nasal sounds (/m/, /n/, /ŋ/).
 - **Efficient Speech Coding & Synthesis**: Compactly parametrizes speech using Linear Predictive Coding (LPC) coefficients, enabling massive data compression for speech transmission, recognition, and synthesis.
+
+---
+
+### Question 14: Define Poles and Zeros of a Discrete-Time System. Explain how they shape the spectral envelope of speech signals and state the BIBO stability condition in the $z$-plane. (5 Marks)
+
+#### Answer:
+
+**1. Definitions of Poles and Zeros (2 Marks)**
+- **Transfer Function**: $H(z) = \frac{B(z)}{A(z)} = G \frac{\prod_{k=1}^{M} (z - z_k)}{\prod_{k=1}^{N} (z - p_k)}$
+- **Poles ($p_k$)**: Values of $z$ for which $A(z) = 0 \implies |H(z)| \to \infty$. Represent resonant frequencies of the system.
+- **Zeros ($z_k$)**: Values of $z$ for which $B(z) = 0 \implies |H(z)| = 0$. Represent frequencies where system response is completely attenuated.
+
+**2. Acoustic Role in Speech Systems (2 Marks)**
+- **Poles $\leftrightarrow$ Formants**: Poles produce prominent sharp peaks in the spectral envelope. In vocal tract modeling, poles correspond directly to acoustic formants ($F_1, F_2, F_3$) created by vocal tract resonances during vowel production.
+- **Zeros $\leftrightarrow$ Anti-Resonances**: Zeros produce spectral dips/notches. In speech, zeros model acoustic anti-resonances introduced by nasal cavity coupling (in nasal consonants `/m/`, `/n/`) or vocal tract constrictions in fricatives.
+
+**3. BIBO Stability Condition in $z$-Plane (1 Mark)**
+A discrete-time LTI system is Bounded-Input Bounded-Output (BIBO) stable **if and only if all system poles lie strictly inside the unit circle** in the $z$-plane:
+$$|p_k| < 1 \quad \forall k = 1, 2, \dots, N$$
+
+---
+
+### Question 15: Determine the poles, zeros, and BIBO stability for the transfer functions: (A) $H_1(z) = \frac{z - 0.5}{z^2 - 0.6z + 0.25}$, (B) $H_2(z) = \frac{z^2 - 1}{z^2 - 0.9z + 0.81}$. (5 Marks)
+
+#### Solution:
+
+**Part A: $H_1(z) = \frac{z - 0.5}{z^2 - 0.6z + 0.25}$ (2.5 Marks)**
+1. **Zeros**: Set numerator $z - 0.5 = 0 \implies \mathbf{z = 0.5}$.
+2. **Poles**: Set denominator $z^2 - 0.6z + 0.25 = 0$:
+   $$z = \frac{0.6 \pm \sqrt{(-0.6)^2 - 4(1)(0.25)}}{2} = \frac{0.6 \pm \sqrt{0.36 - 1.0}}{2} = \frac{0.6 \pm j0.8}{2} = \mathbf{0.3 \pm j0.4}$$
+3. **Stability**: Magnitude $|p| = \sqrt{0.3^2 + 0.4^2} = \sqrt{0.09 + 0.16} = \sqrt{0.25} = 0.5$.  
+   Since $|p| = 0.5 < 1$, both poles lie inside the unit circle $\implies \mathbf{BIBO\ Stable}$.
+
+**Part B: $H_2(z) = \frac{z^2 - 1}{z^2 - 0.9z + 0.81}$ (2.5 Marks)**
+1. **Zeros**: Set numerator $z^2 - 1 = 0 \implies \mathbf{z = \pm 1}$ *(Zeros lie directly on the unit circle at $+1$ and $-1$)*.
+2. **Poles**: Set denominator $z^2 - 0.9z + 0.81 = 0$:
+   $$z = \frac{0.9 \pm \sqrt{(-0.9)^2 - 4(1)(0.81)}}{2} = \frac{0.9 \pm \sqrt{0.81 - 3.24}}{2} = \frac{0.9 \pm j1.5588}{2} = \mathbf{0.45 \pm j0.7794}$$
+3. **Stability**: Magnitude $|p| = \sqrt{0.45^2 + 0.7794^2} = \sqrt{0.2025 + 0.6075} = \sqrt{0.81} = 0.9$.  
+   Since $|p| = 0.9 < 1$, all poles lie inside the unit circle $\implies \mathbf{BIBO\ Stable}$.
+
+---
+
+### Question 16: Determine the poles, zeros, and BIBO stability for the system transfer function: $H(z) = \frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1} + 0.64 z^{-2}}$. (5 Marks)
+
+#### Solution:
+
+**1. Conversion to Positive Powers of $z$ (1 Mark)**
+Multiply numerator and denominator by $z^2$:
+$$H(z) = \frac{z^2 (1 - 0.5 z^{-1})}{z^2 (1 - 0.8 z^{-1} + 0.64 z^{-2})} = \frac{z(z - 0.5)}{z^2 - 0.8z + 0.64}$$
+
+**2. Zeros Calculation (1.5 Marks)**
+Set numerator $z(z - 0.5) = 0$:
+- $z = 0 \implies \mathbf{z_1 = 0}$ *(Zero at origin)*
+- $z - 0.5 = 0 \implies \mathbf{z_2 = 0.5}$ *(Real zero at $z=0.5$)*
+
+**3. Poles Calculation (1.5 Marks)**
+Set denominator $z^2 - 0.8z + 0.64 = 0$:
+$$z = \frac{0.8 \pm \sqrt{(-0.8)^2 - 4(1)(0.64)}}{2} = \frac{0.8 \pm \sqrt{0.64 - 2.56}}{2} = \frac{0.8 \pm \sqrt{-1.92}}{2} = \frac{0.8 \pm j1.38564}{2} = \mathbf{0.4 \pm j0.69282}$$
+
+**4. Stability Verification (1 Mark)**
+Pole magnitude $|p| = \sqrt{0.4^2 + 0.69282^2} = \sqrt{0.16 + 0.48} = \sqrt{0.64} = \mathbf{0.8}$.  
+Since $|p| = 0.8 < 1$, both poles lie strictly inside the unit circle $\implies$ System is **BIBO Stable**.
+
+---
+
+### Question 17: Determine the poles, zeros, and plot locations for the discrete-time speech filter: $H(z) = \frac{z(z - 0.7)}{(z - 0.8 e^{j\pi/4})(z - 0.8 e^{-j\pi/4})}$. (5 Marks)
+
+#### Solution:
+
+**1. Zeros Calculation (1.5 Marks)**
+Set numerator to zero: $z(z - 0.7) = 0$:
+- $z = 0 \implies \mathbf{z_1 = 0}$ *(Zero at origin)*
+- $z - 0.7 = 0 \implies \mathbf{z_2 = 0.7}$ *(Real zero at $z=0.7$)*
+
+**2. Poles Calculation in Rectangular Form (2 Marks)**
+Set denominator factors to zero:
+- $p_1 = 0.8 e^{j\pi/4} = 0.8 \left( \cos\frac{\pi}{4} + j\sin\frac{\pi}{4} \right) = 0.8 \left( \frac{\sqrt{2}}{2} + j\frac{\sqrt{2}}{2} \right) = \mathbf{0.5657 + j0.5657}$
+- $p_2 = 0.8 e^{-j\pi/4} = 0.8 \left( \cos\frac{\pi}{4} - j\sin\frac{\pi}{4} \right) = 0.8 \left( \frac{\sqrt{2}}{2} - j\frac{\sqrt{2}}{2} \right) = \mathbf{0.5657 - j0.5657}$
+
+**3. Stability & Formant Angle Analysis (1.5 Marks)**
+- **Pole Magnitude**: $|p_{1,2}| = 0.8 < 1 \implies \mathbf{BIBO\ Stable}$.
+- **Formant Frequency**: Angle $\theta = \frac{\pi}{4} \text{ rad} = 45^\circ$. For a sampling rate of $F_s = 16\text{ kHz}$, the resonant formant frequency is:
+  $$f_0 = \frac{\theta}{2\pi} \times F_s = \frac{\pi/4}{2\pi} \times 16000 = \frac{1}{8} \times 16000 = \mathbf{2000\text{ Hz}}$$
+
+---
+
+### Question 18: Compare Continuous-Time ($s$-plane) vs. Discrete-Time ($z$-plane) Pole-Zero Analysis. Show how a pole location affects speech spectrum resonance. (5 Marks)
+
+#### Answer:
+
+**1. Comparison of $s$-plane vs. $z$-plane Representation (3 Marks)**
+
+| Parameter | Continuous-Time ($s$-plane) | Discrete-Time ($z$-plane) |
+| :--- | :--- | :--- |
+| **Mathematical Domain** | Laplace Transform $H(s) = \int h(t) e^{-st} dt$ | Z-Transform $H(z) = \sum h[n] z^{-n}$ |
+| **Frequency Axis** | Imaginary axis $s = j\Omega$ ($\Omega \in (-\infty, +\infty)$) | Unit Circle $|z| = 1 \implies z = e^{j\omega}$ ($\omega \in [-\pi, +\pi]$) |
+| **Stability Region** | Left-Half of $s$-plane ($\text{Re}(s) < 0$) | Inside the Unit Circle ($|z| < 1$) |
+| **Pole Symbol** | Marked with **X** | Marked with **X** |
+| **Zero Symbol** | Marked with **O** | Marked with **O** |
+
+**2. Effect of Pole Location on Speech Spectrum Resonance (2 Marks)**
+- **Distance from Unit Circle ($|p|$)**:
+  - As $|p| \to 1$ (pole approaches unit circle), the spectral peak magnitude becomes higher and sharper (narrow formant bandwidth).
+  - As $|p| \to 0$ (pole moves toward origin), the spectral peak becomes flat and smooth (broad formant bandwidth).
+- **Angle around Unit Circle ($\angle p = \omega_0$)**:
+  - The polar angle $\omega_0 = \angle p$ directly determines the physical formant resonance frequency $f_0 = \frac{\omega_0}{2\pi} F_s$.
+
