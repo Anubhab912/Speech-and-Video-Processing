@@ -1155,13 +1155,25 @@ Since $y_1[n] = y_2[n] = \{2, -5, 7, -7, 3\}$, the **Commutative Property ($x*h 
 
 #### Solution:
 
-**1. Output Length Formulation (1.5 Marks):**
-- Input length $L_x = 4$, impulse response length $L_h = 3$.
-- Output sequence length:
-  $$L_y = L_x + L_h - 1 = 4 + 3 - 1 = \mathbf{6\text{ samples}}$$
-- If input starts at $n=0$ and $h[n]$ starts at $n=0$, output spans $n = 0, 1, 2, 3, 4, 5$.
+**1. Output Length & Index Boundaries Formulation (1.5 Marks):**
+- Given input $x[n] = \{1, 2, 1, 3\}$ for $n = 0, 1, 2, 3 \implies L_x = 4$, $n_{x,\min} = 0$, $n_{x,\max} = 3$.
+- Given impulse response $h[n] = \{1, 0, -1\}$ for $n = 0, 1, 2 \implies L_h = 3$, $n_{h,\min} = 0$, $n_{h,\max} = 2$.
+- **Output Sequence Boundaries**:
+  - Starting index: $n_{y,\min} = n_{x,\min} + n_{h,\min} = 0 + 0 = \mathbf{0}$
+  - Ending index: $n_{y,\max} = n_{x,\max} + n_{h,\max} = 3 + 2 = \mathbf{5}$
+- **Total Output Length**:
+  $$L_y = L_x + L_h - 1 = 4 + 3 - 1 = \mathbf{6\text{ samples}} \quad (n = 0, 1, 2, 3, 4, 5)$$
 
-**2. Toeplitz Convolution Matrix Method (2.5 Marks):**
+**2. Convolution via Flip-and-Slide Method (2 Marks):**
+Flipping $h[k]$ to $h[-k] = \{-1, 0, 1\}$ and shifting by $n$:
+- **$n = 0$**: $y[0] = x[0]h[0] = 1 \times 1 = \mathbf{1}$
+- **$n = 1$**: $y[1] = x[0]h[1] + x[1]h[0] = (1)(0) + (2)(1) = \mathbf{2}$
+- **$n = 2$**: $y[2] = x[0]h[2] + x[1]h[1] + x[2]h[0] = (1)(-1) + (2)(0) + (1)(1) = -1 + 0 + 1 = \mathbf{0}$
+- **$n = 3$**: $y[3] = x[1]h[2] + x[2]h[1] + x[3]h[0] = (2)(-1) + (1)(0) + (3)(1) = -2 + 0 + 3 = \mathbf{1}$
+- **$n = 4$**: $y[4] = x[2]h[2] + x[3]h[1] = (1)(-1) + (3)(0) = -1 + 0 = \mathbf{-1}$
+- **$n = 5$**: $y[5] = x[3]h[2] = (3)(-1) = \mathbf{-3}$
+
+**3. Toeplitz Convolution Matrix Method & Verification (1.5 Marks):**
 $$\begin{bmatrix} y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5] \end{bmatrix} =
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
@@ -1173,16 +1185,15 @@ $$\begin{bmatrix} y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5] \end{bmatrix} =
 \end{bmatrix}
 \begin{bmatrix} 1 \\ 2 \\ 1 \\ 3 \end{bmatrix} =
 \begin{bmatrix}
-(1)(1) \\
-(1)(2) \\
-(-1)(1) + (1)(1) \\
-(-1)(2) + (1)(3) \\
-(-1)(1) \\
-(-1)(3)
+1(1) \\
+1(2) \\
+-1(1) + 1(1) \\
+-1(2) + 1(3) \\
+-1(1) \\
+-1(3)
 \end{bmatrix} =
 \begin{bmatrix} \mathbf{1} \\ \mathbf{2} \\ \mathbf{0} \\ \mathbf{1} \\ \mathbf{-1} \\ \mathbf{-3} \end{bmatrix}$$
 
-**3. Final Output Sequence (1 Mark):**
 $$\mathbf{y[n] = \{1, 2, 0, 1, -1, -3\} \quad \text{for } n = 0, 1, 2, 3, 4, 5}$$
 
 ---
