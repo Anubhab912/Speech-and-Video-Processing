@@ -101,8 +101,9 @@ SVP/
 │   │   └── 📄 README.md                                       # [Chapter 5 Notes & Outline](Module_1_Speech_Processing_Concepts/Chapter_5_Linear_Filter_Banks/README.md)
 │   ├── 📁 Chapter_6_Linear_Prediction_and_LPC/
 │   │   └── 📄 README.md                                       # [Chapter 6 Notes & Outline](Module_1_Speech_Processing_Concepts/Chapter_6_Linear_Prediction_and_LPC/README.md)
-│   └── 📁 Chapter_7_Python_Implementation/
-│       └── 📄 README.md                                       # [Chapter 7 Lab Guides & Code](Module_1_Speech_Processing_Concepts/Chapter_7_Python_Implementation/README.md)
+│   ├── 📁 Chapter_7_Python_Implementation/
+│   │   └── 📄 README.md                                       # [Chapter 7 Lab Guides & Code](Module_1_Speech_Processing_Concepts/Chapter_7_Python_Implementation/README.md)
+│   └── 📄 Question_Bank_SAQ_LAQ_Solutions.md                  # [Official Master Solution Key (80 SAQs + 41 LAQs)](Module_1_Speech_Processing_Concepts/Question_Bank_SAQ_LAQ_Solutions.md)
 ├── 📁 Module_2_Feature_Extraction_and_Speech_Recognition/
 │   └── 📄 README.md                                           # [Module II Overview & Notes](Module_2_Feature_Extraction_and_Speech_Recognition/README.md)
 ├── 📁 Module_3_Basics_of_Video_Processing/
@@ -146,6 +147,11 @@ Click on any course topic or resource button to jump straight to the exact study
 ---
 
 ## 🎯 Direct Shortcuts to Exam Question Sheets
+
+- 🏆 **[Module 1 Master Question Bank Solutions (80 SAQs + 41 LAQs & Solved Problems)](Module_1_Speech_Processing_Concepts/Question_Bank_SAQ_LAQ_Solutions.md)**:
+  - *Complete official solution key for Dr. Kunal Anand's Module 1 Question Bank.*
+  - *SAQ 1–80: All Short Answer Questions covering Speech Models, ADC, Spectrograms, LTI, Pole-Zero, DFT/FFT, Filter Banks & LPC.*
+  - *LAQ 1–41: Step-by-step solved numericals, mathematical proofs, and derivations.*
 
 - 📝 **[Chapter 1 5-Mark Exam Questions & Model Solutions](Module_1_Speech_Processing_Concepts/Chapter_1_Introduction_to_Speech_Processing/practice_questions.md)**:
   - *Q1: Speech Processing Definition & Need (5 Marks)*
