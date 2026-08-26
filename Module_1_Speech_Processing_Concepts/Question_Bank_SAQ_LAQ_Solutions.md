@@ -1151,29 +1151,67 @@ Since $y_1[n] = y_2[n] = \{2, -5, 7, -7, 3\}$, the **Commutative Property ($x*h 
 
 ---
 
-### LAQ 26 (Solved Problem): For $x[n] = \{1, 2, 1, 3\}$ and $h[n] = \{1, 0, -1\}$, determine the output length and compute all $y[n]$. (5 Marks)
+### LAQ 26 (Solved Problem): For the discrete sequences $x[n] = \{1, 2, 1, 3\}$ and $h[n] = \{1, 0, -1\}$:
+(a) Determine the output sequence length and index range.
+(b) Compute all values of the output sequence $y[n]$ using the discrete convolution sum. (5 Marks)
 
 #### Solution:
 
-**1. Output Length & Index Boundaries Formulation (1.5 Marks):**
-- Given input $x[n] = \{1, 2, 1, 3\}$ for $n = 0, 1, 2, 3 \implies L_x = 4$, $n_{x,\min} = 0$, $n_{x,\max} = 3$.
-- Given impulse response $h[n] = \{1, 0, -1\}$ for $n = 0, 1, 2 \implies L_h = 3$, $n_{h,\min} = 0$, $n_{h,\max} = 2$.
-- **Output Sequence Boundaries**:
-  - Starting index: $n_{y,\min} = n_{x,\min} + n_{h,\min} = 0 + 0 = \mathbf{0}$
-  - Ending index: $n_{y,\max} = n_{x,\max} + n_{h,\max} = 3 + 2 = \mathbf{5}$
-- **Total Output Length**:
-  $$L_y = L_x + L_h - 1 = 4 + 3 - 1 = \mathbf{6\text{ samples}} \quad (n = 0, 1, 2, 3, 4, 5)$$
+#### **Part (a): Output Sequence Length & Index Range Determination (2 Marks)**
+1. **Input Sequence Parameters**:
+   - Input signal $x[n] = \{1, 2, 1, 3\}$ for $n = 0, 1, 2, 3$:
+     $$\text{Length } L_x = 4, \quad n_{x,\min} = 0, \quad n_{x,\max} = 3$$
+2. **Impulse Response Parameters**:
+   - System impulse response $h[n] = \{1, 0, -1\}$ for $n = 0, 1, 2$:
+     $$\text{Length } L_h = 3, \quad n_{h,\min} = 0, \quad n_{h,\max} = 2$$
+3. **Index Boundaries Calculation**:
+   - Starting sample index:
+     $$n_{y,\min} = n_{x,\min} + n_{h,\min} = 0 + 0 = \mathbf{0}$$
+   - Ending sample index:
+     $$n_{y,\max} = n_{x,\max} + n_{h,\max} = 3 + 2 = \mathbf{5}$$
+4. **Total Output Length ($L_y$)**:
+   $$L_y = L_x + L_h - 1 = 4 + 3 - 1 = \mathbf{6\text{ samples}}$$
+   *(The convolved output $y[n]$ contains exactly 6 samples, spanning index range $n \in [0, 5]$).*
 
-**2. Convolution via Flip-and-Slide Method (2 Marks):**
-Flipping $h[k]$ to $h[-k] = \{-1, 0, 1\}$ and shifting by $n$:
-- **$n = 0$**: $y[0] = x[0]h[0] = 1 \times 1 = \mathbf{1}$
-- **$n = 1$**: $y[1] = x[0]h[1] + x[1]h[0] = (1)(0) + (2)(1) = \mathbf{2}$
-- **$n = 2$**: $y[2] = x[0]h[2] + x[1]h[1] + x[2]h[0] = (1)(-1) + (2)(0) + (1)(1) = -1 + 0 + 1 = \mathbf{0}$
-- **$n = 3$**: $y[3] = x[1]h[2] + x[2]h[1] + x[3]h[0] = (2)(-1) + (1)(0) + (3)(1) = -2 + 0 + 3 = \mathbf{1}$
-- **$n = 4$**: $y[4] = x[2]h[2] + x[3]h[1] = (1)(-1) + (3)(0) = -1 + 0 = \mathbf{-1}$
-- **$n = 5$**: $y[5] = x[3]h[2] = (3)(-1) = \mathbf{-3}$
+---
 
-**3. Toeplitz Convolution Matrix Method & Verification (1.5 Marks):**
+#### **Part (b): Computation of All Output Samples $y[n]$ (3 Marks)**
+
+The discrete-time linear convolution sum is given by:
+$$y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k] \, h[n - k] = \sum_{k=0}^{3} x[k] \, h[n - k]$$
+
+**1. Step-by-Step Sample Calculations:**
+
+- **Sample $y[0]$ (for $n = 0$):**
+  $$y[0] = x[0]h[0] = (1)(1) = \mathbf{1}$$
+
+- **Sample $y[1]$ (for $n = 1$):**
+  $$y[1] = x[0]h[1] + x[1]h[0] = (1)(0) + (2)(1) = 0 + 2 = \mathbf{2}$$
+
+- **Sample $y[2]$ (for $n = 2$):**
+  $$y[2] = x[0]h[2] + x[1]h[1] + x[2]h[0] = (1)(-1) + (2)(0) + (1)(1) = -1 + 0 + 1 = \mathbf{0}$$
+
+- **Sample $y[3]$ (for $n = 3$):**
+  $$y[3] = x[1]h[2] + x[2]h[1] + x[3]h[0] = (2)(-1) + (1)(0) + (3)(1) = -2 + 0 + 3 = \mathbf{1}$$
+
+- **Sample $y[4]$ (for $n = 4$):**
+  $$y[4] = x[2]h[2] + x[3]h[1] = (1)(-1) + (3)(0) = -1 + 0 = \mathbf{-1}$$
+
+- **Sample $y[5]$ (for $n = 5$):**
+  $$y[5] = x[3]h[2] = (3)(-1) = \mathbf{-3}$$
+
+**2. Convolution Tabular Method Verification:**
+
+| Index $n$ | Shifted Term $k=0$ | Shifted Term $k=1$ | Shifted Term $k=2$ | Shifted Term $k=3$ | Sum $y[n]$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **$n = 0$** | $x[0]h[0] = (1)(1) = 1$ | — | — | — | **$1$** |
+| **$n = 1$** | $x[0]h[1] = (1)(0) = 0$ | $x[1]h[0] = (2)(1) = 2$ | — | — | **$2$** |
+| **$n = 2$** | $x[0]h[2] = (1)(-1) = -1$ | $x[1]h[1] = (2)(0) = 0$ | $x[2]h[0] = (1)(1) = 1$ | — | **$0$** |
+| **$n = 3$** | — | $x[1]h[2] = (2)(-1) = -2$ | $x[2]h[1] = (1)(0) = 0$ | $x[3]h[0] = (3)(1) = 3$ | **$1$** |
+| **$n = 4$** | — | — | $x[2]h[2] = (1)(-1) = -1$ | $x[3]h[1] = (3)(0) = 0$ | **$-1$** |
+| **$n = 5$** | — | — | — | $x[3]h[2] = (3)(-1) = -3$ | **$-3$** |
+
+**3. Matrix Method Verification (Toeplitz Formulation):**
 $$\begin{bmatrix} y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5] \end{bmatrix} =
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
@@ -1185,15 +1223,16 @@ $$\begin{bmatrix} y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5] \end{bmatrix} =
 \end{bmatrix}
 \begin{bmatrix} 1 \\ 2 \\ 1 \\ 3 \end{bmatrix} =
 \begin{bmatrix}
-1(1) \\
-1(2) \\
--1(1) + 1(1) \\
--1(2) + 1(3) \\
--1(1) \\
--1(3)
+(1)(1) \\
+(1)(2) \\
+(-1)(1) + (1)(1) \\
+(-1)(2) + (1)(3) \\
+(-1)(1) \\
+(-1)(3)
 \end{bmatrix} =
 \begin{bmatrix} \mathbf{1} \\ \mathbf{2} \\ \mathbf{0} \\ \mathbf{1} \\ \mathbf{-1} \\ \mathbf{-3} \end{bmatrix}$$
 
+**4. Final Output Sequence:**
 $$\mathbf{y[n] = \{1, 2, 0, 1, -1, -3\} \quad \text{for } n = 0, 1, 2, 3, 4, 5}$$
 
 ---
