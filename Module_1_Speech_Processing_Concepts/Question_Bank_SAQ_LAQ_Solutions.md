@@ -1059,25 +1059,44 @@ $$\mathbf{y[n] = \{2, 5, 1, 0, -1\} \quad \text{for } n = 0, 1, 2, 3, 4}$$
 
 ---
 
-### LAQ 23: A discrete-time LTI system has the input signal $x[n]$ and impulse response $h[n]$. Derive the convolution sum formulation. (5 Marks)
+### LAQ 23 (Solved Problem): A discrete-time LTI system has the input signal $x[n] = \{1, 2, 1, 3\}, n=0,1,2,3$ and the impulse response $h[n] = \{1, 0, -1\}, n=0,1,2$. Using the convolution operation, determine the output sequence $y[n]$. (5 Marks)
 
-#### Answer:
-**1. Representation of Input as Weighted Sum of Impulses (2 Marks)**
-Any discrete sequence $x[n]$ can be represented as a linear combination of shifted unit impulses $\delta[n-k]$:
+#### Solution:
 
-$$x[n] = \sum_{k=-\infty}^{\infty} x[k] \, \delta[n - k]$$
+**1. Output Range and Length Determination (1 Mark):**
+- Length of input sequence: $L_x = 4$ ($n = 0, 1, 2, 3$).
+- Length of impulse response: $L_h = 3$ ($n = 0, 1, 2$).
+- Total length of output sequence:
+  $$L_y = L_x + L_h - 1 = 4 + 3 - 1 = \mathbf{6\text{ samples}}$$
+- The output indices span $n = 0, 1, 2, 3, 4, 5$.
 
-**2. Applying Linearity and Time-Invariance (2.5 Marks)**
-Let the system transformation be $T\{\cdot\}$ and impulse response $h[n] = T\{\delta[n]\}$.
-- By **Linearity (Superposition)**:
-  $$y[n] = T\{x[n]\} = T\left\{ \sum_{k=-\infty}^{\infty} x[k] \delta[n - k] \right\} = \sum_{k=-\infty}^{\infty} x[k] T\{\delta[n - k]\}$$
-- By **Time-Invariance**:
-  $$T\{\delta[n - k]\} = h[n - k]$$
-- Substituting yields the **Convolution Sum**:
-  $$\mathbf{y[n] = \sum_{k=-\infty}^{\infty} x[k] \, h[n - k] = x[n] * h[n]}$$
+**2. Step-by-Step Convolution Computations (3 Marks):**
+Using the convolution sum formula $y[n] = \sum_{k=0}^{3} x[k] h[n - k]$:
+- **For $n = 0$**:
+  $$y[0] = x[0]h[0] = 1 \times 1 = \mathbf{1}$$
+- **For $n = 1$**:
+  $$y[1] = x[0]h[1] + x[1]h[0] = (1 \times 0) + (2 \times 1) = 0 + 2 = \mathbf{2}$$
+- **For $n = 2$**:
+  $$y[2] = x[0]h[2] + x[1]h[1] + x[2]h[0] = (1 \times -1) + (2 \times 0) + (1 \times 1) = -1 + 0 + 1 = \mathbf{0}$$
+- **For $n = 3$**:
+  $$y[3] = x[1]h[2] + x[2]h[1] + x[3]h[0] = (2 \times -1) + (1 \times 0) + (3 \times 1) = -2 + 0 + 3 = \mathbf{1}$$
+- **For $n = 4$**:
+  $$y[4] = x[2]h[2] + x[3]h[1] = (1 \times -1) + (3 \times 0) = -1 + 0 = \mathbf{-1}$$
+- **For $n = 5$**:
+  $$y[5] = x[3]h[2] = 3 \times -1 = \mathbf{-3}$$
 
-**3. Conclusion (0.5 Mark)**
-The output of any LTI system is uniquely and entirely determined by convolving the input with its impulse response.
+**3. Tabular Verification & Final Sequence (1 Mark):**
+
+| $n$ | $k=0: x[0]h[n]$ | $k=1: x[1]h[n-1]$ | $k=2: x[2]h[n-2]$ | $k=3: x[3]h[n-3]$ | $y[n]$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **0** | $1 \times 1 = 1$ | - | - | - | **1** |
+| **1** | $1 \times 0 = 0$ | $2 \times 1 = 2$ | - | - | **2** |
+| **2** | $1 \times -1 = -1$ | $2 \times 0 = 0$ | $1 \times 1 = 1$ | - | **0** |
+| **3** | - | $2 \times -1 = -2$ | $1 \times 0 = 0$ | $3 \times 1 = 3$ | **1** |
+| **4** | - | - | $1 \times -1 = -1$ | $3 \times 0 = 0$ | **-1** |
+| **5** | - | - | - | $3 \times -1 = -3$ | **-3** |
+
+$$\mathbf{y[n] = \{1, 2, 0, 1, -1, -3\} \quad \text{for } n = 0, 1, 2, 3, 4, 5}$$
 
 ---
 
@@ -1136,18 +1155,34 @@ Since $y_1[n] = y_2[n] = \{2, -5, 7, -7, 3\}$, the **Commutative Property ($x*h 
 
 #### Solution:
 
-**1. Output Length (1 Mark):**
-- $L_x = 4$, $L_h = 3 \implies L_y = 4 + 3 - 1 = \mathbf{6\text{ samples}}$ ($n = 0, 1, 2, 3, 4, 5$).
+**1. Output Length Formulation (1.5 Marks):**
+- Input length $L_x = 4$, impulse response length $L_h = 3$.
+- Output sequence length:
+  $$L_y = L_x + L_h - 1 = 4 + 3 - 1 = \mathbf{6\text{ samples}}$$
+- If input starts at $n=0$ and $h[n]$ starts at $n=0$, output spans $n = 0, 1, 2, 3, 4, 5$.
 
-**2. Step-by-Step Convolution (3 Marks):**
-- $y[0] = x[0]h[0] = 1 \times 1 = \mathbf{1}$
-- $y[1] = x[0]h[1] + x[1]h[0] = (1 \times 0) + (2 \times 1) = \mathbf{2}$
-- $y[2] = x[0]h[2] + x[1]h[1] + x[2]h[0] = (1 \times -1) + (2 \times 0) + (1 \times 1) = -1 + 0 + 1 = \mathbf{0}$
-- $y[3] = x[1]h[2] + x[2]h[1] + x[3]h[0] = (2 \times -1) + (1 \times 0) + (3 \times 1) = -2 + 0 + 3 = \mathbf{1}$
-- $y[4] = x[2]h[2] + x[3]h[1] = (1 \times -1) + (3 \times 0) = \mathbf{-1}$
-- $y[5] = x[3]h[2] = 3 \times -1 = \mathbf{-3}$
+**2. Toeplitz Convolution Matrix Method (2.5 Marks):**
+$$\begin{bmatrix} y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5] \end{bmatrix} =
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+-1 & 0 & 1 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{bmatrix}
+\begin{bmatrix} 1 \\ 2 \\ 1 \\ 3 \end{bmatrix} =
+\begin{bmatrix}
+(1)(1) \\
+(1)(2) \\
+(-1)(1) + (1)(1) \\
+(-1)(2) + (1)(3) \\
+(-1)(1) \\
+(-1)(3)
+\end{bmatrix} =
+\begin{bmatrix} \mathbf{1} \\ \mathbf{2} \\ \mathbf{0} \\ \mathbf{1} \\ \mathbf{-1} \\ \mathbf{-3} \end{bmatrix}$$
 
-**3. Output Sequence (1 Mark):**
+**3. Final Output Sequence (1 Mark):**
 $$\mathbf{y[n] = \{1, 2, 0, 1, -1, -3\} \quad \text{for } n = 0, 1, 2, 3, 4, 5}$$
 
 ---
@@ -1178,40 +1213,43 @@ $$H(z) = G \frac{1 + \sum_{k=1}^{M} b_k z^{-k}}{1 - \sum_{k=1}^{N} a_k z^{-k}}$$
 
 ---
 
-### LAQ 29 (Solved Problem): Determine poles, zeros, and BIBO stability for: (A) $H_1(z) = \frac{z - 0.5}{z^2 - 0.6z + 0.25}$, (B) $H_2(z) = \frac{z^2 - 1}{z^2 - 0.9z + 0.81}$. (5 Marks)
+### LAQ 29 (Solved Problem): Find the poles and zeros of $H(z) = \frac{z^2(z+1)}{(z-0.8)(z+0.5)}$ and analyze system stability. (5 Marks)
 
 #### Solution:
 
-**Part A: $H_1(z) = \frac{z - 0.5}{z^2 - 0.6z + 0.25}$ (2.5 Marks)**
-1. **Zeros**: Numerator $z - 0.5 = 0 \implies \mathbf{z = 0.5}$.
-2. **Poles**: Denominator $z^2 - 0.6z + 0.25 = 0$:
-   $$z = \frac{0.6 \pm \sqrt{(-0.6)^2 - 4(1)(0.25)}}{2} = \frac{0.6 \pm \sqrt{0.36 - 1.0}}{2} = \frac{0.6 \pm j0.8}{2} = \mathbf{0.3 \pm j0.4}$$
-3. **Stability**: Magnitude $|p| = \sqrt{0.3^2 + 0.4^2} = \sqrt{0.09 + 0.16} = \sqrt{0.25} = 0.5$.  
-   Since $|p| = 0.5 < 1$, the system is **BIBO Stable**.
+**1. Calculation of Zeros (2 Marks):**
+Set numerator $N(z) = z^2(z + 1) = 0$:
+- $z^2 = 0 \implies \mathbf{z_1 = 0, z_2 = 0}$ (Double zero at the origin).
+- $z + 1 = 0 \implies \mathbf{z_3 = -1}$ (Zero on the unit circle at $\omega = \pi$).
 
-**Part B: $H_2(z) = \frac{z^2 - 1}{z^2 - 0.9z + 0.81}$ (2.5 Marks)**
-1. **Zeros**: Numerator $z^2 - 1 = 0 \implies \mathbf{z = \pm 1}$ (on the unit circle).
-2. **Poles**: Denominator $z^2 - 0.9z + 0.81 = 0$:
-   $$z = \frac{0.9 \pm \sqrt{(-0.9)^2 - 4(1)(0.81)}}{2} = \frac{0.9 \pm \sqrt{0.81 - 3.24}}{2} = \frac{0.9 \pm j1.5588}{2} = \mathbf{0.45 \pm j0.7794}$$
-3. **Stability**: Magnitude $|p| = \sqrt{0.45^2 + 0.7794^2} = \sqrt{0.2025 + 0.6075} = \sqrt{0.81} = 0.9$.  
-   Since $|p| = 0.9 < 1$, the system is **BIBO Stable**.
+**2. Calculation of Poles (2 Marks):**
+Set denominator $D(z) = (z - 0.8)(z + 0.5) = 0$:
+- $z - 0.8 = 0 \implies \mathbf{p_1 = 0.8}$ (Real pole in right-half plane).
+- $z + 0.5 = 0 \implies \mathbf{p_2 = -0.5}$ (Real pole in left-half plane).
+
+**3. BIBO Stability Analysis (1 Mark):**
+- Pole magnitudes: $|p_1| = |0.8| = \mathbf{0.8 < 1}$ and $|p_2| = |-0.5| = \mathbf{0.5 < 1}$.
+- Since all poles lie strictly inside the unit circle in the $Z$-plane ($|p_k| < 1$), the system is **Bounded-Input Bounded-Output (BIBO) Stable**.
 
 ---
 
-### LAQ 30 (Solved Problem): Determine poles, zeros, and plot locations for: (A) $H(z) = \frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1} + 0.64 z^{-2}}$, (B) $H(z) = \frac{z(z - 0.7)}{(z - 0.8 e^{j\pi/4})(z - 0.8 e^{-j\pi/4})}$. (5 Marks)
+### LAQ 30 (Solved Problem): Determine poles and zeros for $H(z) = \frac{(z+0.5+j0.5)(z+0.5-j0.5)}{(z-0.6+j0.3)(z-0.6-j0.3)}$ and plot their locations in the $Z$-plane. (5 Marks)
 
 #### Solution:
 
-**Part A: $H(z) = \frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1} + 0.64 z^{-2}}$ (2.5 Marks)**
-1. **Positive Powers Form**: $H(z) = \frac{z(z - 0.5)}{z^2 - 0.8z + 0.64}$.
-2. **Zeros**: $z(z - 0.5) = 0 \implies \mathbf{z_1 = 0, z_2 = 0.5}$.
-3. **Poles**: $z^2 - 0.8z + 0.64 = 0 \implies z = \frac{0.8 \pm \sqrt{0.64 - 2.56}}{2} = \mathbf{0.4 \pm j0.6928}$.
-4. **Stability**: Magnitude $|p| = \sqrt{0.4^2 + 0.6928^2} = \sqrt{0.64} = \mathbf{0.8 < 1} \implies \mathbf{BIBO\ Stable}$.
+**1. Calculation of Zeros (2 Marks):**
+Set numerator $(z + 0.5 + j0.5)(z + 0.5 - j0.5) = 0$:
+- $z_1 = -0.5 - j0.5 \implies |z_1| = \sqrt{(-0.5)^2 + (-0.5)^2} = \sqrt{0.25 + 0.25} = \sqrt{0.5} \approx \mathbf{0.7071}$, $\angle z_1 = -135^\circ$.
+- $z_2 = -0.5 + j0.5 \implies |z_2| = \sqrt{(-0.5)^2 + (0.5)^2} = \sqrt{0.5} \approx \mathbf{0.7071}$, $\angle z_2 = +135^\circ$.
 
-**Part B: $H(z) = \frac{z(z - 0.7)}{(z - 0.8 e^{j\pi/4})(z - 0.8 e^{-j\pi/4})}$ (2.5 Marks)**
-1. **Zeros**: $z(z - 0.7) = 0 \implies \mathbf{z_1 = 0, z_2 = 0.7}$.
-2. **Poles**: $p_{1,2} = 0.8 e^{\pm j\pi/4} = 0.8(\cos 45^\circ \pm j\sin 45^\circ) = \mathbf{0.5657 \pm j0.5657}$.
-3. **Stability & Formant**: Magnitude $|p| = 0.8 < 1 \implies \mathbf{BIBO\ Stable}$. Resonant frequency at $F_s = 16\text{ kHz}$: $f_0 = \frac{\pi/4}{2\pi} \times 16,000 = \mathbf{2000\text{ Hz}}$.
+**2. Calculation of Poles (2 Marks):**
+Set denominator $(z - 0.6 + j0.3)(z - 0.6 - j0.3) = 0$:
+- $p_1 = 0.6 - j0.3 \implies |p_1| = \sqrt{(0.6)^2 + (-0.3)^2} = \sqrt{0.36 + 0.09} = \sqrt{0.45} \approx \mathbf{0.6708}$, $\angle p_1 = \arctan(-0.3/0.6) \approx \mathbf{-26.57^\circ}$.
+- $p_2 = 0.6 + j0.3 \implies |p_2| = \sqrt{(0.6)^2 + (0.3)^2} = \sqrt{0.45} \approx \mathbf{0.6708}$, $\angle p_2 = \arctan(0.3/0.6) \approx \mathbf{+26.57^\circ}$.
+
+**3. Stability & Formant Resonance Analysis (1 Mark):**
+- Since $|p_{1,2}| \approx 0.6708 < 1$, both poles lie strictly inside the unit circle $\implies$ **BIBO Stable**.
+- The complex conjugate pole pair creates a resonant formant at digital frequency $\theta = 26.57^\circ = 0.4636\text{ rad}$.
 
 ---
 
