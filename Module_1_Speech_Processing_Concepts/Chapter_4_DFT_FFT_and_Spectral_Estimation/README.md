@@ -51,7 +51,7 @@ The inverse Fourier Transform reconstructs the continuous time-domain signal:
 
 $$x(t) = \int_{-\infty}^{\infty} X(f) \, e^{j 2\pi f t} \, df$$
 
-#### Solved Example (Slide 10-12):
+#### Solved Example: Continuous Fourier Transform Spectrum
 Consider a composite speech signal $x(t) = 2\cos(2\pi \cdot 50 t) + 3\cos(2\pi \cdot 37.5 t)$.
 - Applying Euler's formula:
   $$x(t) = \left(e^{j 2\pi 50 t} + e^{-j 2\pi 50 t}\right) + 1.5 \left(e^{j 2\pi 37.5 t} + e^{-j 2\pi 37.5 t}\right)$$
@@ -165,7 +165,7 @@ flowchart TD
 4. **Sampling Rate Reduction (Decimation)**: Lowpass energy varies slowly ($20 - 30\text{ Hz}$); sampling rate is decimated down to $40 - 60\text{ Hz}$.
 5. **Amplitude Compression**: Applies logarithmic compression to compress dynamic range, matching human loudness perception.
 
-### 4.3 Data Reduction & Solved Compression Example (Slide 58-59)
+### 4.3 Data Reduction & Solved Compression Example
 Consider a narrowband speech signal sampled at $F_s = 8\text{ kHz}$ with $8\text{ bits/sample}$:
 1. **Raw Bit Rate**:
    $$\text{Raw Bit Rate} = 8000 \times 8 = \mathbf{64,000\text{ bps} \quad (64\text{ kbps})}$$
