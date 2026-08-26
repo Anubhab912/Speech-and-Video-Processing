@@ -1222,7 +1222,7 @@ Summing along the anti-diagonals (from top-left to bottom-right):
 
 **3. Matrix-Vector Convolution Formulation ($\mathbf{y} = \mathbf{H} \mathbf{x}$):**
 
-Setting up the $(L_y \times L_x)$ convolution matrix $\mathbf{H}$ formed by shifted columns of $h[n]$:
+Setting up the $(L_y \times L_x) = (6 \times 4)$ convolution matrix $\mathbf{H}$ formed by time-shifted columns of $h[n]$:
 
 $$\begin{bmatrix}
 y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5]
@@ -1250,25 +1250,17 @@ x[0] \\ x[1] \\ x[2] \\ x[3]
 1 \\ 2 \\ 1 \\ 3
 \end{bmatrix}$$
 
-Carrying out the complete row-by-column dot product multiplication:
+**Row-by-Row Dot Product Evaluation:**
+- **Row 0 ($n = 0$)**: $y[0] = (1)(1) + (0)(2) + (0)(1) + (0)(3) = 1 + 0 + 0 + 0 = \mathbf{1}$
+- **Row 1 ($n = 1$)**: $y[1] = (0)(1) + (1)(2) + (0)(1) + (0)(3) = 0 + 2 + 0 + 0 = \mathbf{2}$
+- **Row 2 ($n = 2$)**: $y[2] = (-1)(1) + (0)(2) + (1)(1) + (0)(3) = -1 + 0 + 1 + 0 = \mathbf{0}$
+- **Row 3 ($n = 3$)**: $y[3] = (0)(1) + (-1)(2) + (0)(1) + (1)(3) = 0 - 2 + 0 + 3 = \mathbf{1}$
+- **Row 4 ($n = 4$)**: $y[4] = (0)(1) + (0)(2) + (-1)(1) + (0)(3) = 0 + 0 - 1 + 0 = \mathbf{-1}$
+- **Row 5 ($n = 5$)**: $y[5] = (0)(1) + (0)(2) + (0)(1) + (-1)(3) = 0 + 0 + 0 - 3 = \mathbf{-3}$
+
+**Matrix Vector Output:**
 $$\begin{bmatrix}
 y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5]
-\end{bmatrix} =
-\begin{bmatrix}
-(1)(1) + (0)(2) + (0)(1) + (0)(3) \\
-(0)(1) + (1)(2) + (0)(1) + (0)(3) \\
-(-1)(1) + (0)(2) + (1)(1) + (0)(3) \\
-(0)(1) + (-1)(2) + (0)(1) + (1)(3) \\
-(0)(1) + (0)(2) + (-1)(1) + (0)(3) \\
-(0)(1) + (0)(2) + (0)(1) + (-1)(3)
-\end{bmatrix} =
-\begin{bmatrix}
-1 \\
-2 \\
--1 + 0 + 1 \\
-0 - 2 + 0 + 3 \\
-0 + 0 - 1 + 0 \\
-0 + 0 + 0 - 3
 \end{bmatrix} =
 \begin{bmatrix}
 \mathbf{1} \\
