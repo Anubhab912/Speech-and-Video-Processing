@@ -1200,19 +1200,44 @@ $$y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k] \, h[n - k] = \sum_{k=0}^{
 - **Sample $y[5]$ (for $n = 5$):**
   $$y[5] = x[3]h[2] = (3)(-1) = \mathbf{-3}$$
 
-**2. Convolution Tabular Method Verification:**
+**2. Tabular Array / Grid Method (Diagonal Summation):**
 
-| Index $n$ | Shifted Term $k=0$ | Shifted Term $k=1$ | Shifted Term $k=2$ | Shifted Term $k=3$ | Sum $y[n]$ |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| **$n = 0$** | $x[0]h[0] = (1)(1) = 1$ | — | — | — | **$1$** |
-| **$n = 1$** | $x[0]h[1] = (1)(0) = 0$ | $x[1]h[0] = (2)(1) = 2$ | — | — | **$2$** |
-| **$n = 2$** | $x[0]h[2] = (1)(-1) = -1$ | $x[1]h[1] = (2)(0) = 0$ | $x[2]h[0] = (1)(1) = 1$ | — | **$0$** |
-| **$n = 3$** | — | $x[1]h[2] = (2)(-1) = -2$ | $x[2]h[1] = (1)(0) = 0$ | $x[3]h[0] = (3)(1) = 3$ | **$1$** |
-| **$n = 4$** | — | — | $x[2]h[2] = (1)(-1) = -1$ | $x[3]h[1] = (3)(0) = 0$ | **$-1$** |
-| **$n = 5$** | — | — | — | $x[3]h[2] = (3)(-1) = -3$ | **$-3$** |
+Constructing the product grid matrix between $h[n]$ (rows) and $x[n]$ (columns):
 
-**3. Matrix Method Verification (Toeplitz Formulation):**
-$$\begin{bmatrix} y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5] \end{bmatrix} =
+$$\begin{array}{c|cccc}
+\mathbf{\times} & \mathbf{x[0]=1} & \mathbf{x[1]=2} & \mathbf{x[2]=1} & \mathbf{x[3]=3} \\
+\hline
+\mathbf{h[0]=1} & \mathbf{1} & \mathbf{2} & \mathbf{1} & \mathbf{3} \\
+\mathbf{h[1]=0} & \mathbf{0} & \mathbf{0} & \mathbf{0} & \mathbf{0} \\
+\mathbf{h[2]=-1} & \mathbf{-1} & \mathbf{-2} & \mathbf{-1} & \mathbf{-3} \\
+\end{array}$$
+
+Summing along the anti-diagonals (from top-left to bottom-right):
+- **$y[0]$** = $1 = \mathbf{1}$
+- **$y[1]$** = $0 + 2 = \mathbf{2}$
+- **$y[2]$** = $-1 + 0 + 1 = \mathbf{0}$
+- **$y[3]$** = $-2 + 0 + 3 = \mathbf{1}$
+- **$y[4]$** = $-1 + 0 = \mathbf{-1}$
+- **$y[5]$** = $-3 = \mathbf{-3}$
+
+**3. Matrix-Vector Convolution Formulation ($\mathbf{y} = \mathbf{H} \mathbf{x}$):**
+
+Setting up the $(L_y \times L_x)$ convolution matrix $\mathbf{H}$ formed by shifted columns of $h[n]$:
+
+$$\begin{bmatrix}
+y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5]
+\end{bmatrix} =
+\begin{bmatrix}
+h[0] & 0 & 0 & 0 \\
+h[1] & h[0] & 0 & 0 \\
+h[2] & h[1] & h[0] & 0 \\
+0 & h[2] & h[1] & h[0] \\
+0 & 0 & h[2] & h[1] \\
+0 & 0 & 0 & h[2]
+\end{bmatrix}
+\begin{bmatrix}
+x[0] \\ x[1] \\ x[2] \\ x[3]
+\end{bmatrix} =
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 \\
@@ -1221,16 +1246,38 @@ $$\begin{bmatrix} y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5] \end{bmatrix} =
 0 & 0 & -1 & 0 \\
 0 & 0 & 0 & -1
 \end{bmatrix}
-\begin{bmatrix} 1 \\ 2 \\ 1 \\ 3 \end{bmatrix} =
 \begin{bmatrix}
-(1)(1) \\
-(1)(2) \\
-(-1)(1) + (1)(1) \\
-(-1)(2) + (1)(3) \\
-(-1)(1) \\
-(-1)(3)
+1 \\ 2 \\ 1 \\ 3
+\end{bmatrix}$$
+
+Carrying out the complete row-by-column dot product multiplication:
+$$\begin{bmatrix}
+y[0] \\ y[1] \\ y[2] \\ y[3] \\ y[4] \\ y[5]
 \end{bmatrix} =
-\begin{bmatrix} \mathbf{1} \\ \mathbf{2} \\ \mathbf{0} \\ \mathbf{1} \\ \mathbf{-1} \\ \mathbf{-3} \end{bmatrix}$$
+\begin{bmatrix}
+(1)(1) + (0)(2) + (0)(1) + (0)(3) \\
+(0)(1) + (1)(2) + (0)(1) + (0)(3) \\
+(-1)(1) + (0)(2) + (1)(1) + (0)(3) \\
+(0)(1) + (-1)(2) + (0)(1) + (1)(3) \\
+(0)(1) + (0)(2) + (-1)(1) + (0)(3) \\
+(0)(1) + (0)(2) + (0)(1) + (-1)(3)
+\end{bmatrix} =
+\begin{bmatrix}
+1 \\
+2 \\
+-1 + 0 + 1 \\
+0 - 2 + 0 + 3 \\
+0 + 0 - 1 + 0 \\
+0 + 0 + 0 - 3
+\end{bmatrix} =
+\begin{bmatrix}
+\mathbf{1} \\
+\mathbf{2} \\
+\mathbf{0} \\
+\mathbf{1} \\
+\mathbf{-1} \\
+\mathbf{-3}
+\end{bmatrix}$$
 
 **4. Final Output Sequence:**
 $$\mathbf{y[n] = \{1, 2, 0, 1, -1, -3\} \quad \text{for } n = 0, 1, 2, 3, 4, 5}$$
