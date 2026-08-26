@@ -1,7 +1,8 @@
 # Module 1: Speech Processing Concepts — Official Master Question Bank Solutions
-> **Course**: Speech and Video Processing (CS30033)  
-> **Source Material**: Official Module-1 Question Bank by Dr. Kunal Anand (SCE, KIIT DU)  
-> **Grading Format**: Standard University 5-Mark Examination Solutions with Explicit Marks Breakdown, Diagrams, and Step-by-Step Numericals.
+
+> **Academic Course**: Speech and Video Processing (CS30033)  
+> **Source Material**: Official Question Bank by Dr. Kunal Anand (SCE, KIIT DU)  
+> **Grading Structure**: Standard University 5-Mark Examination Format with Explicit Marks Breakdown, Embedded Diagrams, and Step-by-Step Numericals for All 80 SAQs and All 45 LAQs in Exact Sequential Order.
 
 ---
 
@@ -46,7 +47,7 @@ Speech processing is a specialized branch of digital signal processing (DSP) and
 **1. Five Major Application Domains (5 Marks, 1 Mark each):**
 1. **Automatic Speech Recognition (ASR)**: Converts spoken acoustic utterances into text (e.g., dictation, automated transcription, voice search, interactive voice response (IVR) call routing).
 2. **Speech Synthesis / Text-to-Speech (TTS)**: Converts written text into natural-sounding speech (e.g., GPS navigation, assistive screen readers for the blind, virtual avatars).
-3. **Speaker Identification & Biometric Verification**: Determines or verifies a speaker\'s identity from voice characteristics for high-security banking and forensics.
+3. **Speaker Identification & Biometric Verification**: Determines or verifies a speaker's identity from voice characteristics for high-security banking and forensics.
 4. **Speech Enhancement & Noise Reduction**: Eliminates background environmental noise, room reverberation, and acoustic echoes in mobile telephony, conference rooms, and hearing aids.
 5. **Low-Bitrate Speech Coding & Compression**: Encodes speech at ultra-low bitrates ($2.4–13\text{ kbps}$) for cellular networks (GSM/VoLTE/5G), military radio communication, and satellite telephony.
 
@@ -57,16 +58,16 @@ Speech processing is a specialized branch of digital signal processing (DSP) and
 #### Answer:
 **1. Three Primary Levels of Speech Communication (3 Marks)**
 Speech communication is modeled as a continuous chain connecting a speaker to a listener across three distinct physical domains:
-1. **Linguistic / Articulatory Level (Speaker\'s Brain & Vocal Tract)**: Message formulation into linguistic words $\to$ motor nerve impulses driving physical articulatory movements.
+1. **Linguistic / Articulatory Level (Speaker's Brain & Vocal Tract)**: Message formulation into linguistic words $\to$ motor nerve impulses driving physical articulatory movements.
 2. **Acoustic Level (Transmission Medium)**: Pressure waves traveling through the air as continuous longitudinal compression and rarefaction waves.
-3. **Auditory / Perceptual Level (Listener\'s Ear & Brain)**: Outer ear captures sound $\to$ eardrum and cochlea perform spectral frequency decomposition $	o$ auditory nerve transmits neural impulses to the brain for message comprehension.
+3. **Auditory / Perceptual Level (Listener's Ear & Brain)**: Outer ear captures sound $\to$ eardrum and cochlea perform spectral frequency decomposition $\to$ auditory nerve transmits neural impulses to the brain for message comprehension.
 
 ```mermaid
 flowchart LR
-    A["🧠 Speaker\'s Brain (Linguistic)"] --> B["🗣️ Vocal Organs (Articulatory)"]
+    A["🧠 Speaker's Brain (Linguistic)"] --> B["🗣️ Vocal Organs (Articulatory)"]
     B --> C["💨 Acoustic Sound Waves (Air)"]
     C --> D["👂 Ear & Cochlea (Auditory Transduction)"]
-    D --> E["🧠 Listener\'s Brain (Perceptual Decoding)"]
+    D --> E["🧠 Listener's Brain (Perceptual Decoding)"]
 ```
 
 **2. Acoustic Significance (2 Marks)**
@@ -176,7 +177,7 @@ $$\bar{F}_1 = \frac{1}{N} \sum_{i=1}^{N} F_{1,i}, \quad \bar{F}_2 = \frac{1}{N} 
 
 **2. Purpose & Practical Significance (3 Marks)**
 - **Speaker Normalization**: Mitigates intra-speaker variability and anatomical vocal tract length differences (e.g., male vs. female vs. child formant scaling).
-- **Vowel Space Area (VSA) Metric**: Connecting the centroids of corner vowels (`/i/`, `/u/`, `/ɑ/`, `/æ/`) quantifies a speaker\'s articulatory working space for clinical speech pathology diagnosis.
+- **Vowel Space Area (VSA) Metric**: Connecting the centroids of corner vowels (`/i/`, `/u/`, `/ɑ/`, `/æ/`) quantifies a speaker's articulatory working space for clinical speech pathology diagnosis.
 - **Reference Acoustic Prototype**: Serves as a cluster anchor in pattern recognition algorithms (k-means, GMMs) for automatic vowel recognition.
 
 ---
@@ -328,12 +329,9 @@ Digitization is the complete end-to-end transformation of a continuous-time, con
 
 ```mermaid
 flowchart LR
-    A["Continuous Analog xa(t)"] --> B["1. Sampler (C/D)
-Discretizes Time (Ts = 1/Fs)"]
-    B --> C["2. Quantizer
-Discretizes Amplitude (L = 2^N)"]
-    C --> D["3. Binary Encoder
-Assigns N-bit Binary Words"]
+    A["Continuous Analog xa(t)"] --> B["1. Sampler (C/D)\nDiscretizes Time (Ts = 1/Fs)"]
+    B --> C["2. Quantizer\nDiscretizes Amplitude (L = 2^N)"]
+    C --> D["3. Binary Encoder\nAssigns N-bit Binary Words"]
     D --> E["Digital Output Sequence x[n]"]
 ```
 
@@ -691,7 +689,7 @@ Superposition guarantees that complex speech can be decomposed into unit impulse
 
 #### Answer:
 **1. Definition of Discrete-Time Convolution (2 Marks)**
-Convolution is a fundamental mathematical operation that combines an input signal sequence $x[n]$ with an LTI system\'s impulse response $h[n]$ to determine the system\'s output sequence $y[n]$:
+Convolution is a fundamental mathematical operation that combines an input signal sequence $x[n]$ with an LTI system's impulse response $h[n]$ to determine the system's output sequence $y[n]$:
 
 $$y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k] \, h[n - k]$$
 
@@ -862,8 +860,8 @@ The Fourier Transform acts as a mathematical prism that decomposes complex, non-
 ### SAQ 52: How can a sinusoidal signal be represented in complex exponential? (5 Marks)
 
 #### Answer:
-**1. Euler\'s Formula Foundations (2 Marks)**
-By Euler\'s identity:
+**1. Euler's Formula Foundations (2 Marks)**
+By Euler's identity:
 $$e^{j\theta} = \cos\theta + j\sin\theta, \quad e^{-j\theta} = \cos\theta - j\sin\theta$$
 
 **2. Derivation of Cosine and Sine Expansions (2 Marks)**
@@ -911,7 +909,7 @@ $$\int_{-\infty}^{\infty} x(t) \, \delta(t - t_0) \, dt = x(t_0)$$
    *(Time compression causes frequency expansion).*
 5. **Convolution Property**:
    $$\mathcal{F}\{x(t) * h(t)\} = X(f) \cdot H(f)$$
-   *(Time convolution corresponds to frequency multiplication).*
+   *(Time-domain convolution corresponds to frequency multiplication).*
 
 ---
 
@@ -941,7 +939,7 @@ The **Discrete-Time Fourier Transform (DTFT)** transforms a discrete-time sequen
 
 $$X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x[n] \, e^{-j\omega n}$$
 
-where $\omega$ is continuous digital angular frequency in radians per sample ($\-\pi \le \omega \le +\pi$).
+where $\omega$ is continuous digital angular frequency in radians per sample ($-\pi \le \omega \le +\pi$).
 
 **2. Key Characteristics (2.5 Marks)**
 - **Periodicity**: $X(e^{j(\omega + 2\pi)}) = X(e^{j\omega})$ (repeats infinitely with period $2\pi$).
@@ -1086,7 +1084,7 @@ The **spectral envelope** is the smooth, slowly varying curve outlining the macr
 
 **2. Crucial Speech Information Carried (3 Marks)**
 - **Linguistic Phoneme Identity**: Prominent envelope peaks correspond to vocal tract resonant **formants ($F_1, F_2, F_3$)**, which uniquely identify vowels and consonants.
-- **Vocal Tract Geometry**: Directly reflects the physical shape, length, and cross-sectional area function of the speaker\'s vocal tract.
+- **Vocal Tract Geometry**: Directly reflects the physical shape, length, and cross-sectional area function of the speaker's vocal tract.
 - **Speaker Characteristics**: Encodes physiological vocal tract size differences used for speaker identification.
 
 ---
@@ -1302,22 +1300,18 @@ Spectral whitening is the process where an input speech signal $s[n]$ is passed 
 
 # Part II: Long Answer Questions & Solved Problems (LAQ 1 – LAQ 45)
 
-### LAQ 1: Explain the speech processing model with a suitable diagram. (5 Marks)
+### LAQ 1: Explain the speech processing model with suitable diagram. (5 Marks)
 
 #### Answer:
 **1. System Architecture Block Diagram (2 Marks)**
 
 ```mermaid
 flowchart LR
-    Voiced["Impulse Train Generator
-(Pitch Period T0)"] --> Sw{"V/U Switch"}
-    Unvoiced["Random Noise Generator
-(White Noise)"] --> Sw
+    Voiced["Impulse Train Generator\n(Pitch Period T0)"] --> Sw{"V/U Switch"}
+    Unvoiced["Random Noise Generator\n(White Noise)"] --> Sw
     Sw --> Gain["Gain G"]
-    Gain --> Filter["All-Pole Vocal Tract Filter
-H(z) = G / (1 - ∑ a_i z^-i)"]
-    Filter --> Radiation["Lip Radiation Filter
-R(z) = 1 - z^-1"]
+    Gain --> Filter["All-Pole Vocal Tract Filter\nH(z) = G / (1 - ∑ a_i z^-i)"]
+    Filter --> Radiation["Lip Radiation Filter\nR(z) = 1 - z^-1"]
     Radiation --> Speech["🗣️ Output Speech s[n]"]
 ```
 
@@ -1355,12 +1349,9 @@ Vowels are voiced acoustic sounds produced without vocal tract constriction, all
 ```mermaid
 flowchart TD
     V["Vowel Classification (Tongue Position)"]
-    V --> F["1. Front Vowels
-(High F2, Low F1)"]
-    V --> C["2. Central Vowels
-(Neutral Formants)"]
-    V --> B["3. Back Vowels
-(Low F2, Low F1)"]
+    V --> F["1. Front Vowels\n(High F2, Low F1)"]
+    V --> C["2. Central Vowels\n(Neutral Formants)"]
+    V --> B["3. Back Vowels\n(Low F2, Low F1)"]
     F --> F1["/i/ (beet), /ɪ/ (bit), /e/ (bait), /ɛ/ (bet), /æ/ (bat)"]
     C --> C1["/ə/ (about - schwa), /ʌ/ (but), /ɜ/ (bird)"]
     B --> B1["/u/ (boot), /ʊ/ (book), /o/ (boat), /ɔ/ (bought), /ɑ/ (father)"]
@@ -1371,7 +1362,7 @@ flowchart TD
 
 ---
 
-### LAQ 4: How are diphthongs and semi-vowels different from each other? List out atleast two examples for each. (5 Marks)
+### LAQ 4: How are the diphthongs and semi vowels different from each other? List out atleast two examples for diphthongs and semi vowels. (5 Marks)
 
 #### Answer:
 
@@ -1399,7 +1390,7 @@ Consonants are speech sounds produced by completely closing, severely constricti
 
 ---
 
-### LAQ 6: Compare and contrast continuous-time and discrete-time signals. How is a continuous-valued signal different from a discrete-valued signal? (5 Marks)
+### LAQ 6: Compare and contrast the continuous-time and discrete-time signals. How is the continuous-valued signal different from the discrete-valued signal? (5 Marks)
 
 #### Answer:
 **1. Continuous-Time vs. Discrete-Time Signals (2.5 Marks)**
@@ -1448,7 +1439,7 @@ flowchart LR
 
 ---
 
-### LAQ 8: Define sampling. How do sampling interval and sampling frequency relate to each other? Write the significance of bandwidth in sampling. (5 Marks)
+### LAQ 8: Define sampling. How does sampling interval and sampling frequency relate to each other? Write the significance of bandwidth in sampling. (5 Marks)
 
 #### Answer:
 **1. Definition of Sampling (1.5 Marks)**
@@ -1464,7 +1455,7 @@ $$T_s = \frac{1}{F_s} \iff F_s = \frac{1}{T_s}$$
 
 ---
 
-### LAQ 9: Explain Nyquist-Shannon sampling theorem. Discuss the issue of aliasing with respect to sampling. How can aliasing be overcome? (5 Marks)
+### LAQ 9: Explain Nyquist-Shannon sampling theorem. Discuss the issue of aliasing with respect to sampling. How can the aliasing can be overcome? (5 Marks)
 
 #### Answer:
 **1. Nyquist-Shannon Theorem Statement (1.5 Marks)**
@@ -1576,7 +1567,7 @@ For $10\text{ V}$ full-scale range:
 
 ---
 
-### LAQ 15 (Solved Problem): A speech acquisition system samples a signal at 16 kHz using a 10-bit ADC over the input range −1.5 V to +1.5 V. Calculate: (1) Quantization step size, (2) Maximum quantization error, (3) Mean squared quantization error. (5 Marks)
+### LAQ 15 (Solved Problem): A speech acquisition system samples a signal at 16 kHz using a 10-bit ADC over the input range −1.5 V to +1.5 V. Calculate Quantization step size, maximum quantization error, and mean squared quantization error. (5 Marks)
 
 #### Solution:
 
@@ -1594,28 +1585,35 @@ For $10\text{ V}$ full-scale range:
 
 ---
 
-### LAQ 16 & 17: Discuss the time-domain and frequency-domain representations of a speech signal. Write the significance of axes and provide a comparative table. (5 Marks)
+### LAQ 16: Discuss the time-domain and frequency-domain representations of a speech signal. Write the significance of the axes used in both the representations. (5 Marks)
 
 #### Answer:
-**1. Visual Representations & Axes Significance (2 Marks)**
+**1. Visual Representations & Axes Significance (3 Marks)**
 - **Time-Domain (X: Time in s, Y: Amplitude in V/Pa)**: Shows physical pressure oscillations over time. Captures speech onset, pauses, and pitch periods.
 - **Frequency-Domain (X: Frequency in Hz, Y: Magnitude in dB)**: Shows spectral energy distribution across frequencies ($0\text{ Hz}$ to $F_s/2$). Captures formants ($F_1, F_2$) and harmonics.
 
 ![Time vs Frequency Representation](../assets/ch03/slide_06_img_02.png)
 *Figure LAQ 16.1: Time-Domain Waveform (Top) vs. Frequency Spectrum (Bottom)*
 
-**2. Comparative Table (3 Marks)**
-
-| Parameter | Time-Domain Representation | Frequency-Domain Representation |
-| :--- | :--- | :--- |
-| **Plot Axes** | X: Time ($\text{s}$), Y: Amplitude | X: Frequency ($\text{Hz}$), Y: Magnitude ($\text{dB}$) |
-| **Information** | Onset, pauses, duration, loudness | Pitch ($F_0$), formants ($F_1, F_2$), spectral tilt |
-| **Transformation** | Direct microphone ADC sampling | Discrete Fourier Transform (DFT / FFT) |
-| **Applications** | Silence removal, framing, energy thresholding | Speech recognition, pitch estimation, noise filtering |
+**2. Complementary Roles (2 Marks)**
+Time-domain shows *when* acoustic events occur, while frequency-domain reveals *what* specific resonances and harmonic frequencies are active.
 
 ---
 
-### LAQ 18: Define spectrogram. How can a spectrogram be created for a given speech signal? Why is it needed in speech processing? (5 Marks)
+### LAQ 17: Differentiate between time-domain and frequency domain representations of a speech signal. (5 Marks)
+
+#### Answer:
+
+| Comparison Criterion | Time-Domain Representation | Frequency-Domain Representation | Marks |
+| :--- | :--- | :--- | :---: |
+| **Independent & Dependent Axes** | X-axis: Time ($\text{s}$ or $\text{ms}$)<br>Y-axis: Instantaneous Amplitude ($\text{V}$ or $\text{Pa}$) | X-axis: Frequency ($\text{Hz}$)<br>Y-axis: Magnitude Power ($\text{dB}$) | **1.5 Marks** |
+| **Physical Information** | Onsets, pauses, duration, pitch period ($T_0$), short-time energy envelope. | Fundamental frequency ($F_0$), vocal tract formants ($F_1, F_2, F_3$), harmonic spacing, spectral tilt. | **1.5 Marks** |
+| **Transformation Method** | Direct sampling via ADC hardware. | Computed via Discrete Fourier Transform (DFT / FFT). | **1 Mark** |
+| **Speech Processing Application** | Voice Activity Detection (VAD), silence removal, frame blocking. | Speech recognition (ASR), pitch tracking, formant analysis, noise filtering. | **1 Mark** |
+
+---
+
+### LAQ 18: Define spectrogram. How can be a spectrogram can be created for a given speech signal? Why is the spectrogram needed in the speech signal processing? (5 Marks)
 
 #### Answer:
 **1. Definition of Spectrogram (1 Mark)**  
@@ -1656,7 +1654,7 @@ A discrete-time system $y[n] = T\{x[n]\}$ is an LTI system if it satisfies both 
 
 ---
 
-### LAQ 20 (Solved Problem): Consider the transformation: $y[n] = x[n] + 2x[n-2]$. For the input sequence $x[n] = \{2, 4, 6\}$, check whether the given system is time-invariant or time-varying. (5 Marks)
+### LAQ 20 (Solved Problem): Consider the following transformation: $y[n] = x[n] + 2x[n−2]$ For the input sequence $x[n] = \{2, 4, 6\}$, Check whether the given system is time-invariant or time-varying. (5 Marks)
 
 #### Solution:
 
@@ -1682,7 +1680,7 @@ Since $y_1[n] = y[n - k]$ for all $k$ and $n$, the system is **Time-Invariant**.
 
 ---
 
-### LAQ 21 (Solved Problem): A discrete-time LTI system has input signal $x[n] = \{2, 1, 2, 4, 3\}$ ($n=0..4$) and impulse response $h[n] = \{1, -1, 2\}$ ($n=0..2$). Using convolution, determine the output sequence $y[n]$. (5 Marks)
+### LAQ 21 (Solved Problem): A discrete-time LTI system has the input signal $x[n] = \{2, 1, 2, 4, 3\}$, $n=0,1,2,3,4$; and the impulse response $h[n] = \{1, -1, 2\}$, $n=0,1,2$. Using the convolution operation, determine the output sequence $y[n]$. (5 Marks)
 
 #### Solution:
 
@@ -1703,7 +1701,7 @@ $$\mathbf{y[n] = \{2, -1, 5, 4, 3, 5, 6\} \quad \text{for } n = 0, 1, 2, 3, 4, 5
 
 ---
 
-### LAQ 22 (Solved Problem): A discrete-time LTI system has input signal $x[n] = \{1, 3, 2, 1\}$ ($n=0..3$) and impulse response $h[n] = \{2, -1\}$ ($n=0, 1$). Using convolution, determine the output sequence $y[n]$. (5 Marks)
+### LAQ 22 (Solved Problem): A discrete-time LTI system has the input signal $x[n] = \{1, 3, 2, 1\}$, $n=0,1,2,3$ and the impulse response $h[n] = \{2, -1\}$, $n=0,1$. Using the convolution operation determine the output sequence $y[n]$. (5 Marks)
 
 #### Solution:
 
@@ -1722,7 +1720,29 @@ $$\mathbf{y[n] = \{2, 5, 1, 0, -1\} \quad \text{for } n = 0, 1, 2, 3, 4}$$
 
 ---
 
-### LAQ 23 (Solved Problem): Express $x[n] = \{3, 4, 5\}$ as a sum of impulses and use convolution with $h[n] = \{1, 2\}$ to find $y[n]$. (5 Marks)
+### LAQ 23: A discrete-time LTI system has the input signal $x[n]$ and impulse response $h[n]$. Derive the convolution sum formulation. (5 Marks)
+
+#### Answer:
+**1. Representation of Input as Weighted Sum of Impulses (2 Marks)**
+Any discrete sequence $x[n]$ can be represented as a linear combination of shifted unit impulses $\delta[n-k]$:
+
+$$x[n] = \sum_{k=-\infty}^{\infty} x[k] \, \delta[n - k]$$
+
+**2. Applying Linearity and Time-Invariance (2.5 Marks)**
+Let the system transformation be $T\{\cdot\}$ and impulse response $h[n] = T\{\delta[n]\}$.
+- By **Linearity (Superposition)**:
+  $$y[n] = T\{x[n]\} = T\left\{ \sum_{k=-\infty}^{\infty} x[k] \delta[n - k] \right\} = \sum_{k=-\infty}^{\infty} x[k] T\{\delta[n - k]\}$$
+- By **Time-Invariance**:
+  $$T\{\delta[n - k]\} = h[n - k]$$
+- Substituting yields the **Convolution Sum**:
+  $$\mathbf{y[n] = \sum_{k=-\infty}^{\infty} x[k] \, h[n - k] = x[n] * h[n]}$$
+
+**3. Conclusion (0.5 Mark)**
+The output of any LTI system is uniquely and entirely determined by convolving the input with its impulse response.
+
+---
+
+### LAQ 24 (Solved Problem): Express $x[n] = \{3, 4, 5\}$ as a sum of impulses and use convolution with $h[n] = \{1, 2\}$ to find $y[n]$. (5 Marks)
 
 #### Solution:
 
@@ -1748,7 +1768,7 @@ $$\mathbf{y[n] = \{3, 10, 13, 10\} \quad \text{for } n = 0, 1, 2, 3}$$
 
 ---
 
-### LAQ 24 (Solved Problem): For $x[n] = \{2, -1, 3\}$ and $h[n] = \{1, -2, 1\}$, compute $y[n]$ and verify the commutative property of convolution. (5 Marks)
+### LAQ 25 (Solved Problem): For $x[n] = \{2, -1, 3\}$ and $h[n] = \{1, -2, 1\}$, compute $y[n]$ and verify the commutative property of convolution. (5 Marks)
 
 #### Solution:
 
@@ -1773,7 +1793,7 @@ Since $y_1[n] = y_2[n] = \{2, -5, 7, -7, 3\}$, the **Commutative Property ($x*h 
 
 ---
 
-### LAQ 25 (Solved Problem): For $x[n] = \{1, 2, 1, 3\}$ and $h[n] = \{1, 0, -1\}$, determine the output length and compute all $y[n]$. (5 Marks)
+### LAQ 26 (Solved Problem): For $x[n] = \{1, 2, 1, 3\}$ and $h[n] = \{1, 0, -1\}$, determine the output length and compute all $y[n]$. (5 Marks)
 
 #### Solution:
 
@@ -1793,7 +1813,19 @@ $$\mathbf{y[n] = \{1, 2, 0, 1, -1, -3\} \quad \text{for } n = 0, 1, 2, 3, 4, 5}$
 
 ---
 
-### LAQ 26 & 27: Explain the concept of pole-zero modeling in speech processing. What is the significance of poles and zeros in representing vocal tract characteristics? (5 Marks)
+### LAQ 27: Discuss the limitations of time-domain convolution. (5 Marks)
+
+#### Answer:
+**1. Five Major Limitations in Speech Signal Processing (5 Marks, 1 Mark each):**
+1. **Excessive Computational Burden**: Direct convolution requires $O(L_x \cdot L_h)$ operations, making real-time speech frame processing slow without FFT acceleration.
+2. **Lack of Direct Frequency Visibility**: Time-domain samples $y[n]$ do not display resonant formant peaks ($F_1, F_2$) or bandwidths.
+3. **Obscured Vocal Tract Modeling**: Resonance poles (formants) and anti-resonance zeros (nasal coupling) cannot be directly estimated from convolution.
+4. **Difficult Filter Synthesis**: Adjusting individual filter cutoff frequencies or designing notch filters is mathematically cumbersome in time.
+5. **Phase & Delay Distortion Analysis**: Evaluating frequency-dependent group delay and phase distortion is not intuitive in the time domain.
+
+---
+
+### LAQ 28: Explain the concept of pole-zero modeling in speech processing. What is the significance of poles and zeros in representing the characteristics of the vocal tract? (5 Marks)
 
 #### Answer:
 **1. Concept of Pole-Zero System Transfer Function (2 Marks)**  
@@ -1807,33 +1839,76 @@ $$H(z) = G \frac{1 + \sum_{k=1}^{M} b_k z^{-k}}{1 - \sum_{k=1}^{N} a_k z^{-k}}$$
 
 ---
 
-### LAQ 28 (Solved Problem): Find the frequency of each cosine, exponential representation, and Fourier Transform for: (1) $x_1(t) = 6\cos(120\pi t) + 4\cos(40\pi t)$, (2) $x_2(t) = 4\cos(2\pi 20t) + 2\cos(2\pi 60t)$. (5 Marks)
+### LAQ 29 (Solved Problem): Determine poles, zeros, and BIBO stability for: (A) $H_1(z) = \frac{z - 0.5}{z^2 - 0.6z + 0.25}$, (B) $H_2(z) = \frac{z^2 - 1}{z^2 - 0.9z + 0.81}$. (5 Marks)
 
 #### Solution:
 
-**Part 1: $x_1(t) = 6\cos(120\pi t) + 4\cos(40\pi t)$ (2.5 Marks)**
-1. **Frequencies**: $\omega_1 = 120\pi \implies f_1 = \mathbf{60\text{ Hz}}$; $\omega_2 = 40\pi \implies f_2 = \mathbf{20\text{ Hz}}$.
-2. **Complex Exponential Form**:
-   $$x_1(t) = 3 e^{j 2\pi 60 t} + 3 e^{-j 2\pi 60 t} + 2 e^{j 2\pi 20 t} + 2 e^{-j 2\pi 20 t}$$
-3. **Fourier Transform**:
-   $$X_1(f) = 3\delta(f - 60) + 3\delta(f + 60) + 2\delta(f - 20) + 2\delta(f + 20)$$
+**Part A: $H_1(z) = \frac{z - 0.5}{z^2 - 0.6z + 0.25}$ (2.5 Marks)**
+1. **Zeros**: Numerator $z - 0.5 = 0 \implies \mathbf{z = 0.5}$.
+2. **Poles**: Denominator $z^2 - 0.6z + 0.25 = 0$:
+   $$z = \frac{0.6 \pm \sqrt{(-0.6)^2 - 4(1)(0.25)}}{2} = \frac{0.6 \pm \sqrt{0.36 - 1.0}}{2} = \frac{0.6 \pm j0.8}{2} = \mathbf{0.3 \pm j0.4}$$
+3. **Stability**: Magnitude $|p| = \sqrt{0.3^2 + 0.4^2} = \sqrt{0.09 + 0.16} = \sqrt{0.25} = 0.5$.  
+   Since $|p| = 0.5 < 1$, the system is **BIBO Stable**.
 
-**Part 2: $x_2(t) = 4\cos(2\pi 20t) + 2\cos(2\pi 60t)$ (2.5 Marks)**
-1. **Frequencies**: $f_1 = \mathbf{20\text{ Hz}}$ ($A_1 = 4$), $f_2 = \mathbf{60\text{ Hz}}$ ($A_2 = 2$).
-2. **Complex Exponential Form**:
-   $$x_2(t) = 2 e^{j 2\pi 20 t} + 2 e^{-j 2\pi 20 t} + 1 e^{j 2\pi 60 t} + 1 e^{-j 2\pi 60 t}$$
-3. **Fourier Transform**:
-   $$X_2(f) = 2\delta(f - 20) + 2\delta(f + 20) + 1\delta(f - 60) + 1\delta(f + 60)$$
+**Part B: $H_2(z) = \frac{z^2 - 1}{z^2 - 0.9z + 0.81}$ (2.5 Marks)**
+1. **Zeros**: Numerator $z^2 - 1 = 0 \implies \mathbf{z = \pm 1}$ (on the unit circle).
+2. **Poles**: Denominator $z^2 - 0.9z + 0.81 = 0$:
+   $$z = \frac{0.9 \pm \sqrt{(-0.9)^2 - 4(1)(0.81)}}{2} = \frac{0.9 \pm \sqrt{0.81 - 3.24}}{2} = \frac{0.9 \pm j1.5588}{2} = \mathbf{0.45 \pm j0.7794}$$
+3. **Stability**: Magnitude $|p| = \sqrt{0.45^2 + 0.7794^2} = \sqrt{0.2025 + 0.6075} = \sqrt{0.81} = 0.9$.  
+   Since $|p| = 0.9 < 1$, the system is **BIBO Stable**.
 
 ---
 
-### LAQ 29 (Solved Problem): Apply an 8-point DFT to $x(t) = 2\sin(2\pi f t)$ with $f = 1	ext{ Hz}$ and sampling frequency $F_s = 8	ext{ Hz}$. (5 Marks)
+### LAQ 30 (Solved Problem): Determine poles, zeros, and plot locations for: (A) $H(z) = \frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1} + 0.64 z^{-2}}$, (B) $H(z) = \frac{z(z - 0.7)}{(z - 0.8 e^{j\pi/4})(z - 0.8 e^{-j\pi/4})}$. (5 Marks)
+
+#### Solution:
+
+**Part A: $H(z) = \frac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1} + 0.64 z^{-2}}$ (2.5 Marks)**
+1. **Positive Powers Form**: $H(z) = \frac{z(z - 0.5)}{z^2 - 0.8z + 0.64}$.
+2. **Zeros**: $z(z - 0.5) = 0 \implies \mathbf{z_1 = 0, z_2 = 0.5}$.
+3. **Poles**: $z^2 - 0.8z + 0.64 = 0 \implies z = \frac{0.8 \pm \sqrt{0.64 - 2.56}}{2} = \mathbf{0.4 \pm j0.6928}$.
+4. **Stability**: Magnitude $|p| = \sqrt{0.4^2 + 0.6928^2} = \sqrt{0.64} = \mathbf{0.8 < 1} \implies \mathbf{BIBO\ Stable}$.
+
+**Part B: $H(z) = \frac{z(z - 0.7)}{(z - 0.8 e^{j\pi/4})(z - 0.8 e^{-j\pi/4})}$ (2.5 Marks)**
+1. **Zeros**: $z(z - 0.7) = 0 \implies \mathbf{z_1 = 0, z_2 = 0.7}$.
+2. **Poles**: $p_{1,2} = 0.8 e^{\pm j\pi/4} = 0.8(\cos 45^\circ \pm j\sin 45^\circ) = \mathbf{0.5657 \pm j0.5657}$.
+3. **Stability & Formant**: Magnitude $|p| = 0.8 < 1 \implies \mathbf{BIBO\ Stable}$. Resonant frequency at $F_s = 16\text{ kHz}$: $f_0 = \frac{\pi/4}{2\pi} \times 16,000 = \mathbf{2000\text{ Hz}}$.
+
+---
+
+### LAQ 31 (Solved Problem): For the given signals, find the frequency of each cosine, exponential representation, and Fourier Transform: (1) $x_1(t) = 6\cos(120\pi t) + 4\cos(40\pi t)$, (2) $x_2(t) = 4\cos(2\pi 20t) + 2\cos(2\pi 60t)$, (3) $x_3(t) = 3\cos(2\pi 15t) + 5\cos(2\pi 50t)$, (4) $x_4(t) = 8\cos(2\pi 10t) + 4\cos(2\pi 25t) + 6\cos(2\pi 40t)$. (5 Marks)
+
+#### Solution:
+
+**1. Signal 1: $x_1(t) = 6\cos(120\pi t) + 4\cos(40\pi t)$ (1.25 Marks)**
+- Frequencies: $f_1 = \frac{120\pi}{2\pi} = \mathbf{60\text{ Hz}}$, $f_2 = \frac{40\pi}{2\pi} = \mathbf{20\text{ Hz}}$.
+- Complex Exponential Form: $x_1(t) = 3 e^{j 2\pi 60 t} + 3 e^{-j 2\pi 60 t} + 2 e^{j 2\pi 20 t} + 2 e^{-j 2\pi 20 t}$.
+- Fourier Transform: $X_1(f) = 3\delta(f - 60) + 3\delta(f + 60) + 2\delta(f - 20) + 2\delta(f + 20)$.
+
+**2. Signal 2: $x_2(t) = 4\cos(2\pi 20t) + 2\cos(2\pi 60t)$ (1.25 Marks)**
+- Frequencies: $f_1 = \mathbf{20\text{ Hz}}$, $f_2 = \mathbf{60\text{ Hz}}$.
+- Complex Exponential Form: $x_2(t) = 2 e^{j 2\pi 20 t} + 2 e^{-j 2\pi 20 t} + 1 e^{j 2\pi 60 t} + 1 e^{-j 2\pi 60 t}$.
+- Fourier Transform: $X_2(f) = 2\delta(f - 20) + 2\delta(f + 20) + 1\delta(f - 60) + 1\delta(f + 60)$.
+
+**3. Signal 3: $x_3(t) = 3\cos(2\pi 15t) + 5\cos(2\pi 50t)$ (1.25 Marks)**
+- Frequencies: $f_1 = \mathbf{15\text{ Hz}}$, $f_2 = \mathbf{50\text{ Hz}}$.
+- Complex Exponential Form: $x_3(t) = 1.5 e^{j 2\pi 15 t} + 1.5 e^{-j 2\pi 15 t} + 2.5 e^{j 2\pi 50 t} + 2.5 e^{-j 2\pi 50 t}$.
+- Fourier Transform: $X_3(f) = 1.5\delta(f - 15) + 1.5\delta(f + 15) + 2.5\delta(f - 50) + 2.5\delta(f + 50)$.
+
+**4. Signal 4: $x_4(t) = 8\cos(2\pi 10t) + 4\cos(2\pi 25t) + 6\cos(2\pi 40t)$ (1.25 Marks)**
+- Frequencies: $f_1 = \mathbf{10\text{ Hz}}$, $f_2 = \mathbf{25\text{ Hz}}$, $f_3 = \mathbf{40\text{ Hz}}$.
+- Complex Exponential Form: $x_4(t) = 4(e^{j 2\pi 10 t} + e^{-j 2\pi 10 t}) + 2(e^{j 2\pi 25 t} + e^{-j 2\pi 25 t}) + 3(e^{j 2\pi 40 t} + e^{-j 2\pi 40 t})$.
+- Fourier Transform: $X_4(f) = 4\delta(f \pm 10) + 2\delta(f \pm 25) + 3\delta(f \pm 40)$.
+
+---
+
+### LAQ 32 (Solved Problem): Suppose a sine wave $x(t) = 2\sin(2\pi f t)$ with $1\text{ Hz}$ frequency, amplitude 2, sampling frequency: $8\text{ Hz}$. Apply 8-point DFT. (5 Marks)
 
 #### Solution:
 
 **1. Sampling & Sequences (1.5 Marks):**
 - $F_s = 8\text{ Hz} \implies T_s = 1/8\text{ s}$. For $n = 0..7$, $x[n] = 2\sin(2\pi \cdot 1 \cdot \frac{n}{8}) = 2\sin(\frac{\pi n}{4})$.
-- Using Euler\'s formula: $x[n] = 2 \left( \frac{e^{j \frac{2\pi}{8} n} - e^{-j \frac{2\pi}{8} n}}{2j} \right) = -j e^{j \frac{2\pi}{8} n} + j e^{-j \frac{2\pi}{8} n}$.
+- Using Euler's formula: $x[n] = 2 \left( \frac{e^{j \frac{2\pi}{8} n} - e^{-j \frac{2\pi}{8} n}}{2j} \right) = -j e^{j \frac{2\pi}{8} n} + j e^{-j \frac{2\pi}{8} n}$.
 
 **2. DFT Bin Frequencies & Orthogonality Evaluation (2.5 Marks):**
 - Bin spacing $\Delta f = \frac{8}{8} = 1\text{ Hz/bin}$. Signal matches bin $k=1$ ($+1\text{ Hz}$) and bin $k=7$ ($-1\text{ Hz} \equiv 7\text{ Hz}$).
@@ -1848,7 +1923,7 @@ The 8-point DFT produces non-zero impulses strictly at bin 1 and bin 7 of magnit
 
 ---
 
-### LAQ 30 (Solved Problem): Apply an 8-point DFT to $x(t) = 3\sin(2\pi f t)$ with $f = 1	ext{ Hz}$ and sampling frequency $F_s = 16	ext{ Hz}$. (5 Marks)
+### LAQ 33 (Solved Problem): Suppose a sine wave $x(t) = 3\sin(2\pi f t)$ with $1\text{ Hz}$ frequency, amplitude 3, sampling frequency: $16\text{ Hz}$. Apply 8-point DFT. (5 Marks)
 
 #### Solution:
 
@@ -1863,7 +1938,7 @@ The 8-point DFT produces non-zero impulses strictly at bin 1 and bin 7 of magnit
 
 ---
 
-### LAQ 31 (Solved Problem): A sine wave has frequency $f_0 = 2	ext{ Hz}$, amplitude $A = 1$, and sampling frequency $F_s = 16	ext{ Hz}$. Apply an 8-point DFT to the sampled signal. (5 Marks)
+### LAQ 34 (Solved Problem): A sine wave has: Frequency: $f_0 = 2\text{ Hz}$, Amplitude: $A = 1$, Sampling frequency: $F_s = 16\text{ Hz}$. Apply an 8-point DFT to the sampled signal. (5 Marks)
 
 #### Solution:
 
@@ -1882,7 +1957,7 @@ Clear isolated spikes of magnitude 4 ($N \cdot A / 2 = 8 \cdot 1 / 2 = 4$) at bi
 
 ---
 
-### LAQ 32: Explain the Fast Fourier Transform (FFT) algorithm. Describe the principle of divide-and-conquer and explain how computational complexity is reduced compared to direct DFT. (5 Marks)
+### LAQ 35: Explain the Fast Fourier Transform (FFT) algorithm used for efficient computation of the Discrete Fourier Transform (DFT). Describe the principle of divide-and-conquer and explain how the computational complexity of FFT is reduced compared to direct DFT computation. (5 Marks)
 
 #### Answer:
 **1. Divide-and-Conquer Principle in Cooley-Tukey FFT (2 Marks)**  
@@ -1913,15 +1988,14 @@ flowchart LR
 
 ---
 
-### LAQ 33 & 35: Explain the complete filter bank model structure for spectral estimation of speech signals with a block diagram, and discuss its limitations. (5 Marks)
+### LAQ 36: Explain the complete filter bank model structure used for spectral estimation of speech signals with a suitable block diagram. (5 Marks)
 
 #### Answer:
 **1. Five-Stage Bank-of-Filters (BOF) Front-End Diagram (2.5 Marks)**
 
 ```mermaid
 flowchart TD
-    A["🗣️ Speech s(n)"] --> B["1. Bandpass Filter Bank h_i(n)
-(Q Overlapping Channels)"]
+    A["🗣️ Speech s(n)"] --> B["1. Bandpass Filter Bank h_i(n)\n(Q Overlapping Channels)"]
     B --> C["2. Nonlinearity / Full-Wave Rectification |s_i(n)|"]
     C --> D["3. Lowpass Filtering (Smooths Energy Envelope)"]
     D --> E["4. Decimation / Downsampling (Rate → 40–60 Hz)"]
@@ -1930,21 +2004,31 @@ flowchart TD
 ```
 
 ![Filter Bank Model](../assets/ch04/slide_50_img_18.png)
-*Figure LAQ 33.1: Canonical Front-End Filter Bank Analyzer Structure*
+*Figure LAQ 36.1: Canonical Front-End Filter Bank Analyzer Structure*
 
-**2. Functional Operations (1.5 Marks)**
-- **BPF Bank**: Divides spectrum into $Q$ sub-bands.
-- **Rectifier**: Shifts spectral energy to low frequencies around DC.
-- **LPF & Decimation**: Smooths high harmonics and downsamples to $40–60\text{ Hz}$.
-- **Log Compression**: Matches human non-linear loudness perception.
-
-**3. Limitations of BOF Model (1 Mark)**
-- Fixed bandwidth filters lack adaptability to pitch changes.
-- Cannot separate vocal tract poles from glottal excitation (no physical speech production model).
+**2. Functional Operations (2.5 Marks)**
+1. **Bandpass Filtering**: Splits wideband speech into $Q$ sub-bands covering the acoustic spectrum.
+2. **Rectification**: Applies $|s_i[n]|$ to shift energy from high frequencies down to DC baseband.
+3. **Low-Pass Filtering**: Smooths high glottal harmonics, extracting the continuous energy envelope.
+4. **Decimation**: Downsamples the slowly varying envelope from $16\text{ kHz}$ to $50\text{ Hz}$.
+5. **Logarithmic Compression**: Models the human ear's non-linear loudness response.
 
 ---
 
-### LAQ 34 (Solved Problem): A speech processing system uses a Mel-scale filter bank with 20 filters from 300 Hz to 8000 Hz. Calculate the Mel-scale spacing between adjacent filters and determine the filter frequencies. (5 Marks)
+### LAQ 37: Describe the basic structure of a filter bank and explain how a bank of bandpass filters helps in representing the spectral characteristics of a speech signal. (5 Marks)
+
+#### Answer:
+**1. Structure of a Parallel Bandpass Filter Bank (2.5 Marks)**
+A digital filter bank consists of an array of $Q$ bandpass filters $H_1(z), H_2(z), \dots, H_Q(z)$ operating in parallel. Each filter is centered at a distinct resonant frequency $f_c(i)$ with specified bandwidth $B_i$, covering the entire audible speech frequency range.
+
+**2. How BPF Bank Captures Spectral Characteristics (2.5 Marks)**
+- **Sub-Band Energy Separation**: Isolates individual formant energy concentrations ($F_1, F_2, F_3$) without needing full complex Fourier transforms.
+- **Biomimetic Auditory Modeling**: Emulates the frequency-to-place tonotopic organization of the human basilar membrane in the cochlea.
+- **Temporal Tracking of Resonance Transitions**: Continuously tracks time-varying formant trajectories as articulators move.
+
+---
+
+### LAQ 38 (Solved Problem): A speech processing system uses a Mel-scale filter bank with 20 filters. The frequency range is from 300 Hz to 8000 Hz. Calculate the mel-scale spacing between adjacent filters. Also, determine the corresponding Mel-scale frequencies for the filters. (5 Marks)
 
 #### Solution:
 
@@ -1966,7 +2050,18 @@ $$m = 2595 \log_{10}\left(1 + \frac{f}{700}\right)$$
 
 ---
 
-### LAQ 36: Explain the principle of Linear Predictive Coding (LPC) in speech processing. Describe how the current speech sample is predicted from previous samples. (5 Marks)
+### LAQ 39: Discuss the limitations of filter bank model. (5 Marks)
+
+#### Answer:
+**1. Four Key Limitations of Filter Bank Modeling (5 Marks, 1.25 Marks each):**
+1. **Limited Sub-Band Frequency Resolution**: Energy is integrated across broad filter channels, losing fine spectral harmonic details within each band.
+2. **Fixed Static Bandwidths**: Predefined filter boundaries do not dynamically adapt to varying speaker pitch ($F_0$) or speaking rates.
+3. **No Direct Physical Speech Production Model**: Unlike LPC, filter banks measure spectral energy without modeling underlying vocal tract pole-zero acoustics.
+4. **Higher Parameter Dimensionality**: Requires many filter channels ($20–40$ filters) to adequately resolve formant peaks compared to compact $10–12$ LPC coefficients.
+
+---
+
+### LAQ 40: Explain the principle of Linear Predictive Coding (LPC) in speech processing. Describe how the current speech sample is predicted from previous samples and explain the significance of LPC coefficients, prediction error, and prediction order in representing the speech signal. (5 Marks)
 
 #### Answer:
 **1. Linear Prediction Formulation (2 Marks)**  
@@ -1976,36 +2071,29 @@ $$\hat{s}[n] = \sum_{i=1}^{p} a_i s[n-i]$$
 
 Prediction error residual is $e[n] = s[n] - \hat{s}[n] = s[n] - \sum_{i=1}^{p} a_i s[n-i]$.
 
-**2. All-Pole Vocal Tract Transfer Function Derivation (2 Marks)**
+**2. All-Pole Vocal Tract Transfer Function Derivation (1.5 Marks)**
 Taking the Z-transform:
-$$E(z) = S(z) \left( 1 - \sum_{i=1}^{p} a_i z^{-i} \right) \implies S(z) = E(z) \cdot \frac{1}{1 - \sum_{i=1}^{p} a_i z^{-i}}$$
-Scaling excitation by gain $G$ yields the **All-Pole Filter**:
-$$H(z) = \frac{S(z)}{U(z)} = \frac{G}{1 - \sum_{i=1}^{p} a_i z^{-i}}$$
+$$E(z) = S(z) \left( 1 - \sum_{i=1}^{p} a_i z^{-i} \right) \implies H(z) = \frac{S(z)}{U(z)} = \frac{G}{1 - \sum_{i=1}^{p} a_i z^{-i}}$$
 
-**3. Parameter Significance (1 Mark)**
-- Prediction order $p$: Number of past samples used ($p \approx 10–16$).
-- LPC coefficients $\{a_i\}$: Parametrize the vocal tract formant envelope.
+**3. Parameter Significance (1.5 Marks)**
+- **LPC Coefficients $\{a_i\}$**: Parametrize the vocal tract formant resonances ($F_1, F_2, F_3$).
+- **Prediction Error $e[n]$**: Encapsulates raw glottal excitation (pitch pulses or white noise).
+- **Prediction Order $p$**: Dictates the maximum number of complex formant pole pairs modeled ($p \approx 10–16$).
 
 ---
 
-### LAQ 37: Explain the major steps involved in LPC analysis of a speech signal. Describe the role of pre-emphasis, framing, windowing, autocorrelation, and parameter conversion. (5 Marks)
+### LAQ 41: Explain the major steps involved in LPC analysis of a speech signal. Describe the role of pre-emphasis, framing and windowing, autocorrelation, LPC coefficient estimation, and parameter conversion. (5 Marks)
 
 #### Answer:
 
 ```mermaid
 flowchart LR
-    A["s(t)"] --> B["1. Pre-emphasis
-(1 - α z^-1)"]
-    B --> C["2. Frame Blocking
-(20–30 ms)"]
-    C --> D["3. Windowing
-(Hamming w[n])"]
-    D --> E["4. Autocorrelation
-(R[0]...R[p])"]
-    E --> F["5. LPC Estimation
-(Levinson-Durbin)"]
-    F --> G["6. Parameter Conversion
-(Cepstrals / Deltas)"]
+    A["s(t)"] --> B["1. Pre-emphasis\n(1 - α z^-1)"]
+    B --> C["2. Frame Blocking\n(20–30 ms)"]
+    C --> D["3. Windowing\n(Hamming w[n])"]
+    D --> E["4. Autocorrelation\n(R[0]...R[p])"]
+    E --> F["5. LPC Estimation\n(Levinson-Durbin)"]
+    F --> G["6. Parameter Conversion\n(Cepstrals / Deltas)"]
 ```
 
 **1. Pre-emphasis (1 Mark)**: Boosts high frequencies ($+6\text{ dB/octave}$) via filter $H_{pre}(z) = 1 - \alpha z^{-1}$ ($\alpha \approx 0.95–0.98$) to flatten the natural $-6\text{ dB/octave}$ glottal spectral tilt.  
@@ -2016,7 +2104,7 @@ flowchart LR
 
 ---
 
-### LAQ 38: Explain the autocorrelation method for estimating LPC coefficients. How is the autocorrelation sequence used to formulate the LPC normal equations? (5 Marks)
+### LAQ 42: Explain the autocorrelation method for estimating LPC coefficients. How is the autocorrelation sequence used to formulate the LPC normal equations? Mention one advantage of the autocorrelation method. (5 Marks)
 
 #### Answer:
 **1. Error Energy Minimization (2 Marks)**  
@@ -2047,7 +2135,7 @@ The autocorrelation matrix is a symmetric **Toeplitz matrix**, which guarantees 
 
 ---
 
-### LAQ 39: Differentiate between the autocorrelation method and covariance method of LPC analysis. (5 Marks)
+### LAQ 43: Differentiate between the autocorrelation method and covariance method of LPC analysis with respect to the analysis interval, treatment of boundary samples, and prediction-error minimization. (5 Marks)
 
 #### Answer:
 
@@ -2060,7 +2148,7 @@ The autocorrelation matrix is a symmetric **Toeplitz matrix**, which guarantees 
 
 ---
 
-### LAQ 40: The prediction order $p$ is an important parameter in LPC analysis. Explain what may happen if $p$ is chosen too low or too high. How would you select a suitable prediction order? (5 Marks)
+### LAQ 44: The prediction order $p$ is an important parameter in LPC analysis. Explain what may happen if the prediction order is chosen too low or too high. How would you select a suitable prediction order for speech signals? (5 Marks)
 
 #### Answer:
 **1. Effect of Prediction Order $p$ (2.5 Marks)**
@@ -2080,7 +2168,7 @@ The autocorrelation matrix is a symmetric **Toeplitz matrix**, which guarantees 
 
 ---
 
-### LAQ 41: What is prediction error in Linear Predictive Coding? Explain how minimizing prediction error helps in estimating LPC coefficients and how the error signal relates to speech excitation. (5 Marks)
+### LAQ 45: What is prediction error in Linear Predictive Coding? Explain how minimizing the prediction error helps in estimating the LPC coefficients and how the resulting error signal is related to the excitation of the speech production system. (5 Marks)
 
 #### Answer:
 **1. Prediction Error Definition & Minimization (2 Marks)**  
@@ -2094,83 +2182,3 @@ Prediction error $e[n] = s[n] - \sum_{i=1}^{p} a_i s[n-i]$ represents the unmode
 
 **3. Role in Speech Synthesis (1 Mark)**  
 In LPC vocoders, transmitting only pitch $T_0$, gain $G$, voiced/unvoiced decision, and LPC coefficients $\{a_i\}$ enables re-synthesizing high-intelligibility speech at extreme data compression ($2.4\text{ kbps}$).
-
----
-
-### LAQ 42 (Solved Problem): Determine the poles, zeros, and BIBO stability for transfer functions: (A) $H_1(z) = rac{z - 0.5}{z^2 - 0.6z + 0.25}$, (B) $H_2(z) = rac{z^2 - 1}{z^2 - 0.9z + 0.81}$. (5 Marks)
-
-#### Solution:
-
-**Part A: $H_1(z) = rac{z - 0.5}{z^2 - 0.6z + 0.25}$ (2.5 Marks)**
-1. **Zeros**: Numerator $z - 0.5 = 0 \implies \mathbf{z = 0.5}$.
-2. **Poles**: Denominator $z^2 - 0.6z + 0.25 = 0$:
-   $$z = \frac{0.6 \pm \sqrt{(-0.6)^2 - 4(1)(0.25)}}{2} = \frac{0.6 \pm \sqrt{0.36 - 1.0}}{2} = \frac{0.6 \pm j0.8}{2} = \mathbf{0.3 \pm j0.4}$$
-3. **Stability**: Magnitude $|p| = \sqrt{0.3^2 + 0.4^2} = \sqrt{0.09 + 0.16} = \sqrt{0.25} = 0.5$.  
-   Since $|p| = 0.5 < 1$, the system is **BIBO Stable**.
-
-**Part B: $H_2(z) = rac{z^2 - 1}{z^2 - 0.9z + 0.81}$ (2.5 Marks)**
-1. **Zeros**: Numerator $z^2 - 1 = 0 \implies \mathbf{z = \pm 1}$ (on the unit circle).
-2. **Poles**: Denominator $z^2 - 0.9z + 0.81 = 0$:
-   $$z = \frac{0.9 \pm \sqrt{(-0.9)^2 - 4(1)(0.81)}}{2} = \frac{0.9 \pm \sqrt{0.81 - 3.24}}{2} = \frac{0.9 \pm j1.5588}{2} = \mathbf{0.45 \pm j0.7794}$$
-3. **Stability**: Magnitude $|p| = \sqrt{0.45^2 + 0.7794^2} = \sqrt{0.2025 + 0.6075} = \sqrt{0.81} = 0.9$.  
-   Since $|p| = 0.9 < 1$, the system is **BIBO Stable**.
-
----
-
-### LAQ 43 (Solved Problem): Determine poles, zeros, and BIBO stability for: $H(z) = rac{1 - 0.5 z^{-1}}{1 - 0.8 z^{-1} + 0.64 z^{-2}}$. (5 Marks)
-
-#### Solution:
-
-**1. Conversion to Positive Powers of $z$ (1 Mark):**
-$$H(z) = \frac{z^2 (1 - 0.5 z^{-1})}{z^2 (1 - 0.8 z^{-1} + 0.64 z^{-2})} = \frac{z(z - 0.5)}{z^2 - 0.8z + 0.64}$$
-
-**2. Zeros Calculation (1.5 Marks):**
-Set numerator $z(z - 0.5) = 0 \implies \mathbf{z_1 = 0}$ (origin zero) and $\mathbf{z_2 = 0.5}$.
-
-**3. Poles Calculation (1.5 Marks):**
-Set denominator $z^2 - 0.8z + 0.64 = 0$:
-$$z = \frac{0.8 \pm \sqrt{(-0.8)^2 - 4(1)(0.64)}}{2} = \frac{0.8 \pm \sqrt{0.64 - 2.56}}{2} = \frac{0.8 \pm j1.38564}{2} = \mathbf{0.4 \pm j0.69282}$$
-
-**4. Stability Verification (1 Mark):**
-Magnitude $|p| = \sqrt{0.4^2 + 0.69282^2} = \sqrt{0.16 + 0.48} = \sqrt{0.64} = \mathbf{0.8}$.  
-Since $|p| = 0.8 < 1$, both poles lie strictly inside the unit circle $\implies$ **BIBO Stable**.
-
----
-
-### LAQ 44 (Solved Problem): Determine the poles, zeros, and plot locations for the discrete-time speech filter: $H(z) = rac{z(z - 0.7)}{(z - 0.8 e^{j\pi/4})(z - 0.8 e^{-j\pi/4})}$. (5 Marks)
-
-#### Solution:
-
-**1. Zeros Calculation (1.5 Marks):**
-Numerator $z(z - 0.7) = 0 \implies \mathbf{z_1 = 0}$ and $\mathbf{z_2 = 0.7}$.
-
-**2. Poles Calculation in Rectangular Form (2 Marks):**
-- $p_1 = 0.8 e^{j\pi/4} = 0.8\left(\cos\frac{\pi}{4} + j\sin\frac{\pi}{4}\right) = 0.8\left(\frac{\sqrt{2}}{2} + j\frac{\sqrt{2}}{2}\right) = \mathbf{0.5657 + j0.5657}$
-- $p_2 = 0.8 e^{-j\pi/4} = 0.8\left(\cos\frac{\pi}{4} - j\sin\frac{\pi}{4}\right) = 0.8\left(\frac{\sqrt{2}}{2} - j\frac{\sqrt{2}}{2}\right) = \mathbf{0.5657 - j0.5657}$
-
-**3. Stability & Formant Angle Analysis (1.5 Marks):**
-- **Stability**: Magnitude $|p_{1,2}| = 0.8 < 1 \implies \mathbf{BIBO\ Stable}$.
-- **Formant Frequency**: Angle $\theta = \frac{\pi}{4}\text{ rad} = 45^\circ$. For $F_s = 16\text{ kHz}$:
-  $$f_0 = \frac{\theta}{2\pi} \times F_s = \frac{\pi/4}{2\pi} \times 16,000 = \frac{1}{8} \times 16,000 = \mathbf{2000\text{ Hz}}$$
-
----
-
-### LAQ 45 (Solved Problem): A speech signal is sampled at 16 kHz with 10-bit precision (raw bit rate 160 kbps). It is processed through an 8-channel filter bank, where each channel output is sampled at 200 Hz and quantized with 6-bit precision. Calculate: (1) Raw bit rate, (2) Compressed bit rate, (3) Compression ratio achieved. (5 Marks)
-
-#### Solution:
-
-**1. Raw Bit Rate Calculation (1.5 Marks):**
-$$\text{Raw Bit Rate} = F_s \times N_{raw} = 16,000\text{ Hz} \times 10\text{ bits} = \mathbf{160,000\text{ bps} \quad (160\text{ kbps})}$$
-
-**2. Compressed Bit Rate Calculation (2 Marks):**
-- Number of filter channels ($Q$) = $8$
-- Channel sampling frequency ($F_{ch}$) = $200\text{ Hz}$
-- Quantization precision per channel ($N_{ch}$) = $6\text{ bits}$
-
-$$\text{Bit Rate per Channel} = 200 \times 6 = 1,200\text{ bps}$$
-$$\text{Total Compressed Bit Rate} = Q \times \text{Bit Rate per Channel} = 8 \times 1,200 = \mathbf{9,600\text{ bps} \quad (9.6\text{ kbps})}$$
-
-**3. Compression Ratio Calculation (1.5 Marks):**
-$$\text{Compression Ratio} = \frac{\text{Raw Bit Rate}}{\text{Compressed Bit Rate}} = \frac{160,000\text{ bps}}{9,600\text{ bps}} = \frac{160}{9.6} \approx \mathbf{16.67 : 1}$$
-
-*Conclusion*: Filter bank front-end processing achieves a **$16.67:1$ compression ratio** while retaining all essential spectral formant envelope cues.
