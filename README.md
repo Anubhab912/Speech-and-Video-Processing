@@ -105,7 +105,17 @@ SVP/
 │   │   └── 📄 README.md                                       # [Chapter 7 Lab Guides & Code](Module_1_Speech_Processing_Concepts/Chapter_7_Python_Implementation/README.md)
 │   └── 📄 Question_Bank_SAQ_LAQ_Solutions.md                  # [Official Master Solution Key (80 SAQs + 41 LAQs)](Module_1_Speech_Processing_Concepts/Question_Bank_SAQ_LAQ_Solutions.md)
 ├── 📁 Module_2_Feature_Extraction_and_Speech_Recognition/
-│   └── 📄 README.md                                           # [Module II Overview & Notes](Module_2_Feature_Extraction_and_Speech_Recognition/README.md)
+│   ├── 📁 Chapter_5_Feature_Extraction_MFCC_LPCC/
+│   │   ├── 📄 README.md                                       # [Chapter 5 Lecture Notes](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_5_Feature_Extraction_MFCC_LPCC/README.md)
+│   │   └── 📄 practice_questions.md                           # [Chapter 5 Exam 5-Mark Q&A (MFCC/LPCC)](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_5_Feature_Extraction_MFCC_LPCC/practice_questions.md)
+│   ├── 📁 Chapter_6_Dynamic_Features_Normalization_VQ/
+│   │   ├── 📄 README.md                                       # [Chapter 6 Lecture Notes](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_6_Dynamic_Features_Normalization_VQ/README.md)
+│   │   └── 📄 practice_questions.md                           # [Chapter 6 Solved Numericals (Delta/VQ/Norm)](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_6_Dynamic_Features_Normalization_VQ/practice_questions.md)
+│   ├── 📁 Chapter_7_Pattern_Matching_and_HMM/
+│   │   ├── 📄 README.md                                       # [Chapter 7 Lecture Notes](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_7_Pattern_Matching_and_HMM/README.md)
+│   │   └── 📄 practice_questions.md                           # [Chapter 7 Solved Numericals (HMM Forward/Viterbi)](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_7_Pattern_Matching_and_HMM/practice_questions.md)
+│   ├── 📄 Question_Bank_SAQ_LAQ_Solutions.md                  # [Official Master Solution Key (53 SAQs + 30 LAQs)](Module_2_Feature_Extraction_and_Speech_Recognition/Question_Bank_SAQ_LAQ_Solutions.md)
+│   └── 📄 README.md                                           # [Module II Overview & Navigation](Module_2_Feature_Extraction_and_Speech_Recognition/README.md)
 ├── 📁 Module_3_Basics_of_Video_Processing/
 │   └── 📄 README.md                                           # [Module III Overview & Notes](Module_3_Basics_of_Video_Processing/README.md)
 ├── 📁 Module_4_Motion_Estimation_Techniques/
@@ -129,17 +139,25 @@ Click on any course topic or resource button to jump straight to the exact study
 | **Chapter 2** | Signals, ADC Process, Sampling Theorem, Aliasing, Quantization | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/README.md)<br>🧮 [Solved Numericals](Module_1_Speech_Processing_Concepts/Chapter_2_Digital_Representation_of_Speech_Signals/practice_questions.md) | ✅ Complete |
 | **Chapter 3** | Time-Frequency Analysis, Spectrograms, LTI Systems, Convolution, Pole-Zero | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/README.md)<br>📝 [5-Mark Exam Q&A](Module_1_Speech_Processing_Concepts/Chapter_3_Convolution_and_Pole_Zero_Modeling/practice_questions.md) | ✅ Complete |
 | **Chapter 4** | Discrete Fourier Transform (DFT), FFT Cooley-Tukey, Filter Banks, Mel Scale, LPC | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/README.md)<br>📝 [5-Mark Exam Q&A](Module_1_Speech_Processing_Concepts/Chapter_4_DFT_FFT_and_Spectral_Estimation/practice_questions.md) | ✅ Complete |
-| **Chapter 5** | Linear Filter Banks, Mel-Scale Filtering, Sub-Band Analysis | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_5_Linear_Filter_Banks/README.md) | ⏳ Outline Ready |
-| **Chapter 6** | Linear Predictive Coding (LPC), Levinson-Durbin Recursion | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_6_Linear_Prediction_and_LPC/README.md) | ⏳ Outline Ready |
-| **Chapter 7** | Python Audio Processing (SciPy, Librosa) Lab Guide | 📖 [Read Notes](Module_1_Speech_Processing_Concepts/Chapter_7_Python_Implementation/README.md) | ⏳ Outline Ready |
+| **Module 1 QB** | Official Faculty Question Bank Solutions (80 SAQs + 45 LAQs) | 🏆 [Open Module 1 Master Solutions](Module_1_Speech_Processing_Concepts/Question_Bank_SAQ_LAQ_Solutions.md) | ✅ Complete |
 
 ---
 
-### 🤖 Modules II – V: Advanced Speech & Video Processing
+### 🔍 Module II: Feature Extraction and Speech Recognition
+
+| Chapter / Topic | Key Learning Focus | Direct Study Links | Status |
+| :--- | :--- | :---: | :---: |
+| **Chapter 5** | Source-Filter Model, Real/Complex Cepstrum, MFCC Pipeline, LPCC Recursion | 📖 [Read Notes](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_5_Feature_Extraction_MFCC_LPCC/README.md)<br>📝 [5-Mark Exam Q&A](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_5_Feature_Extraction_MFCC_LPCC/practice_questions.md) | ✅ Complete |
+| **Chapter 6** | Static vs Dynamic Features, Delta/$\Delta\Delta$ Equations, CMN, VQ & LBG Algorithm | 📖 [Read Notes](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_6_Dynamic_Features_Normalization_VQ/README.md)<br>🧮 [Solved Numericals](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_6_Dynamic_Features_Normalization_VQ/practice_questions.md) | ✅ Complete |
+| **Chapter 7** | Pattern Matching, HMM $\lambda=(A, B, \pi)$, Forward Algorithm, Viterbi & Baum-Welch | 📖 [Read Notes](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_7_Pattern_Matching_and_HMM/README.md)<br>📝 [5-Mark Exam Q&A](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_7_Pattern_Matching_and_HMM/practice_questions.md) | ✅ Complete |
+| **Module 2 QB** | Official Faculty Question Bank Solutions (53 SAQs + 30 LAQs) | 🏆 [Open Module 2 Master Solutions](Module_2_Feature_Extraction_and_Speech_Recognition/Question_Bank_SAQ_LAQ_Solutions.md) | ✅ Complete |
+
+---
+
+### 📹 Modules III – V: Video Processing & Analytics
 
 | Module | Core Topics | Direct Study Link | Status |
 | :--- | :--- | :---: | :---: |
-| **Module II** | Feature Extraction (MFCC, LPCC), Vector Quantization, HMM Recognition | 📖 [Open Module II](Module_2_Feature_Extraction_and_Speech_Recognition/README.md) | ⏳ Outline Ready |
 | **Module III** | Video Perception, Color Spaces (YCbCr), Pinhole Camera, 3D Rigid Motion | 📖 [Open Module III](Module_3_Basics_of_Video_Processing/README.md) | ⏳ Outline Ready |
 | **Module IV** | Optical Flow, Block-Matching Motion Search (EBMA), Video Summarization | 📖 [Open Module IV](Module_4_Motion_Estimation_Techniques/README.md) | ⏳ Outline Ready |
 | **Module V** | Object Tracking (Mean-Shift, Active Shapes), Boundary Detection, OpenCV | 📖 [Open Module V](Module_5_Object_Tracking_and_Segmentation/README.md) | ⏳ Outline Ready |
@@ -148,10 +166,15 @@ Click on any course topic or resource button to jump straight to the exact study
 
 ## 🎯 Direct Shortcuts to Exam Question Sheets
 
-- 🏆 **[Module 1 Master Question Bank Solutions (80 SAQs + 41 LAQs & Solved Problems)](Module_1_Speech_Processing_Concepts/Question_Bank_SAQ_LAQ_Solutions.md)**:
+- 🏆 **[Module 1 Master Question Bank Solutions (80 SAQs + 45 LAQs)](Module_1_Speech_Processing_Concepts/Question_Bank_SAQ_LAQ_Solutions.md)**:
   - *Complete official solution key for Dr. Kunal Anand's Module 1 Question Bank.*
-  - *SAQ 1–80: All Short Answer Questions covering Speech Models, ADC, Spectrograms, LTI, Pole-Zero, DFT/FFT, Filter Banks & LPC.*
-  - *LAQ 1–41: Step-by-step solved numericals, mathematical proofs, and derivations.*
+  - *SAQ 1–80: All Short Answer Questions (2 Marks each).*
+  - *LAQ 1–45: Step-by-step solved numericals, derivations, and diagrams (5 Marks each).*
+
+- 🏆 **[Module 2 Master Question Bank Solutions (53 SAQs + 30 LAQs)](Module_2_Feature_Extraction_and_Speech_Recognition/Question_Bank_SAQ_LAQ_Solutions.md)**:
+  - *Complete official solution key for Dr. Kunal Anand's Module 2 Question Bank.*
+  - *SAQ 1–53: All Short Answer Questions covering MFCC, LPCC, Dynamic Features, CMN, VQ & HMMs (2 Marks each).*
+  - *LAQ 1–30: Step-by-step solved numericals (Delta/$\Delta\Delta$, Normalization, VQ Distance, Forward Algorithm, Viterbi Algorithm) (5 Marks each).*
 
 - 📝 **[Chapter 1 5-Mark Exam Questions & Model Solutions](Module_1_Speech_Processing_Concepts/Chapter_1_Introduction_to_Speech_Processing/practice_questions.md)**:
   - *Q1: Speech Processing Definition & Need (5 Marks)*
