@@ -189,6 +189,12 @@ Row-Column Grid"]
    $$v = \frac{y}{p_y} + c_y = f_y \frac{Y_C}{Z_C} + c_y$$
    *(where $p_x, p_y$ are physical pixel dimensions, $f_x, f_y$ are focal lengths in pixel units, and $(c_x, c_y)$ is the principal point in pixel coordinates).*
 
+#### 5.1 Worked Numerical: Pinhole Projection Height Check
+- **Problem**: A pinhole camera has a calibrated focal length of $f = 800\text{ pixels}$. An object of physical height $H = 1.8\text{ m}$ is situated at a distance of $Z = 12\text{ m}$ from the camera. Determine the projected image height $h$ in pixels.
+- **Solution**:
+  $$h = \frac{f \cdot H}{Z} = \frac{800\text{ px} \times 1.8\text{ m}}{12\text{ m}} = \frac{1440}{12} = \mathbf{120\text{ pixels}}$$
+- **Takeaway**: Farther objects appear smaller; near objects subtend larger pixel extents and shift much more rapidly across the sensor during camera translation.
+
 ---
 
 ## 6. Shape Models in Computer Vision
@@ -321,6 +327,27 @@ $$y' = a_4 x + a_5 y + a_6$$
 
 ---
 
+### 8.3 Worked Numerical: Applying a 2D Affine Motion Model
+
+- **Problem**: In a video sequence, the 2D motion of an object is described by the transformation:
+  $$x' = 1.2x + 15$$
+  $$y' = 0.8y - 10$$
+  If a point on the object has coordinates $(x, y) = (50, 25)$ in the original frame, calculate its new coordinates $(x', y')$ in the next frame. Which direction and size change does this suggest?
+- **Step-by-Step Solution**:
+  1. **Substitute Original Coordinates**:
+     $$x' = 1.2(50) + 15 = 60 + 15 = \mathbf{75\text{ pixels}}$$
+     $$y' = 0.8(25) - 10 = 20 - 10 = \mathbf{10\text{ pixels}}$$
+  2. **Net Displacement**:
+     - The point moves from $(50, 25)$ to $(75, 10)$.
+     - Horizontal shift: $\Delta x = 75 - 50 = +25\text{ pixels}$ (shifted $25$ pixels to the right).
+     - Vertical displacement: In standard digital image coordinates (origin at top-left, $+y$ downward), moving from $y = 25$ to $y' = 10$ represents an upward shift of $15$ pixels (or $-10$ offset in the linear translation term).
+  3. **Size & Aspect Ratio Change**:
+     - Horizontal scale factor $s_x = 1.2 > 1.0 \implies 20\%$ horizontal expansion/stretching.
+     - Vertical scale factor $s_y = 0.8 < 1.0 \implies 20\%$ vertical compression/contraction.
+     - The object undergoes anisotropic stretching, altering its aspect ratio.
+
+---
+
 ## 9. Homogeneous Coordinates: Unifying Transformations
 
 In standard 2D Cartesian coordinates, translation is an additive vector operation ($[x', y']^T = \mathbf{A}[x, y]^T + \mathbf{t}$), while rotation and scaling are multiplicative matrix operations. This mathematical incompatibility prevents compounding transformations into a single matrix.
@@ -391,7 +418,7 @@ $$\mathbf{P}' = \mathbf{R} \mathbf{P} + \mathbf{T}$$
 
 Where:
 - $\mathbf{T} = [T_X, T_Y, T_Z]^T$ is the $3 \times 1$ linear translation vector.
-- $\mathbf{R}$ is a $3 \times 3$ **orthonormal rotation matrix** ($\\mathbf{R}^T \mathbf{R} = \mathbf{I}, \det(\mathbf{R}) = +1$), formed by multiplying individual elementary axis rotations:
+- $\mathbf{R}$ is a $3 \times 3$ **orthonormal rotation matrix** ($\mathbf{R}^T \mathbf{R} = \mathbf{I}, \det(\mathbf{R}) = +1$), formed by multiplying individual elementary axis rotations:
 
 $$\mathbf{R} = \mathbf{R}_z(\psi) \mathbf{R}_y(\theta) \mathbf{R}_x(\phi)$$
 

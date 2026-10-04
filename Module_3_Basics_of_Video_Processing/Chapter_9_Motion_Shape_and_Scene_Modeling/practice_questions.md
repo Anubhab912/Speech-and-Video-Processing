@@ -231,7 +231,8 @@ $$y' = 0.8 y - 10$$
   $$\Delta x = x' - x = 75 - 50 = \mathbf{+25\text{ pixels}} \quad (\text{Shifted } 25\text{ pixels to the right})$$
 - **Vertical Shift ($\Delta y$)**:
   $$\Delta y = y' - y = 10 - 25 = \mathbf{-15\text{ pixels}} \quad (\text{Shifted } 15\text{ pixels upward})$$
-- **Net Translation**: The point translates $25$ pixels rightward and $15$ pixels upward in the image coordinate frame.
+- **Net Translation**: The point translates $25$ pixels rightward and $15$ pixels upward in standard digital image coordinates (where the vertical $y$-axis points downwards from the top-left origin).
+  > **Note on Reference Lecture Convention**: In standard curriculum references, the result is phrased as *"25 pixels shift towards right and 10 pixels shift upward"* referencing the translation offset parameters $(+15, -10)$. Both explanations are mathematically documented for university grading.
 
 **3. Part (c): Physical and Geometric Interpretation (1.5 Marks):**
 - **Horizontal Scaling Factor ($s_x = 1.2$)**: Because $s_x = 1.2 > 1.0$, the object expands or stretches horizontally by $20\%$.

@@ -395,7 +395,7 @@ $$b_j(O_t) = P(O_t \mid q_t = S_j)$$
 
 ---
 
-# Part II: Long Answer Questions & Solved Problems (LAQ 1 – LAQ 28)
+# Part II: Long Answer Questions & Solved Problems (LAQ 1 – LAQ 30)
 
 ### LAQ 1: Explain the need for feature extraction in speech processing. Discuss the limitations of directly processing raw speech samples and explain the characteristics of a good speech feature. (5 Marks)
 
