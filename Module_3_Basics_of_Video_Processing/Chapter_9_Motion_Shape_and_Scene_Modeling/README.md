@@ -163,17 +163,9 @@ Rigorous geometric computer vision requires converting between four interconnect
 
 ```mermaid
 flowchart LR
-    W["1. World Frame
-(X_W, Y_W, Z_W)
-Real-world metric coordinates"] -->|Extrinsic Matrix [R | T]| C["2. Camera Frame
-(X_C, Y_C, Z_C)
-Origin at Optical Center"]
-    C -->|Pinhole Projection (f)| I["3. Image Plane
-(x, y) continuous
-Physical sensor mm"]
-    I -->|Digitization & Origin Shift| P["4. Pixel Coordinates
-(u, v) discrete integers
-Row-Column Grid"]
+    W["1. World Frame<br>(X_W, Y_W, Z_W)<br>Real-world metric coordinates"] -->|"Extrinsic Matrix [R, T]"| C["2. Camera Frame<br>(X_C, Y_C, Z_C)<br>Origin at Optical Center"]
+    C -->|"Pinhole Projection (f)"| I["3. Image Plane<br>(x, y) continuous<br>Physical sensor mm"]
+    I -->|"Digitization & Origin Shift"| P["4. Pixel Coordinates<br>(u, v) discrete integers<br>Row-Column Grid"]
 ```
 
 ![Pinhole Projection Geometry](../../assets/ch09/slide_16_img_05.png)
@@ -232,14 +224,8 @@ A **Scene Model** describes the complete environment observed by the camera: the
 ```mermaid
 flowchart TD
     SC["Scene Classification in Video"]
-    SC --> SS["Static Scene
-• Environment structures do not move
-• If camera is fixed, consecutive frames are identical (up to sensor noise)
-• E.g., empty room, vacant roadway"]
-    SC --> DS["Dynamic Scene
-• Foreground entities translate, rotate, or deform
-• Significant inter-frame optical flow
-• E.g., bustling intersection, pedestrian mall"]
+    SC --> SS["Static Scene<br>• Environment structures do not move<br>• If camera is fixed, consecutive frames are identical<br>• E.g., empty room, vacant roadway"]
+    SC --> DS["Dynamic Scene<br>• Foreground entities translate, rotate, or deform<br>• Significant inter-frame optical flow<br>• E.g., bustling intersection, pedestrian mall"]
 ```
 
 ### 7.1 Scene Complexity by Platform
@@ -262,21 +248,11 @@ When objects or cameras move, their projected appearances on the 2D image plane 
 
 ```mermaid
 flowchart TD
-    L1["1. Translation Model (2 DoF)
-• Horizontal & vertical shift
-• Preserves: Orientation, scale, angles, lengths"]
-    L2["2. Euclidean / Rigid Model (3 DoF)
-• Translation + In-plane Rotation
-• Preserves: Lengths, angles, areas"]
-    L3["3. Similarity Model (4 DoF)
-• Translation + Rotation + Uniform Scale
-• Preserves: Angles, ratios of lengths"]
-    L4["4. Affine Model (6 DoF)
-• Translation + Rotation + Scale + Shear
-• Preserves: Parallelism, ratios of collinear lengths"]
-    L5["5. Projective / Homography (8 DoF)
-• General perspective projection
-• Preserves: Straight lines (cross-ratios)"]
+    L1["1. Translation Model (2 DoF)<br>• Horizontal & vertical shift<br>• Preserves: Orientation, scale, angles, lengths"]
+    L2["2. Euclidean / Rigid Model (3 DoF)<br>• Translation + In-plane Rotation<br>• Preserves: Lengths, angles, areas"]
+    L3["3. Similarity Model (4 DoF)<br>• Translation + Rotation + Uniform Scale<br>• Preserves: Angles, ratios of lengths"]
+    L4["4. Affine Model (6 DoF)<br>• Translation + Rotation + Scale + Shear<br>• Preserves: Parallelism, ratios of collinear lengths"]
+    L5["5. Projective / Homography (8 DoF)<br>• General perspective projection<br>• Preserves: Straight lines (cross-ratios)"]
     L1 --> L2 --> L3 --> L4 --> L5
 ```
 
@@ -401,14 +377,8 @@ When a camera platform moves through a 3D scene, or a solid physical object tran
 ```mermaid
 flowchart TD
     RM["3D Rigid Motion (6-DoF)"]
-    RM --> T["3 Translational DoF
-• T_X: Left / Right displacement
-• T_Y: Up / Down displacement
-• T_Z: Forward / Backward displacement"]
-    RM --> R["3 Rotational DoF
-• Roll (φ): Rotation around X axis
-• Pitch (θ): Rotation around Y axis
-• Yaw (ψ): Rotation around Z axis"]
+    RM --> T["3 Translational DoF<br>• T_X: Left / Right displacement<br>• T_Y: Up / Down displacement<br>• T_Z: Forward / Backward displacement"]
+    RM --> R["3 Rotational DoF<br>• Roll (φ): Rotation around X axis<br>• Pitch (θ): Rotation around Y axis<br>• Yaw (ψ): Rotation around Z axis"]
 ```
 
 ### 11.1 Mathematical Formulation
@@ -439,16 +409,12 @@ Engineers must choose the simplest mathematical model capable of explaining obse
 ```mermaid
 flowchart TD
     Q1{"Is the motion primarily uniform translation across frames?"}
-    Q1 -- Yes --> M1["Use Translation Model (2 DoF)
-E.g., Block matching in H.264"]
+    Q1 -- Yes --> M1["Use Translation Model (2 DoF)<br>E.g., Block matching in H.264"]
     Q1 -- No --> Q2{"Does the target rotate or zoom uniformly?"}
-    Q2 -- Yes --> M2["Use Euclidean (3 DoF) or Similarity (4 DoF)
-E.g., Drone tracking"]
+    Q2 -- Yes --> M2["Use Euclidean (3 DoF) or Similarity (4 DoF)<br>E.g., Drone tracking"]
     Q2 -- No --> Q3{"Is the motion over a planar surface viewed under tilt?"}
-    Q3 -- Yes --> M3["Use Affine (6 DoF) or Homography (8 DoF)
-E.g., Panorama stitching, document scan"]
-    Q3 -- No --> M4["Use 3D Rigid Motion (6-DoF) + Depth / SLAM
-E.g., Autonomous driving, robotics"]
+    Q3 -- Yes --> M3["Use Affine (6 DoF) or Homography (8 DoF)<br>E.g., Panorama stitching, document scan"]
+    Q3 -- No --> M4["Use 3D Rigid Motion (6-DoF) + Depth / SLAM<br>E.g., Autonomous driving, robotics"]
 ```
 
 ### 12.1 Practical Guidelines

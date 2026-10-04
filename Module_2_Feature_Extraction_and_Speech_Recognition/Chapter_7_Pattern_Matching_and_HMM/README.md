@@ -75,9 +75,9 @@ flowchart LR
     end
 
     subgraph Observable Acoustic Layer
-        S1 -->|b_1(O_1)| O1["Observation O_1"]
-        S2 -->|b_2(O_2)| O2["Observation O_2"]
-        S3 -->|b_3(O_3)| O3["Observation O_3"]
+        S1 -->|"b_1(O_1)"| O1["Observation O_1"]
+        S2 -->|"b_2(O_2)"| O2["Observation O_2"]
+        S3 -->|"b_3(O_3)"| O3["Observation O_3"]
     end
 ```
 
