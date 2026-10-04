@@ -4,13 +4,13 @@
 > **Source Material**: Official Module-2 Question Bank by Dr. Kunal Anand (SCE, KIIT DU)  
 > **Grading Structure**:  
 > - **Part I: Short Answer Questions (SAQ 1 – SAQ 53)** $\to$ **2 Marks Each** (Crisp definitions, formulas, and key significance).  
-> - **Part II: Long Answer Questions & Problems (LAQ 1 – LAQ 28)** $\to$ **5 Marks Each** (Detailed derivations, embedded diagrams, comparison matrices, and step-by-step numericals).
+> - **Part II: Long Answer Questions & Problems (LAQ 1 – LAQ 30)** $\to$ **5 Marks Each** (Detailed derivations, embedded diagrams, comparison matrices, and step-by-step numericals).
 
 ---
 
 # Table of Contents
 1. [Part I: Short Answer Questions (SAQ 1 – SAQ 53) — 2 Marks Each](#part-i-short-answer-questions-saq-1--saq-53)
-2. [Part II: Long Answer Questions & Solved Problems (LAQ 1 – LAQ 28) — 5 Marks Each](#part-ii-long-answer-questions--solved-problems-laq-1--laq-28)
+2. [Part II: Long Answer Questions & Solved Problems (LAQ 1 – LAQ 30) — 5 Marks Each](#part-ii-long-answer-questions--solved-problems-laq-1--laq-30)
 
 ---
 

@@ -117,7 +117,13 @@ SVP/
 │   ├── 📄 Question_Bank_SAQ_LAQ_Solutions.md                  # [Official Master Solution Key (53 SAQs + 30 LAQs)](Module_2_Feature_Extraction_and_Speech_Recognition/Question_Bank_SAQ_LAQ_Solutions.md)
 │   └── 📄 README.md                                           # [Module II Overview & Navigation](Module_2_Feature_Extraction_and_Speech_Recognition/README.md)
 ├── 📁 Module_3_Basics_of_Video_Processing/
-│   └── 📄 README.md                                           # [Module III Overview & Notes](Module_3_Basics_of_Video_Processing/README.md)
+│   ├── 📁 Chapter_8_Video_Formation_Perception_Representation/
+│   │   ├── 📄 README.md                                       # [Chapter 8 Lecture Notes](Module_3_Basics_of_Video_Processing/Chapter_8_Video_Formation_Perception_Representation/README.md)
+│   │   └── 📄 practice_questions.md                           # [Chapter 8 Solved Numericals & 5-Mark Q&A](Module_3_Basics_of_Video_Processing/Chapter_8_Video_Formation_Perception_Representation/practice_questions.md)
+│   ├── 📁 Chapter_9_Motion_Shape_and_Scene_Modeling/
+│   │   ├── 📄 README.md                                       # [Chapter 9 Lecture Notes](Module_3_Basics_of_Video_Processing/Chapter_9_Motion_Shape_and_Scene_Modeling/README.md)
+│   │   └── 📄 practice_questions.md                           # [Chapter 9 Solved Numericals & 5-Mark Q&A](Module_3_Basics_of_Video_Processing/Chapter_9_Motion_Shape_and_Scene_Modeling/practice_questions.md)
+│   └── 📄 README.md                                           # [Module III Overview & Navigation](Module_3_Basics_of_Video_Processing/README.md)
 ├── 📁 Module_4_Motion_Estimation_Techniques/
 │   └── 📄 README.md                                           # [Module IV Overview & Notes](Module_4_Motion_Estimation_Techniques/README.md)
 └── 📁 Module_5_Object_Tracking_and_Segmentation/
@@ -154,11 +160,20 @@ Click on any course topic or resource button to jump straight to the exact study
 
 ---
 
-### 📹 Modules III – V: Video Processing & Analytics
+### 📹 Module III: Basics of Video Processing
+
+| Chapter / Topic | Key Learning Focus | Direct Study Links | Status |
+| :--- | :--- | :---: | :---: |
+| **Chapter 8** | Video Formation, Perception (CFF), Data Rates, YCbCr/HSV, Bayer CFA, Pinhole Camera | 📖 [Read Notes](Module_3_Basics_of_Video_Processing/Chapter_8_Video_Formation_Perception_Representation/README.md)<br>🧮 [Solved Numericals & 5-Mark Q&A](Module_3_Basics_of_Video_Processing/Chapter_8_Video_Formation_Perception_Representation/practice_questions.md) | ✅ Complete |
+| **Chapter 9** | 4 Causes of Change, Camera Motions, Parallax, 2D Motion Ladder, Homography, 3D Rigid Motion | 📖 [Read Notes](Module_3_Basics_of_Video_Processing/Chapter_9_Motion_Shape_and_Scene_Modeling/README.md)<br>🧮 [Solved Numericals & 5-Mark Q&A](Module_3_Basics_of_Video_Processing/Chapter_9_Motion_Shape_and_Scene_Modeling/practice_questions.md) | ✅ Complete |
+| **Module 3 Hub** | Module III Syllabus Breakdown, Learning Architecture & Overview | 🚀 [Open Module 3 Hub](Module_3_Basics_of_Video_Processing/README.md) | ✅ Complete |
+
+---
+
+### 🎥 Modules IV – V: Advanced Video Processing & Analytics
 
 | Module | Core Topics | Direct Study Link | Status |
 | :--- | :--- | :---: | :---: |
-| **Module III** | Video Perception, Color Spaces (YCbCr), Pinhole Camera, 3D Rigid Motion | 📖 [Open Module III](Module_3_Basics_of_Video_Processing/README.md) | ⏳ Outline Ready |
 | **Module IV** | Optical Flow, Block-Matching Motion Search (EBMA), Video Summarization | 📖 [Open Module IV](Module_4_Motion_Estimation_Techniques/README.md) | ⏳ Outline Ready |
 | **Module V** | Object Tracking (Mean-Shift, Active Shapes), Boundary Detection, OpenCV | 📖 [Open Module V](Module_5_Object_Tracking_and_Segmentation/README.md) | ⏳ Outline Ready |
 
@@ -206,6 +221,51 @@ Click on any course topic or resource button to jump straight to the exact study
   - *Q8–Q9: Cooley-Tukey FFT, Even-Odd Decomposition, Twiddle Factor & Butterfly Unit.*
   - *Q10–Q12: Bank-of-Filters (BOF) pipeline, decimation & filter bank compression ratio numericals.*
   - *Q13–Q15: Mel Scale conversion, LPC all-pole model & Yule-Walker equation derivation.*
+
+- 🔬 **[Chapter 5 5-Mark Exam Questions: MFCC, LPCC & Deconvolution](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_5_Feature_Extraction_MFCC_LPCC/practice_questions.md)**:
+  - *Q1: Speech Feature Extraction Need & Characteristics of Good Features (5 Marks)*
+  - *Q2: Speech Source-Filter Convolution Framework $s[n] = e[n] * h[n]$ (5 Marks)*
+  - *Q3: Real vs Complex Cepstrum Derivations & Homomorphic Deconvolution (5 Marks)*
+  - *Q4: Step-by-Step 13-Coefficient MFCC Extraction Pipeline (5 Marks)*
+  - *Q5: LPC All-Pole Filter & Recursive LPCC Derivation (5 Marks)*
+
+- ⚡ **[Chapter 6 Solved Numericals: Dynamic Features, Normalization & VQ](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_6_Dynamic_Features_Normalization_VQ/practice_questions.md)**:
+  - *Q1: Static vs Dynamic Features & Delta / Acceleration Physics (5 Marks)*
+  - *Q2: Step-by-Step Solved Numerical: First-Order Delta ($\Delta$) Velocity (5 Marks)*
+  - *Q3: Step-by-Step Solved Numerical: Second-Order Delta-Delta ($\Delta\Delta$) Acceleration (5 Marks)*
+  - *Q4: Step-by-Step Solved Numerical: Cepstral Mean Normalization (CMN) (5 Marks)*
+  - *Q5: Vector Quantization (VQ) Principles & LBG Clustering Algorithm (5 Marks)*
+
+- 🤖 **[Chapter 7 Solved Numericals: Pattern Matching & HMM Speech Recognition](Module_2_Feature_Extraction_and_Speech_Recognition/Chapter_7_Pattern_Matching_and_HMM/practice_questions.md)**:
+  - *Q1: Pattern Comparison: Template Matching (DTW) vs Statistical Models (HMM) (5 Marks)*
+  - *Q2: Hidden Markov Model Topology $\lambda = (A, B, \pi)$ & 3 Core Problems (5 Marks)*
+  - *Q3: Step-by-Step Solved Numerical: Forward Algorithm Total Likelihood $P(O \mid \lambda)$ (5 Marks)*
+  - *Q4: Step-by-Step Solved Numerical: Viterbi Algorithm Optimal Path Decoding (5 Marks)*
+  - *Q5: Baum-Welch (EM) Training Algorithm & GMM-HMM Acoustic Modeling (5 Marks)*
+
+- 🎬 **[Chapter 8 5-Mark Exam Questions & Solved Video Formation Numericals](Module_3_Basics_of_Video_Processing/Chapter_8_Video_Formation_Perception_Representation/practice_questions.md)**:
+  - *Q1: Video Formation Pipeline & Electronic Sampling Breakdown (5 Marks)*
+  - *Q2: Visual Perception: Persistence of Vision, Apparent Motion & Critical Flicker Fusion (5 Marks)*
+  - *Q3: Progressive ($1080\text{p}$) vs Interlaced ($1080\text{i}$) Scanning & Combing Artifacts (5 Marks)*
+  - *Q4: Solved Numerical: Uncompressed Data Rate ($663.6\text{ Mbit/s}$) & 2-Hour Storage ($597.2\text{ GB}$) (5 Marks)*
+  - *Q5: Trichromatic Human Vision, RGB vs CMYK & YCbCr Compression Rationale (5 Marks)*
+  - *Q6: Chroma Subsampling ($4:4:4, 4:2:2, 4:2:0$) & Bandwidth Savings (5 Marks)*
+  - *Q7: Bayer CFA Mosaic ($50\%\text{ G}$) vs 3-Sensor Prism & Demosaicing (5 Marks)*
+  - *Q8: Solved Numerical: Pinhole Camera Perspective Projection ($h = f H / Z$) (5 Marks)*
+  - *Q9: Real Lens Aberrations, Radial Distortion (Barrel/Pincushion) & Calibration (5 Marks)*
+  - *Q10: Video Containers vs Codecs & OpenCV FourCC Architecture (5 Marks)*
+
+- 📐 **[Chapter 9 5-Mark Exam Questions & Solved Motion Modeling Numericals](Module_3_Basics_of_Video_Processing/Chapter_9_Motion_Shape_and_Scene_Modeling/practice_questions.md)**:
+  - *Q1: Four Causes of Inter-Frame Changes & Brightness Constancy Assumption (5 Marks)*
+  - *Q2: Camera Motions: Rotation vs Translation vs Zoom vs Dolly Parallax (5 Marks)*
+  - *Q3: Motion Parallax Mathematical Derivation ($v_x = -f V_X / Z$) (5 Marks)*
+  - *Q4: Four Video Coordinate Frames: World $\to$ Camera $\to$ Image $\to$ Pixel (5 Marks)*
+  - *Q5: Shape Models: Point, Line, Bounding Box, Contour, Blob, Surface Patch (5 Marks)*
+  - *Q6: Static vs Dynamic Scenes across Surveillance, Handheld & Drone Platforms (5 Marks)*
+  - *Q7: The 2D Motion Model Ladder (Translation $\to$ Rigid $\to$ Affine $\to$ Homography) (5 Marks)*
+  - *Q8: Homogeneous Coordinates Matrix Unification & Concatenation Proofs (5 Marks)*
+  - *Q9: Planar Homography Formulations, 8-DoF & 4 Point Correspondences (5 Marks)*
+  - *Q10: Solved Numerical: 2D Affine Transformation ($x' = 1.2x + 15, y' = 0.8y - 10$) (5 Marks)*
 
 ---
 
